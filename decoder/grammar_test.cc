@@ -15,12 +15,12 @@ using namespace std;
 class GrammarTest : public testing::Test {
  public:
   GrammarTest() {
-    Weights::InitFromFile("test_data/weights.gt", &wts);
+    wts.InitFromFile("test_data/weights.gt");
   }
  protected:
   virtual void SetUp() { }
   virtual void TearDown() { }
-  vector<weight_t> wts;
+  Weights wts;
 };
        
 TEST_F(GrammarTest,TestTextGrammar) {

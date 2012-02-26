@@ -196,7 +196,7 @@ struct DecoderImpl {
 	}
 
     
-  void forest_stats(Hypergraph &forest,string name,bool show_tree,bool show_deriv=false, show_ruleset=false) {
+  void forest_stats(Hypergraph &forest,string name,bool show_tree,bool show_deriv=false, bool show_ruleset=false) {
     cerr << viterbi_stats(forest,name,true,show_tree,show_deriv,show_ruleset,rules_file);
     cerr << endl;
   }
@@ -448,9 +448,9 @@ DecoderImpl::DecoderImpl(po::variables_map& conf, int argc, char** argv, istream
     ("show_rules", po::value<string>(), "Show the rules used in Viterbi translation or k best derivations, depending on option k_best_rules")
     ("rules_dir",po::value<string>(),"DISCOURSE FEATURE: Directory to read rule frequency of each document from")
     ("rules_file",po::value<string>(),"DISCOURSE FEATURE: File to read rule frequency of entire collection from")
-//    ("discourse_0",po::value<string>(),"DISCOURSE FEATURE: enable variation 0")
-//    ("discourse_1",po::value<string>(),"DISCOURSE FEATURE: enable variation 1")
-//    ("discourse_2",po::value<string>(),"DISCOURSE FEATURE: enable variation 2")
+    ("discourse_0",po::value<string>(),"DISCOURSE FEATURE: enable variation 0")
+    ("discourse_1",po::value<string>(),"DISCOURSE FEATURE: enable variation 1")
+    ("discourse_2",po::value<string>(),"DISCOURSE FEATURE: enable variation 2")
     ("df",po::value<vector<string> >()->composing(),"DISCOURSE FEATURE: File to read document frequency (df) values, followed by total number of documents")
     
         ("forest_output,O",po::value<string>(),"Directory to write forests to");

@@ -83,8 +83,10 @@ int main(int argc, char** argv) {
     }
     
     //show rules
-    string show_rules_dir = decoder.GetConf()["show_rules"].as<string>();
-    
+    string show_rules_dir;
+    if(decoder.GetConf().count("show_rules")){
+    	show_rules_dir = decoder.GetConf()["show_rules"].as<string>();
+    }    
     string buf;
     while(*in) {
         getline(*in, buf);
@@ -93,17 +95,20 @@ int main(int argc, char** argv) {
         if(discourse_cnt>0){
             vector<string> segments_in_doc = split(buf, "<NEXTSEG>", false);
            
-            stringstream show_rules_strm;
             if(rulefreq_perdoc){ 
             	int doc_id = get_doc_id(segments_in_doc[0]);
             	ff_discourse->load_freqs(doc_id, rulefreq_dir);
-                show_rules_strm << show_rules_dir << "/rules." << doc_id;
-                decoder.SetRuleFile(show_rules_strm.str());                
             }
             
             stringstream outstrm;
             for(int i=0;i<segments_in_doc.size();i++){
-                decoder.Decode(segments_in_doc[i]);  
+                int sent_id = get_sent_id(segments_in_doc[i]);
+                stringstream show_rules_strm; 
+		if(decoder.GetConf().count("show_rules")){
+			show_rules_strm << show_rules_dir << "/rules." << sent_id;
+                	decoder.SetRuleFile(show_rules_strm.str());                
+                }
+		decoder.Decode(segments_in_doc[i]);  
             }
             
             for(int i=0;i<segments_in_doc.size();i++){

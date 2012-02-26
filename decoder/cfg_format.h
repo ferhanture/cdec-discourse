@@ -101,7 +101,7 @@ struct CFGFormat {
   }
 
   void print_features(std::ostream &o,prob_t p,FeatureVector const& fv=FeatureVector()) const {
-    bool logp=(logprob_feat && p!=prob_t::One());
+    bool logp=(logprob_feat && p!=1);
     if (features || logp) {
       o << partsep;
       if (logp)
