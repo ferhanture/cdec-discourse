@@ -1,0 +1,766 @@
+cdec v1.0 (c) 2009-2011 by Chris Dyer
+Configuration file: cdec.ini
+Reading weights from weights.init
+Loaded 11 feature weights
+feature: LanguageModel (with config parameters '-o 5 lm://dsub01:6666')
+LM feature name: LanguageModel from file lm://dsub01:6666 order 5
+Connected to LM on dsub01 on port 6666
+State is 37 bytes for feature LanguageModel -o 5 lm://dsub01:6666
+feature: WordPenalty (no config parameters)
+State is 0 bytes for feature WordPenalty
+feature: SourceWordPenalty (no config parameters)
+State is 0 bytes for feature SourceWordPenalty
+feature: ArityPenalty (no config parameters)
+State is 0 bytes for feature ArityPenalty
+Configured 1 rescoring pass
+  [num_fn=4 int_alg=CUBE:k=100]
+Adding glue grammar for default nonterminal X and goal nonterminal S
+Reading input from STDIN
+
+INPUT: <s> رود لارسن الشرق الاوسط برميل بارود ب فتيل مشتعل  </s>
+  id = 0
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ...........
+  Init. forest (nodes/edges): 78/7664
+  Init. forest       (paths): 2.16179e+17
+  Init. forest  Viterbi logp: 6.24721
+  Init. forest       Viterbi: <s> رود لارسن الشرق الاوسط برميل بارود ب فتيل مشتعل </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -330.299	-330.299
+  Pass1 forest (nodes/edges): 257/1229
+  Pass1 forest       (paths): 650223
+  Pass1 forest  Viterbi logp: -330.299
+  Pass1 forest       Viterbi: <s> roed - larsen : middle east a gunpowder barrel with a lit fuse . </s>
+
+Forest rescoring:: 0.38 secs (1 calls)
+Translation: 0.39 secs (1 calls)
+
+INPUT: <s> اوسلو 6 2 اف ب اعتبر تيري رود لارسن الموفد السابق ل ...
+  id = 1
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ...........................................
+  Init. forest (nodes/edges): 494/137409
+  Init. forest       (paths): 4.74327e+74
+  Init. forest  Viterbi logp: 26.2383
+  Init. forest       Viterbi: <s> اوسلو 6 2 اف ب اعتبر تيري رود لارسن الموفد السابق ل الامم المتحده الي الشرق الاوسط ان الوضع في هذه المنطقه لم يكن يوما علي درجه الخطوره التي هو علي ها اليوم مشبها المنطقه ب برميل بارود ب فتيل مشتعل </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -455.05	-455.05
+  Pass1 forest (nodes/edges): 1296/7827
+  Pass1 forest       (paths): 6.50437e+20
+  Pass1 forest  Viterbi logp: -455.05
+  Pass1 forest       Viterbi: <s> oslo , feb 6 ( afp ) former united nations envoy to the middle east terje roed larsen considered that the situation in the region has never been on the degree of danger which is today , comparing the region to a gunpowder barrel with a lit fuse . </s>
+
+Forest rescoring:: 4.31 secs (1 calls)
+Translation: 4.49 secs (1 calls)
+
+INPUT: <s> قال رود لارسن متحدثا ل الاذاعه العامه النروجيه ان ار ...
+  id = 2
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ............................
+  Init. forest (nodes/edges): 299/58013
+  Init. forest       (paths): 2.661e+47
+  Init. forest  Viterbi logp: 16.8675
+  Init. forest       Viterbi: <s> قال رود لارسن متحدثا ل الاذاعه العامه النروجيه ان ار كاي ان ه يمكن الان تشبيه المنطقه من عده نواح ب برميل بارود ب فتيل مشتعل </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -450.642	-450.642
+  Pass1 forest (nodes/edges): 555/2270
+  Pass1 forest       (paths): 8.02745e+10
+  Pass1 forest  Viterbi logp: -450.642
+  Pass1 forest       Viterbi: <s> roed - larsen said , speaking for the norwegian public radio that kay that he may now be comparing the region from several districts in the barrel of a gun with a lit fuse . </s>
+
+Forest rescoring:: 2.01 secs (1 calls)
+Translation: 2.08 secs (1 calls)
+
+INPUT: <s> اضاف اعتقد ان الوضع اكثر صعوبه و تعقيدا و خطوره من ما ...
+  id = 3
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ....................
+  Init. forest (nodes/edges): 195/61000
+  Init. forest       (paths): 1.55452e+35
+  Init. forest  Viterbi logp: 11.8697
+  Init. forest       Viterbi: <s> اضاف اعتقد ان الوضع اكثر صعوبه و تعقيدا و خطوره من ما كان علي ه منذ عقود عديده </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -326.367	-326.367
+  Pass1 forest (nodes/edges): 623/3647
+  Pass1 forest       (paths): 3.74753e+10
+  Pass1 forest  Viterbi logp: -326.367
+  Pass1 forest       Viterbi: <s> he added , " i believe that the situation more difficult and more complicated and dangerous than it was several decades ago . </s>
+
+Forest rescoring:: 1.86 secs (1 calls)
+Translation: 1.93 secs (1 calls)
+
+INPUT: <s> من بين الازمات القائمه او الكامنه في الشرق الاوسط ...
+  id = 4
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ...........................
+  Init. forest (nodes/edges): 286/56033
+  Init. forest       (paths): 3.46181e+43
+  Init. forest  Viterbi logp: 16.2427
+  Init. forest       Viterbi: <s> من بين الازمات القائمه او الكامنه في الشرق الاوسط ذكر رود لارسن النزاع العربي الاسرائيلي و الملف النووي الايراني و الازمه بين لبنان و سوريا </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -331.196	-331.196
+  Pass1 forest (nodes/edges): 781/5750
+  Pass1 forest       (paths): 3.89101e+14
+  Pass1 forest  Viterbi logp: -331.196
+  Pass1 forest       Viterbi: <s> among the existing or potential crises in the middle east , roed - larsen said the arab - israeli conflict and the iranian nuclear file and crisis between lebanon and syria . </s>
+
+Forest rescoring:: 1.81 secs (1 calls)
+Translation: 1.88 secs (1 calls)
+
+INPUT: <s> قال ان كل ذلك يعيد نا الي مسائل قيم جوهريه و اراء تجعل ...
+  id = 5
+.Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    .................................
+  Init. forest (nodes/edges): 364/119014
+  Init. forest       (paths): 3.62467e+60
+  Init. forest  Viterbi logp: 19.9911
+  Init. forest       Viterbi: <s> قال ان كل ذلك يعيد نا الي مسائل قيم جوهريه و اراء تجعل الوضع معرضا في اي لحظه ل الخروج عن السيطره اكثر من ما كان علي ه في الايام الاخيره </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -417.695	-417.695
+  Pass1 forest (nodes/edges): 1179/7485
+  Pass1 forest       (paths): 7.21909e+17
+  Pass1 forest  Viterbi logp: -417.695
+  Pass1 forest       Viterbi: <s> he said that all this brings us back to the issues of fundamental values and views an exhibition at any moment to make the situation get out of control more than what it was in recent days . </s>
+
+Forest rescoring:: 3.51 secs (1 calls)
+Translation: 3.66 secs (1 calls)
+
+INPUT: <s> لم يذكر رود ل ارس صراحه اعمال العنف التي تخللت ...
+  id = 6
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    .......................................
+  Init. forest (nodes/edges): 442/121830
+  Init. forest       (paths): 3.0054e+69
+  Init. forest  Viterbi logp: 23.7394
+  Init. forest       Viterbi: <s> لم يذكر رود ل ارس صراحه اعمال العنف التي تخللت التظاهرات في العالم الاسلامي احتجاجا علي نشر رسوم كاريكاتوريه عن النبي محمد في الصحف الاوروبيه مكتفيا ب التشديد علي ضروره الحوار بدل رشق الحجاره و اضرام النيران </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -454.668	-454.668
+  Pass1 forest (nodes/edges): 1423/8335
+  Pass1 forest       (paths): 1.08415e+20
+  Pass1 forest  Viterbi logp: -454.668
+  Pass1 forest       Viterbi: <s> he did not mention the rod to march openly acts of violence that took place during demonstrations in the islamic world in protest against the publication of cartoons of the prophet muhammad in european newspapers only to emphasize the necessity of dialogue instead of throwing stones and set ablaze . </s>
+
+Forest rescoring:: 3.87 secs (1 calls)
+Translation: 4.04 secs (1 calls)
+
+INPUT: <s> قام متظاهرون ب احراق مبنيي السفارتين الدنماركيه و ...
+  id = 7
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    .......................................................
+  Init. forest (nodes/edges): 650/170988
+  Init. forest       (paths): 4.37002e+86
+  Init. forest  Viterbi logp: 33.7349
+  Init. forest       Viterbi: <s> قام متظاهرون ب احراق مبنيي السفارتين الدنماركيه و النروجيه في دمشق السبت فيما احرق مبني يضم مكتبا ل السفاره الدنماركيه في بيروت ردا علي نشر الرسوم في سبتمبر في صحيفه يلاندس بوستن الدنماركيه و اعاده نشر ها فيما بعد في عدد من وسائل الاعلام الاوروبيه و في طليعه ها مجله ماغازين يت النروجيه </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -751.302	-751.302
+  Pass1 forest (nodes/edges): 1563/9371
+  Pass1 forest       (paths): 1.38977e+23
+  Pass1 forest  Viterbi logp: -751.302
+  Pass1 forest       Viterbi: <s> demonstrators burned danish and norwegian embassies in damascus saturday , while building burned buildings that includes the office of the danish embassy in beirut in response to the publication of the cartoons in september in danish yalandis boston newspaper and redeploy them later in a number of european mass media , in the forefront of the magazine ماغازين accuse norwegian </s>
+
+Forest rescoring:: 5.68 secs (1 calls)
+Translation: 5.9 secs (1 calls)
+
+INPUT: <s> رود لارسن مكلف حاليا مراقبه تطبيق قرار مجلس الامن ...
+  id = 8
+.Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    .......................................
+  Init. forest (nodes/edges): 441/131924
+  Init. forest       (paths): 4.17688e+60
+  Init. forest  Viterbi logp: 23.7394
+  Init. forest       Viterbi: <s> رود لارسن مكلف حاليا مراقبه تطبيق قرار مجلس الامن الدولي 1559 الذي ينص علي نزع سلاح الميليشيات و المجموعات المسلحه في لبنان و من بين ها ب نظر المنظمه الدوليه حزب الله الشيعي اللبناني و مجموعات فلسطينيه </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -371.058	-371.058
+  Pass1 forest (nodes/edges): 1246/7768
+  Pass1 forest       (paths): 1.10168e+19
+  Pass1 forest  Viterbi logp: -371.058
+  Pass1 forest       Viterbi: <s> roed - larsen is currently in charge of monitoring the implementation of security council resolution 1559 which stipulates on the disarmament of the militias and armed groups in lebanon , including in the eyes of the international organization of the lebanese shiite hezbollah and palestinian groups . </s>
+
+Forest rescoring:: 4.1 secs (1 calls)
+Translation: 4.28 secs (1 calls)
+
+INPUT: <s> كوفي انان س يخصص قيمه جائزه زايد ل انشاء مؤسسه ل ...
+  id = 9
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ...................
+  Init. forest (nodes/edges): 182/48159
+  Init. forest       (paths): 1.01519e+30
+  Init. forest  Viterbi logp: 11.245
+  Init. forest       Viterbi: <s> كوفي انان س يخصص قيمه جائزه زايد ل انشاء مؤسسه ل الزراعه و تعليم البنات في افريقيا </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -341.243	-341.243
+  Pass1 forest (nodes/edges): 659/4041
+  Pass1 forest       (paths): 4.61445e+09
+  Pass1 forest  Viterbi logp: -341.243
+  Pass1 forest       Viterbi: <s> secretary - general kofi annan the zayed prize value will be allocated for the establishment of the institution for agriculture and girls ' education in africa . </s>
+
+Forest rescoring:: 1.56 secs (1 calls)
+Translation: 1.62 secs (1 calls)
+
+INPUT: <s> دبي 7 2 اف ب قال الامين العام ل الامم المتحده كوفي انان ...
+  id = 10
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ..................................................
+  Init. forest (nodes/edges): 585/172469
+  Init. forest       (paths): 7.20751e+80
+  Init. forest  Viterbi logp: 30.6113
+  Init. forest       Viterbi: <s> دبي 7 2 اف ب قال الامين العام ل الامم المتحده كوفي انان ان ه س يخصص قيمه جائزه زايد الدوليه ل البيئه التي تسلم ها مساء الاثنين في دبي و تبلغ قيمه ها 500 الف دولار ل اقامه مؤسسه ل الزراعه و تعليم البنات في القاره الافريقيه </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -423.883	-423.883
+  Pass1 forest (nodes/edges): 1879/11652
+  Pass1 forest       (paths): 7.88289e+23
+  Pass1 forest  Viterbi logp: -423.883
+  Pass1 forest       Viterbi: <s> dubai , feb 7 ( afp ) secretary - general of the united nations secretary - general kofi annan said that he would allocate $ zayed international prize for the environment that it received monday night in dubai and $ 500 thousand dollars for the establishment of an institution for agriculture and girls ' education in the african continent . </s>
+
+Forest rescoring:: 5.51 secs (1 calls)
+Translation: 5.73 secs (1 calls)
+
+INPUT: <s> اكد انان في كلمه اثناء حفل تسلم الجائزه ان ه قرر ...
+  id = 11
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ................................
+  Init. forest (nodes/edges): 351/89957
+  Init. forest       (paths): 6.51681e+48
+  Init. forest  Viterbi logp: 19.3664
+  Init. forest       Viterbi: <s> اكد انان في كلمه اثناء حفل تسلم الجائزه ان ه قرر استخدام قيمه الجائزه ل اطلاق مؤسسه ساتولي بعث ها ل تعمل في افريقيا في مجالي الزراعه و تعليم البنات </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -417.107	-417.107
+  Pass1 forest (nodes/edges): 1092/6845
+  Pass1 forest       (paths): 7.35151e+14
+  Pass1 forest  Viterbi logp: -417.107
+  Pass1 forest       Viterbi: <s> annan confirmed in a speech during a ceremony to receive the prize that he decided to use the prize - institution will assume sent to work in africa in the fields of agriculture and education of girls . </s>
+
+Forest rescoring:: 2.81 secs (1 calls)
+Translation: 2.93 secs (1 calls)
+
+INPUT: <s> اوضح ان ه اختار الزراعه ل ان الشعوب الافريقيه في حاجه ...
+  id = 12
+.Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ..............................
+  Init. forest (nodes/edges): 320/75081
+  Init. forest       (paths): 2.71152e+36
+  Init. forest  Viterbi logp: 18.1169
+  Init. forest       Viterbi: <s> اوضح ان ه اختار الزراعه ل ان الشعوب الافريقيه في حاجه الي ثوره خضراء و تعليم البنات ل ان ه لا توجد وسائل اخري اكثر فعاليه ل التنميه </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -413.596	-413.596
+  Pass1 forest (nodes/edges): 892/3339
+  Pass1 forest       (paths): 7.04311e+09
+  Pass1 forest  Viterbi logp: -413.596
+  Pass1 forest       Viterbi: <s> he clarified that he chose the agriculture to african nations in need to green revolution and teach girls because there is no other means for more effective development . </s>
+
+Forest rescoring:: 2.76 secs (1 calls)
+Translation: 2.87 secs (1 calls)
+
+INPUT: <s> تمنح جائزه زايد الدوليه ل البيئه التي اطلقت سنه 1998 ب ...
+  id = 13
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ..............................................
+  Init. forest (nodes/edges): 533/124860
+  Init. forest       (paths): 2.74296e+69
+  Init. forest  Viterbi logp: 28.1124
+  Init. forest       Viterbi: <s> تمنح جائزه زايد الدوليه ل البيئه التي اطلقت سنه 1998 ب اسم مؤسس دوله الامارات العربيه المتحده الشيخ زايد بن سلطان ال نهيان مره كل سنتين ل الاشخاص الذين يتميزون في مجال الدفاع عن البيئه و تبلغ القيمه الاجماليه ل جوائز ها مليون دولار </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -428.37	-428.37
+  Pass1 forest (nodes/edges): 1316/9311
+  Pass1 forest       (paths): 1.3814e+21
+  Pass1 forest  Viterbi logp: -428.37
+  Pass1 forest       Viterbi: <s> the zayed international prize for the environment , which opened in 1998 in the name of the founder of the united arab emirates sheikh zayed bin sultan al nahyan , once every two years for people who are known in the field of environmental defense and the total value to $ 1 million prizes . </s>
+
+Forest rescoring:: 4.05 secs (1 calls)
+Translation: 4.21 secs (1 calls)
+
+INPUT: <s> اضافه الي انان حصلت منظمه ميلينيوم ايكوس يستم ...
+  id = 14
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    .....................................
+  Init. forest (nodes/edges): 412/92438
+  Init. forest       (paths): 3.70029e+49
+  Init. forest  Viterbi logp: 22.49
+  Init. forest       Viterbi: <s> اضافه الي انان حصلت منظمه ميلينيوم ايكوس يستم اسيسمنت التي تتخذ من ماليزيا مقرا ل ها و تضم حوالي 1360 خبيرا في مجال البيئه علي جائزه البحث العلمي التي تبلغ قيمه ها 300 الف دولار </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -736.222	-736.222
+  Pass1 forest (nodes/edges): 1156/5768
+  Pass1 forest       (paths): 2.51364e+15
+  Pass1 forest  Viterbi logp: -736.222
+  Pass1 forest       Viterbi: <s> in addition to annan got the millennium ekeus " اسيسمنت , based in malaysia , and includes about 1,360 experts in the field of environment on the scientific research prize worth 300,000 dollars . </s>
+
+Forest rescoring:: 3.04 secs (1 calls)
+Translation: 3.16 secs (1 calls)
+
+INPUT: <s> تقاسم وزير البيئه الاندونيسي السابق اميل سليم و ...
+  id = 15
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    .....................................
+  Init. forest (nodes/edges): 416/83882
+  Init. forest       (paths): 2.29784e+52
+  Init. forest  Viterbi logp: 22.49
+  Init. forest       Viterbi: <s> تقاسم وزير البيئه الاندونيسي السابق اميل سليم و السناتور انجيلا كروبر المسؤوله عن مؤسسه ل الدفاع عن البيئه في ترينيداد و توباغو الجائزه المخصصه ل المنظمات غير الحكوميه التي تبلغ قيمه ها مئتي الف دولار </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -443.064	-443.064
+  Pass1 forest (nodes/edges): 1187/7174
+  Pass1 forest       (paths): 4.02719e+16
+  Pass1 forest  Viterbi logp: -443.064
+  Pass1 forest       Viterbi: <s> former indonesian environment minister emil salim and senator angela cropper , responsible for institution to defend the environment in trinidad and tobago award allocated for non - governmental organizations , which is estimated by two hundred thousand dollars . </s>
+
+Forest rescoring:: 2.91 secs (1 calls)
+Translation: 3.02 secs (1 calls)
+
+INPUT: <s> كان نائب رئيس الامارات رئيس الحكومه حاكم دبي الشيخ ...
+  id = 16
+.Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ...................
+  Init. forest (nodes/edges): 182/37282
+  Init. forest       (paths): 1.21684e+28
+  Init. forest  Viterbi logp: 11.245
+  Init. forest       Viterbi: <s> كان نائب رئيس الامارات رئيس الحكومه حاكم دبي الشيخ محمد بن راشد ال مكتوم استقبل انان الاثنين </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -325.929	-325.929
+  Pass1 forest (nodes/edges): 528/2691
+  Pass1 forest       (paths): 3.38582e+08
+  Pass1 forest  Viterbi logp: -325.929
+  Pass1 forest       Viterbi: <s> the vice president of the united arab emirates prime minister and ruler of dubai , sheikh mohammed bin rashid al maktoum received annan monday . </s>
+
+Forest rescoring:: 1.16 secs (1 calls)
+Translation: 1.2 secs (1 calls)
+
+INPUT: <s> اكد الشيخ محمد خلال المقابله التي تركزت علي ملف ي ...
+  id = 17
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ....................................................
+  Init. forest (nodes/edges): 611/162114
+  Init. forest       (paths): 1.93527e+79
+  Init. forest  Viterbi logp: 31.8608
+  Init. forest       Viterbi: <s> اكد الشيخ محمد خلال المقابله التي تركزت علي ملف ي العراق و النزاع العربي الاسرائيلي ضروره اللجوء الي فض النزاعات و حل المشاكل سلميا بعيدا عن العنف و سباق التسلح و الكيل ب مكيالين ضمانا لاحقاق الحق و توفير العداله و الحريه ل جميع الشعوب ب حسب وكاله انباء الامارات </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -487.545	-487.545
+  Pass1 forest (nodes/edges): 1821/11555
+  Pass1 forest       (paths): 1.38863e+23
+  Pass1 forest  Viterbi logp: -487.545
+  Pass1 forest       Viterbi: <s> sheikh mohammad confirmed during the meeting that focused on iraq and the arab - israeli conflict need to resort to settle disputes and resolve the problems peacefully away from violence and arms race and double standards to guarantee to achieve and provide justice and freedom for all peoples , according to the news agency of the united arab emirates . </s>
+
+Forest rescoring:: 5.26 secs (1 calls)
+Translation: 5.48 secs (1 calls)
+
+INPUT: <s> جاء تسليم جائزه زايد الدوليه ل البيئه ضمن ندوات و ...
+  id = 18
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ......................................
+  Init. forest (nodes/edges): 427/78286
+  Init. forest       (paths): 3.74359e+50
+  Init. forest  Viterbi logp: 23.1147
+  Init. forest       Viterbi: <s> جاء تسليم جائزه زايد الدوليه ل البيئه ضمن ندوات و مؤتمرات تعني ب البيئه تستضيف ها دبي بين ها الدوره الاستثنائيه التاسعه ل مجلس اداره برنامج الامم المتحده ل البيئه و المنتدي الوزاري العالمي ل البيئه </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -424.892	-424.892
+  Pass1 forest (nodes/edges): 1408/6522
+  Pass1 forest       (paths): 1.27694e+15
+  Pass1 forest  Viterbi logp: -424.892
+  Pass1 forest       Viterbi: <s> came the handing over of the zayed international prize for the environment within the seminars and conferences concerned with the environment hosted by dubai between the ninth session of the governing council of the united nations environment program and the global ministerial environment forum </s>
+
+Forest rescoring:: 3.24 secs (1 calls)
+Translation: 3.33 secs (1 calls)
+
+INPUT: <s> كما استضافت دبي المؤتمر الدولي حول التصرف في ...
+  id = 19
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    .........................
+  Init. forest (nodes/edges): 260/67792
+  Init. forest       (paths): 3.09248e+37
+  Init. forest  Viterbi logp: 14.9933
+  Init. forest       Viterbi: <s> كما استضافت دبي المؤتمر الدولي حول التصرف في المنتجات الكيميائيه الذي اختتم الاثنين و بحث سبل الحد من مخاطر المنتجات الكيميائيه في العالم </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -366.502	-366.502
+  Pass1 forest (nodes/edges): 800/5392
+  Pass1 forest       (paths): 7.49268e+11
+  Pass1 forest  Viterbi logp: -366.502
+  Pass1 forest       Viterbi: <s> dubai also hosted the international conference on disposal of chemical products which ended monday and discussed ways to reduce the risk of chemical products in the world . </s>
+
+Forest rescoring:: 2.05 secs (1 calls)
+Translation: 2.13 secs (1 calls)
+
+INPUT: <s> كان يفترض ان يتم في المؤتمر تبني اتفاق ب هذا الخصوص ...
+  id = 20
+.Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ...................................
+  Init. forest (nodes/edges): 389/113533
+  Init. forest       (paths): 3.16505e+48
+  Init. forest  Viterbi logp: 21.2405
+  Init. forest       Viterbi: <s> كان يفترض ان يتم في المؤتمر تبني اتفاق ب هذا الخصوص غير ان مسؤولا في الامم المتحده قال ل وكاله فرانس برس ان ذلك لم يتم ب سبب مشاكل تتعلق خاصه ب التمويل </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -399.509	-399.509
+  Pass1 forest (nodes/edges): 874/4057
+  Pass1 forest       (paths): 1.62027e+12
+  Pass1 forest  Viterbi logp: -399.509
+  Pass1 forest       Viterbi: <s> the conference is supposed to adopt an agreement in this regard , however , an official in the united nations said to agence france presse that this did not happen because of the problems relating to the financing . </s>
+
+Forest rescoring:: 3.6 secs (1 calls)
+Translation: 3.74 secs (1 calls)
+
+INPUT: <s> رئيس بلديه بلجيكي يمنع عرض عمل فني يصور صدام حسين  </s>
+  id = 21
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ............
+  Init. forest (nodes/edges): 91/14243
+  Init. forest       (paths): 5.72784e+18
+  Init. forest  Viterbi logp: 6.87193
+  Init. forest       Viterbi: <s> رئيس بلديه بلجيكي يمنع عرض عمل فني يصور صدام حسين </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -343.659	-343.659
+  Pass1 forest (nodes/edges): 235/828
+  Pass1 forest       (paths): 37451
+  Pass1 forest  Viterbi logp: -343.659
+  Pass1 forest       Viterbi: <s> mayor belgian prevents a work of art showing saddam hussein . </s>
+
+Forest rescoring:: 0.54 secs (1 calls)
+Translation: 0.55 secs (1 calls)
+
+INPUT: <s> بروكسل 7 2 اف ب اعلن رئيس بلديه ميدل كيرك غرب بلجيكا ...
+  id = 22
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    .....................................................
+  Init. forest (nodes/edges): 624/123078
+  Init. forest       (paths): 1.2322e+80
+  Init. forest  Viterbi logp: 32.4855
+  Init. forest       Viterbi: <s> بروكسل 7 2 اف ب اعلن رئيس بلديه ميدل كيرك غرب بلجيكا ميشال ل ان دويت ل وكاله فرانس برس ان ه قرر منع عرض عمل فني موضع جدل يصور الرئيس العراقي المخلوع صدام حسين مكبلا و يحمل توقيع الفنان التشيكي الطليعي ديفيد س ير ني معتبرا ان ه يصدم المشاعر </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -621.45	-621.45
+  Pass1 forest (nodes/edges): 2235/10037
+  Pass1 forest       (paths): 2.25595e+22
+  Pass1 forest  Viterbi logp: -621.45
+  Pass1 forest       Viterbi: <s> brussels , feb 7 ( afp ) declared mayor middle kirk west belgium michel to dwight told agence france presse that it decided to ban the controversial technical work showing the deposed iraqi president saddam hussein was chained and pioneering signed by czech artist david will see me considering that shocks feelings . </s>
+
+Forest rescoring:: 4.43 secs (1 calls)
+Translation: 4.6 secs (1 calls)
+
+INPUT: <s> قال لون دويت رئيس بلديه المنتجع الساحلي الصغير ...
+  id = 23
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ..........................................
+  Init. forest (nodes/edges): 481/106877
+  Init. forest       (paths): 1.29958e+65
+  Init. forest  Viterbi logp: 25.6136
+  Init. forest       Viterbi: <s> قال لون دويت رئيس بلديه المنتجع الساحلي الصغير البلجيكي مبررا قرار ه الاثنين ان هذا العمل الفني يمكن ان يصدم مشاعر الناس ليس ابناء المنطقه فقط بل ك ذلك السياح و ربما اشخاص من عقيده اخري و علي الاخص المسلمون </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -541.022	-541.022
+  Pass1 forest (nodes/edges): 1254/4771
+  Pass1 forest       (paths): 2.24169e+14
+  Pass1 forest  Viterbi logp: -541.022
+  Pass1 forest       Viterbi: <s> seaside resort municipality head color dwight said small belgian justified his decision monday that the technical work can only that shocked the people 's feelings , not of the sons of the region as well as tourists and perhaps people of other faith , especially muslims . </s>
+
+Forest rescoring:: 4.17 secs (1 calls)
+Translation: 4.32 secs (1 calls)
+
+INPUT: <s> لكن ه اوضح ان العمل الفني انجز قبل نحو سنه و لا علاقه ...
+  id = 24
+.Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    .........................................
+  Init. forest (nodes/edges): 454/129917
+  Init. forest       (paths): 7.112e+52
+  Init. forest  Viterbi logp: 24.9888
+  Init. forest       Viterbi: <s> لكن ه اوضح ان العمل الفني انجز قبل نحو سنه و لا علاقه ل ه ب قضيه نشر الرسوم الكاريكاتوريه عن النبي محمد في اوروبا و التي تسببت خلال الايام الماضيه ب موجه استنكار و عنف في العالم الاسلامي </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -403.839	-403.839
+  Pass1 forest (nodes/edges): 1479/6828
+  Pass1 forest       (paths): 7.31696e+14
+  Pass1 forest  Viterbi logp: -403.839
+  Pass1 forest       Viterbi: <s> but he clarified that the work of art was about a year ago and has nothing to do with the publication of cartoons of the prophet mohammed in europe , and which resulted in the last days of violence and a wave of condemnation in the islamic world . </s>
+
+Forest rescoring:: 4.9 secs (1 calls)
+Translation: 5.08 secs (1 calls)
+
+INPUT: <s> العمل الفني الذي يحمل عنوان القرش يصور صدام حسين ...
+  id = 25
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ..................
+  Init. forest (nodes/edges): 169/26664
+  Init. forest       (paths): 8.08936e+24
+  Init. forest  Viterbi logp: 10.6203
+  Init. forest       Viterbi: <s> العمل الفني الذي يحمل عنوان القرش يصور صدام حسين مكبلا عائما في حوض ملئ ب سائل </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -402.26	-402.26
+  Pass1 forest (nodes/edges): 531/2190
+  Pass1 forest       (paths): 1.55186e+07
+  Pass1 forest  Viterbi logp: -402.26
+  Pass1 forest       Viterbi: <s> the work of art entitled " shark " shows saddam hussein chained floating in the basin is full of liquid . </s>
+
+Forest rescoring:: 0.93 secs (1 calls)
+Translation: 0.95 secs (1 calls)
+
+INPUT: <s> كان من المقرر عرض ه في اطار مهرجان بوفور 2006 ل الفنون  ...
+  id = 26
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ..............
+  Init. forest (nodes/edges): 117/29341
+  Init. forest       (paths): 1.42331e+18
+  Init. forest  Viterbi logp: 8.12137
+  Init. forest       Viterbi: <s> كان من المقرر عرض ه في اطار مهرجان بوفور 2006 ل الفنون </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -579.048	-579.048
+  Pass1 forest (nodes/edges): 301/1008
+  Pass1 forest       (paths): 117822
+  Pass1 forest  Viterbi logp: -579.048
+  Pass1 forest       Viterbi: <s> he was scheduled to be presented within the framework of بوفور 2006 arts festival </s>
+
+Forest rescoring:: 0.97 secs (1 calls)
+Translation: 1 secs (1 calls)
+
+INPUT: <s> قال ميشال ل ان دويت اعتبرت ان العمل يصدم المشاعر ...
+  id = 27
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ..........................
+  Init. forest (nodes/edges): 271/60831
+  Init. forest       (paths): 4.68886e+31
+  Init. forest  Viterbi logp: 15.618
+  Init. forest       Viterbi: <s> قال ميشال ل ان دويت اعتبرت ان العمل يصدم المشاعر مشددا علي ان صدام حسين يخضع حاليا ل المحاكمه و تعرض الجلسات علي التلفزيون </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -418.605	-418.605
+  Pass1 forest (nodes/edges): 1021/3838
+  Pass1 forest       (paths): 2.67297e+08
+  Pass1 forest  Viterbi logp: -418.605
+  Pass1 forest       Viterbi: <s> michel said that dwight considered that shocks feelings , confirming that saddam hussein is currently under trial and sessions on television . </s>
+
+Forest rescoring:: 2.1 secs (1 calls)
+Translation: 2.18 secs (1 calls)
+
+INPUT: <s> عرض القرش ل المره الاولي في معرض براغ 2 الدولي الذي ...
+  id = 28
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ........................
+  Init. forest (nodes/edges): 247/52444
+  Init. forest       (paths): 5.67218e+33
+  Init. forest  Viterbi logp: 14.3686
+  Init. forest       Viterbi: <s> عرض القرش ل المره الاولي في معرض براغ 2 الدولي الذي ينظم كل سنتين و قد اقيم بين مايو و سبتمبر 2005 </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -368.763	-368.763
+  Pass1 forest (nodes/edges): 711/4335
+  Pass1 forest       (paths): 9.83207e+10
+  Pass1 forest  Viterbi logp: -368.763
+  Pass1 forest       Viterbi: <s> the sharks for the first time in prague 2 international exhibition which is organized every two years , was held between may and september 2005 . </s>
+
+Forest rescoring:: 1.72 secs (1 calls)
+Translation: 1.79 secs (1 calls)
+
+INPUT: <s> اشتهر ديفيد س ير ني 38 عاما ب اعمال ه الاستفزازيه و من ...
+  id = 29
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    .............................
+  Init. forest (nodes/edges): 312/58981
+  Init. forest       (paths): 9.41706e+40
+  Init. forest  Viterbi logp: 17.4922
+  Init. forest       Viterbi: <s> اشتهر ديفيد س ير ني 38 عاما ب اعمال ه الاستفزازيه و من ها رايه علي قوائم التي ترمز الي هجره الالمان الشرقيين الي الغرب عام 1989 </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -438.993	-438.993
+  Pass1 forest (nodes/edges): 1005/4856
+  Pass1 forest       (paths): 1.13433e+12
+  Pass1 forest  Viterbi logp: -438.993
+  Pass1 forest       Viterbi: <s> david will see me ( 38 years ) was famous for its provocative acts and his opinion on the lists , which refers to the emigration of east germans to the west in 1989 . </s>
+
+Forest rescoring:: 2.27 secs (1 calls)
+Translation: 2.35 secs (1 calls)
+
+INPUT: <s> في اكتوبر 2004 تخلت بلديه براغ عن تنفيذ نصب تذكاري ل ...
+  id = 30
+Adding pass through grammar
+First pass parse... 
+  Goal category: [S]
+    ...........................
+  Init. forest (nodes/edges): 286/44563
+  Init. forest       (paths): 8.33422e+34
+  Init. forest  Viterbi logp: 16.2427
+  Init. forest       Viterbi: <s> في اكتوبر 2004 تخلت بلديه براغ عن تنفيذ نصب تذكاري ل حركه المقاومه ضد النازيه من تصميم ه اعتبر مهينا ل قدامي الحرب العالميه الثانيه </s>
+
+
+  RESCORING PASS #1 [num_fn=4 int_alg=CUBE:k=100]
+  Applying feature functions (cube pruning, pop_limit = 100)
+    .................................................
+  Best path: -406.299	-406.299
+  Pass1 forest (nodes/edges): 932/3717
+  Pass1 forest       (paths): 3.30714e+10
+  Pass1 forest  Viterbi logp: -406.299
+  Pass1 forest       Viterbi: <s> in october 2004 , prague municipality gave up implementation of a memorial for the resistance movement against nazi design he considered insulting to the veterans of the second world war . </s>
+
+Forest rescoring:: 1.74 secs (1 calls)
+Translation: 1.78 secs (1 calls)
+user	50.2844
+sys	46.8959
+VmPeak:   548864 kB
+VmRSS:    149160 kB

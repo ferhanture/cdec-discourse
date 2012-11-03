@@ -1,0 +1,315 @@
+[X] ||| <s> ||| <s> ||| PassThrough=1 ||| 0-0
+[S] ||| [X,1] ||| [1]
+[X] ||| كوفي انان ||| secretary - general kofi annan ||| PhraseModel_0=1 PhraseModel_1=0.380943 PhraseModel_2=2.32498 ||| 0-0 0-2 0-3 1-1 1-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| زايد ||| zayed ||| PhraseModel_0=0.0791812 PhraseModel_1=0.00798988 PhraseModel_2=0.0864165 ||| 0-0
+[X] ||| جائزه [X,1] ||| [1] prize ||| PhraseModel_0=0.736759 PhraseModel_1=0.266478 PhraseModel_2=0.247308 ||| 0-1
+[X] ||| قيمه [X,1] ||| [1] value ||| PhraseModel_0=1.43573 PhraseModel_1=0.294032 PhraseModel_2=0.374402 ||| 0-1
+[X] ||| س يخصص [X,1] ||| the [1] will be allocated ||| PhraseModel_0=1.52288 PhraseModel_1=1.89803 PhraseModel_2=2.2143 ||| 0-2 1-0 1-3 1-4
+[X] ||| [X,1] ل انشاء مؤسسه ||| [1] for the establishment of the institution ||| PhraseModel_0=0.69897 PhraseModel_1=1.70768 PhraseModel_2=4.42037 ||| 1-1 2-3 3-6
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الزراعه و ||| agriculture and ||| PhraseModel_0=0.346787 PhraseModel_1=0.418294 PhraseModel_2=0.245051 ||| 0-0 1-1
+[X] ||| ل [X,1] تعليم البنات ||| for [1] girls ' education ||| PhraseModel_0=-0 PhraseModel_1=2.65414 PhraseModel_2=2.07289 ||| 0-0 2-4 3-2 3-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| في افريقيا </s> ||| in africa . </s> ||| PhraseModel_0=0.281222 PhraseModel_1=0.228076 PhraseModel_2=1.20423 ||| 0-0 1-1 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| <s> ||| <s> ||| PassThrough=1 ||| 0-0
+[S] ||| [X,1] ||| [1]
+[X] ||| دبي ||| dubai ||| PhraseModel_0=0.0555173 PhraseModel_1=0.0362685 PhraseModel_2=0.0363682 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| 7 2 اف ب ||| , feb 7 ( afp ) ||| PhraseModel_0=0.414973 PhraseModel_1=4.18287 PhraseModel_2=5.81796 ||| 0-0 0-2 1-1 1-3 2-4 2-5 3-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الامين العام ل الامم المتحده ||| secretary - general of the united nations ||| PhraseModel_0=1.33099 PhraseModel_1=2.61767 PhraseModel_2=3.49518 ||| 0-0 0-1 1-2 2-1 2-3 3-6 4-5
+[X] ||| [X,1] كوفي انان ||| [1] secretary - general kofi annan ||| PhraseModel_0=1 PhraseModel_1=0.380943 PhraseModel_2=2.32498 ||| 1-1 1-3 1-4 2-2 2-5
+[X] ||| قال [X,1] ان ||| [1] said that ||| PhraseModel_0=0.69897 PhraseModel_1=0.725989 PhraseModel_2=0.462991 ||| 0-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ه س يخصص ||| he would allocate ||| PhraseModel_0=0.380211 PhraseModel_1=2.94388 PhraseModel_2=3.12218 ||| 0-0 1-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| قيمه ||| $ ||| PhraseModel_0=1.30103 PhraseModel_1=1.50521 PhraseModel_2=1.1083 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| جائزه زايد الدوليه ل البيئه ||| zayed international prize for the environment ||| PhraseModel_0=0.30103 PhraseModel_1=1.48966 PhraseModel_2=1.89923 ||| 0-2 1-0 2-1 3-3 4-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| التي ||| that ||| PhraseModel_0=0.552842 PhraseModel_1=1.12873 PhraseModel_2=0.604553 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| مساء الاثنين ||| monday night ||| PhraseModel_0=0.346787 PhraseModel_1=0.607354 PhraseModel_2=0.556399 ||| 0-1 1-0
+[X] ||| [X,1] في دبي ||| [1] in dubai ||| PhraseModel_0=0.169625 PhraseModel_1=0.188597 PhraseModel_2=0.220784 ||| 1-1 2-2
+[X] ||| تسلم ها [X,1] و ||| it received [1] and ||| PhraseModel_0=1.25527 PhraseModel_1=2.47174 PhraseModel_2=1.9371 ||| 0-1 1-0 3-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| تبلغ قيمه ها 500 الف ||| $ 500 thousand ||| PhraseModel_0=-0 PhraseModel_1=5.3673 PhraseModel_2=1.51354 ||| 0-0 1-0 3-1 4-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| دولار ||| dollars ||| PhraseModel_0=0.435729 PhraseModel_1=0.16724 PhraseModel_2=0.248557 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ل اقامه مؤسسه ||| for the establishment of an institution ||| PhraseModel_0=0.30103 PhraseModel_1=1.40819 PhraseModel_2=5.26647 ||| 0-0 1-2 2-4 2-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الزراعه و ||| agriculture and ||| PhraseModel_0=0.346787 PhraseModel_1=0.418294 PhraseModel_2=0.245051 ||| 0-0 1-1
+[X] ||| ل [X,1] تعليم البنات ||| for [1] girls ' education ||| PhraseModel_0=-0 PhraseModel_1=2.65414 PhraseModel_2=2.07289 ||| 0-0 2-4 3-2 3-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| في القاره الافريقيه </s> ||| in the african continent . </s> ||| PhraseModel_0=0.212608 PhraseModel_1=0.809678 PhraseModel_2=1.90351 ||| 0-0 1-1 1-3 2-2 3-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| <s> اكد انان ||| <s> annan confirmed ||| PhraseModel_0=0.292597 PhraseModel_1=0.38113 PhraseModel_2=0.49932 ||| 0-0 1-2 2-1
+[S] ||| [X,1] ||| [1]
+[X] ||| في كلمه اثناء ||| in a speech during ||| PhraseModel_0=0.367977 PhraseModel_1=1.30906 PhraseModel_2=1.34592 ||| 0-0 1-1 1-2 2-3
+[X] ||| تسلم الجائزه ||| receive the prize ||| PhraseModel_0=0.477121 PhraseModel_1=2.14165 PhraseModel_2=2.14688 ||| 0-0 1-2
+[X] ||| [X,1] حفل [X,2] ||| [1] a ceremony to [2] ||| PhraseModel_0=2.47712 PhraseModel_1=0.606282 PhraseModel_2=2.55497 ||| 1-1 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| قرر استخدام ||| decided to use ||| PhraseModel_0=0.39794 PhraseModel_1=0.992597 PhraseModel_2=1.05787 ||| 0-0 0-1 1-2
+[X] ||| [X,1] قيمه الجائزه ||| [1] the prize ||| PhraseModel_0=1.53148 PhraseModel_1=3.98246 PhraseModel_2=0.848876 ||| 2-2
+[X] ||| ان ه [X,1] ل اطلاق ||| that he [1] - ||| PhraseModel_0=1.11948 PhraseModel_1=4.45196 PhraseModel_2=2.09657 ||| 0-0 1-1 4-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| بعث ||| sent ||| PhraseModel_0=0.224268 PhraseModel_1=1.07915 PhraseModel_2=0.19939 ||| 0-0
+[X] ||| [X,1] ها ل تعمل ||| [1] to work ||| PhraseModel_0=0.477121 PhraseModel_1=3.65176 PhraseModel_2=1.22579 ||| 2-1 3-2
+[X] ||| ساتولي [X,1] ||| will assume [1] ||| PhraseModel_0=-0 PhraseModel_1=3.17187 PhraseModel_2=0.60206 ||| 0-0 0-1
+[X] ||| مؤسسه [X,1] في افريقيا ||| institution [1] in africa ||| PhraseModel_0=-0 PhraseModel_1=0.65854 PhraseModel_2=1.11487 ||| 0-0 2-2 3-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| و تعليم البنات ||| and education of girls ||| PhraseModel_0=-0 PhraseModel_1=2.38883 PhraseModel_2=1.62656 ||| 0-0 1-1 2-3
+[X] ||| في مجالي الزراعه [X,1] </s> ||| in the fields of agriculture [1] . </s> ||| PhraseModel_0=0.414973 PhraseModel_1=1.78385 PhraseModel_2=3.07924 ||| 0-0 1-2 2-4 4-7
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| <s> اوضح ان ||| <s> he clarified that ||| PhraseModel_0=0.424043 PhraseModel_1=0.556061 PhraseModel_2=1.54129 ||| 0-0 1-1 1-2 2-3
+[S] ||| [X,1] ||| [1]
+[X] ||| الزراعه ل ||| agriculture to ||| PhraseModel_0=0.954243 PhraseModel_1=0.882323 PhraseModel_2=0.528602 ||| 0-0 1-1
+[X] ||| الشعوب ||| nations ||| PhraseModel_0=0.485895 PhraseModel_1=1.71939 PhraseModel_2=0.533703 ||| 0-0
+[X] ||| [X,1] الافريقيه في ||| african [1] in ||| PhraseModel_0=0.843653 PhraseModel_1=0.715051 PhraseModel_2=0.228176 ||| 1-0 2-2
+[X] ||| ه اختار [X,1] ان [X,2] ||| he chose the [1] [2] ||| PhraseModel_0=0.778151 PhraseModel_1=2.45782 PhraseModel_2=1.99829 ||| 0-0 1-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ثوره خضراء ||| green revolution ||| PhraseModel_0=0.359022 PhraseModel_1=2.13264 PhraseModel_2=0.362551 ||| 0-1 1-0
+[X] ||| الي [X,1] و تعليم ||| to [1] and teach ||| PhraseModel_0=0.477121 PhraseModel_1=1.95493 PhraseModel_2=1.53141 ||| 0-0 2-2 3-3
+[X] ||| حاجه [X,1] البنات ||| need [1] girls ||| PhraseModel_0=-0 PhraseModel_1=1.39092 PhraseModel_2=0.340954 ||| 0-0 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ل ان ه لا توجد ||| because there is no ||| PhraseModel_0=0.801632 PhraseModel_1=5.73572 PhraseModel_2=4.1685 ||| 0-0 3-3 4-1 4-2 4-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| وسائل اخري ||| other means ||| PhraseModel_0=0.201202 PhraseModel_1=1.47856 PhraseModel_2=0.98465 ||| 0-1 1-0
+[X] ||| التنميه </s> ||| development . </s> ||| PhraseModel_0=0.35985 PhraseModel_1=0.500852 PhraseModel_2=0.924088 ||| 0-0 1-2
+[X] ||| [X,1] اكثر فعاليه ل [X,2] ||| [1] for more effective [2] ||| PhraseModel_0=1.32222 PhraseModel_1=2.1741 PhraseModel_2=1.60838 ||| 1-2 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| <s> تمنح ||| <s> the ||| PhraseModel_0=1.61278 PhraseModel_1=4.86295 PhraseModel_2=0.623551 ||| 0-0 1-1
+[S] ||| [X,1] ||| [1]
+[X] ||| جائزه زايد الدوليه ل البيئه ||| zayed international prize for the environment ||| PhraseModel_0=0.30103 PhraseModel_1=1.48966 PhraseModel_2=1.89923 ||| 0-2 1-0 2-1 3-3 4-5
+[X] ||| [X,1] التي اطلقت ||| [1] , which opened ||| PhraseModel_0=2.17609 PhraseModel_1=1.97784 PhraseModel_2=2.91145 ||| 1-2 2-3
+[X] ||| [X,1] سنه 1998 ||| [1] in 1998 ||| PhraseModel_0=0.720159 PhraseModel_1=2.59963 PhraseModel_2=1.68399 ||| 1-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| مؤسس دوله الامارات العربيه المتحده ||| founder of the united arab emirates ||| PhraseModel_0=-0 PhraseModel_1=1.46375 PhraseModel_2=2.3589 ||| 0-0 1-5 2-5 3-4 4-3
+[X] ||| ب اسم [X,1] ||| in the name of the [1] ||| PhraseModel_0=2 PhraseModel_1=1.39411 PhraseModel_2=3.84416 ||| 0-0 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الشيخ ||| sheikh ||| PhraseModel_0=0.09691 PhraseModel_1=0.050928 PhraseModel_2=0.10001 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| زايد ||| zayed ||| PhraseModel_0=0.0791812 PhraseModel_1=0.00798988 PhraseModel_2=0.0864165 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| بن ||| bin ||| PhraseModel_0=0.111633 PhraseModel_1=0.0187512 PhraseModel_2=0.119921 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| سلطان ال ||| sultan al ||| PhraseModel_0=0.0178747 PhraseModel_1=2.06217 PhraseModel_2=1.02638 ||| 0-0 1-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| مره كل سنتين ||| once every two years ||| PhraseModel_0=0.367977 PhraseModel_1=2.28898 PhraseModel_2=2.37253 ||| 0-0 1-1 2-2 2-3
+[X] ||| نهيان [X,1] ل ||| nahyan , [1] for ||| PhraseModel_0=0.977724 PhraseModel_1=0.753322 PhraseModel_2=1.75842 ||| 0-0 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الاشخاص ||| people ||| PhraseModel_0=0.270295 PhraseModel_1=1.46711 PhraseModel_2=0.276005 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الذين ||| who ||| PhraseModel_0=0.295278 PhraseModel_1=0.688773 PhraseModel_2=0.276262 ||| 0-0
+[X] ||| [X,1] يتميزون ||| [1] are known ||| PhraseModel_0=0.801632 PhraseModel_1=3.73041 PhraseModel_2=1.7282 ||| 1-1 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الدفاع عن البيئه ||| environmental defense ||| PhraseModel_0=0.845098 PhraseModel_1=2.28129 PhraseModel_2=0.926578 ||| 0-1 2-0
+[X] ||| في مجال [X,1] و ||| in the field of [1] and ||| PhraseModel_0=0.728933 PhraseModel_1=0.89987 PhraseModel_2=2.30804 ||| 0-0 1-2 3-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| تبلغ القيمه الاجماليه ||| the total value ||| PhraseModel_0=0.176091 PhraseModel_1=3.97332 PhraseModel_2=0.89534 ||| 0-2 1-0 1-2 2-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| جوائز ||| prizes ||| PhraseModel_0=0.435729 PhraseModel_1=0.289131 PhraseModel_2=0.364716 ||| 0-0
+[X] ||| [X,1] ها مليون دولار ||| $ 1 million [1] ||| PhraseModel_0=1.47712 PhraseModel_1=1.91689 PhraseModel_2=2.6743 ||| 2-0 2-2 3-1
+[X] ||| ل [X,1] </s> ||| to [1] . </s> ||| PhraseModel_0=0.778151 PhraseModel_1=0.759946 PhraseModel_2=1.35385 ||| 0-0 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| <s> ||| <s> ||| PassThrough=1 ||| 0-0
+[S] ||| [X,1] ||| [1]
+[X] ||| اضافه الي ||| in addition to ||| PhraseModel_0=0.239075 PhraseModel_1=1.39173 PhraseModel_2=1.2626 ||| 0-0 0-1 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| حصلت ||| got ||| PhraseModel_0=0.761118 PhraseModel_1=0.974945 PhraseModel_2=0.517412 ||| 0-0
+[X] ||| انان [X,1] منظمه ||| annan [1] the ||| PhraseModel_0=1.27875 PhraseModel_1=3.3903 PhraseModel_2=0.775197 ||| 0-0 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ميلينيوم ||| millennium ||| PhraseModel_0=0.210853 PhraseModel_1=1.90309 PhraseModel_2=0.176091 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ايكوس ||| ekeus ||| PhraseModel_0=0.740363 PhraseModel_1=0.893947 PhraseModel_2=0.452298 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| يستم ||| " ||| PhraseModel_0=0.778151 PhraseModel_1=5.90193 PhraseModel_2=0.90309 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| اسيسمنت ||| اسيسمنت ||| PassThrough=1 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ماليزيا مقرا ||| based in malaysia ||| PhraseModel_0=0.30103 PhraseModel_1=1.43494 PhraseModel_2=1.58284 ||| 0-2 1-0 1-1
+[X] ||| التي تتخذ من [X,1] ||| , [1] ||| PhraseModel_0=1.47712 PhraseModel_1=6.77066 PhraseModel_2=0.901938 ||| 0-0
+[X] ||| [X,1] ل ها و ||| [1] , and ||| PhraseModel_0=1.273 PhraseModel_1=3.17106 PhraseModel_2=0.856922 ||| 3-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| تضم ||| includes ||| PhraseModel_0=0.579494 PhraseModel_1=0.660338 PhraseModel_2=0.522756 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| حوالي ||| about ||| PhraseModel_0=0.180456 PhraseModel_1=0.884469 PhraseModel_2=0.216819 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| 1360 ||| 1,360 ||| PhraseModel_0=0.30103 PhraseModel_1=0.477121 PhraseModel_2=0.342423 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| البيئه ||| environment ||| PhraseModel_0=0.128816 PhraseModel_1=0.231978 PhraseModel_2=0.141415 ||| 0-0
+[X] ||| خبيرا في مجال [X,1] علي ||| experts in the field of [1] on ||| PhraseModel_0=-0 PhraseModel_1=2.84282 PhraseModel_2=3.00848 ||| 0-0 1-1 2-3 4-6
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| البحث العلمي التي ||| the scientific research ||| PhraseModel_0=0.477121 PhraseModel_1=3.13204 PhraseModel_2=1.66593 ||| 0-2 1-1 2-0
+[X] ||| جائزه [X,1] ||| [1] prize ||| PhraseModel_0=0.736759 PhraseModel_1=0.266478 PhraseModel_2=0.247308 ||| 0-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| 300 الف ||| 300,000 ||| PhraseModel_0=0.460088 PhraseModel_1=0.834483 PhraseModel_2=1.22407 ||| 0-0 1-0
+[X] ||| تبلغ قيمه ها [X,1] ||| worth [1] ||| PhraseModel_0=0.78533 PhraseModel_1=4.68536 PhraseModel_2=1.23555 ||| 0-0 1-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| دولار </s> ||| dollars . </s> ||| PhraseModel_0=0.49035 PhraseModel_1=0.16724 PhraseModel_2=1.14334 ||| 0-0 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| وزير البيئه الاندونيسي ||| indonesian environment minister ||| PhraseModel_0=0.146128 PhraseModel_1=1.1404 PhraseModel_2=0.34717 ||| 0-2 1-1 2-0
+[X] ||| [X,1] السابق ||| former [1] ||| PhraseModel_0=0.431798 PhraseModel_1=0.208801 PhraseModel_2=0.147348 ||| 1-0
+[X] ||| <s> تقاسم [X,1] ||| <s> [1] ||| PhraseModel_0=1.34242 PhraseModel_1=5.37226 PhraseModel_2=-0 ||| 0-0
+[S] ||| [X,1] ||| [1]
+[X] ||| اميل ||| emil ||| PhraseModel_0=1.09691 PhraseModel_1=0.102563 PhraseModel_2=1.01929 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| سليم ||| salim ||| PhraseModel_0=0.28679 PhraseModel_1=0.10194 PhraseModel_2=0.294116 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| السناتور ||| senator ||| PhraseModel_0=0.102373 PhraseModel_1=0.856615 PhraseModel_2=0.078464 ||| 0-0
+[X] ||| و [X,1] انجيلا ||| and [1] angela ||| PhraseModel_0=0.182931 PhraseModel_1=0.36862 PhraseModel_2=0.19296 ||| 0-0 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| المسؤوله عن ||| responsible for ||| PhraseModel_0=0.542623 PhraseModel_1=2.10782 PhraseModel_2=1.42518 ||| 0-0 1-1
+[X] ||| كروبر [X,1] ||| cropper , [1] ||| PhraseModel_0=1.15635 PhraseModel_1=0.139662 PhraseModel_2=1.17193 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| مؤسسه ||| institution ||| PhraseModel_0=0.823909 PhraseModel_1=0.430464 PhraseModel_2=0.805421 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ل الدفاع عن ||| to defend the ||| PhraseModel_0=1.09691 PhraseModel_1=1.71138 PhraseModel_2=2.40307 ||| 0-0 1-1 2-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| البيئه ||| environment ||| PhraseModel_0=0.128816 PhraseModel_1=0.231978 PhraseModel_2=0.141415 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| في ترينيداد و ||| in trinidad and ||| PhraseModel_0=0.0579919 PhraseModel_1=0.57429 PhraseModel_2=0.402122 ||| 0-0 1-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| توباغو ||| tobago ||| PhraseModel_0=0.0469966 PhraseModel_1=0.430125 PhraseModel_2=0.0321847 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الجائزه المخصصه ل ||| award allocated for ||| PhraseModel_0=0.30103 PhraseModel_1=2.22677 PhraseModel_2=2.13079 ||| 0-0 1-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| المنظمات غير الحكوميه ||| non - governmental organizations ||| PhraseModel_0=0.221849 PhraseModel_1=1.12061 PhraseModel_2=3.16967 ||| 0-3 1-0 2-2
+[X] ||| [X,1] التي تبلغ قيمه ها ||| [1] , which is estimated by ||| PhraseModel_0=1.77085 PhraseModel_1=4.74355 PhraseModel_2=6.01201 ||| 1-2 2-3 3-4 4-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| مئتي الف دولار </s> ||| two hundred thousand dollars . </s> ||| PhraseModel_0=0.176091 PhraseModel_1=2.21688 PhraseModel_2=2.64165 ||| 0-0 0-1 1-2 2-3 3-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| <s> كان ||| <s> the ||| PhraseModel_0=0.920819 PhraseModel_1=2.582 PhraseModel_2=0.623551 ||| 0-0 1-1
+[S] ||| [X,1] ||| [1]
+[X] ||| نائب ||| vice ||| PhraseModel_0=0.49485 PhraseModel_1=0.179382 PhraseModel_2=0.456128 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| رئيس الامارات ||| president of the united arab emirates ||| PhraseModel_0=1.03342 PhraseModel_1=1.18377 PhraseModel_2=4.35335 ||| 0-0 1-3 1-4 1-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| رئيس الحكومه ||| prime minister ||| PhraseModel_0=0.303935 PhraseModel_1=1.71656 PhraseModel_2=1.90526 ||| 0-1 1-0
+[X] ||| [X,1] حاكم دبي ||| [1] and ruler of dubai ||| PhraseModel_0=0.932248 PhraseModel_1=0.49971 PhraseModel_2=3.47075 ||| 1-2 2-4
+[X] ||| بن راشد ال مكتوم ||| bin rashid al maktoum ||| PhraseModel_0=0.341396 PhraseModel_1=2.81547 PhraseModel_2=1.60014 ||| 0-0 1-1 2-2 3-3
+[X] ||| [X,1] الشيخ محمد [X,2] استقبل ||| [1] , sheikh mohammed [2] received ||| PhraseModel_0=-0 PhraseModel_1=1.13781 PhraseModel_2=2.17566 ||| 1-2 2-3 4-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الاثنين ||| monday ||| PhraseModel_0=0.241593 PhraseModel_1=0.134937 PhraseModel_2=0.0888863 ||| 0-0
+[X] ||| انان [X,1] </s> ||| annan [1] . </s> ||| PhraseModel_0=1.30103 PhraseModel_1=0.110479 PhraseModel_2=1.04643 ||| 0-0 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| <s> ||| <s> ||| PassThrough=1 ||| 0-0
+[S] ||| [X,1] ||| [1]
+[X] ||| الشيخ محمد ||| sheikh mohammad ||| PhraseModel_0=0.401574 PhraseModel_1=0.0690229 PhraseModel_2=0.575267 ||| 0-0 1-1
+[X] ||| اكد [X,1] خلال المقابله ||| [1] confirmed during the meeting ||| PhraseModel_0=0.30103 PhraseModel_1=2.99715 PhraseModel_2=2.10805 ||| 0-1 2-2 3-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| التي تركزت علي ||| that focused on ||| PhraseModel_0=0.477121 PhraseModel_1=2.3456 PhraseModel_2=1.49711 ||| 0-0 1-1 2-2
+[X] ||| العراق ||| iraq ||| PhraseModel_0=0.0238029 PhraseModel_1=0.0482892 PhraseModel_2=0.0284639 ||| 0-0
+[X] ||| [X,1] ملف ي [X,2] و ||| [1] [2] and ||| PhraseModel_0=1.32222 PhraseModel_1=7.29753 PhraseModel_2=0.175508 ||| 4-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| النزاع العربي الاسرائيلي ||| the arab - israeli conflict ||| PhraseModel_0=0.576094 PhraseModel_1=1.78112 PhraseModel_2=2.20565 ||| 0-0 0-2 0-4 1-1 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ضروره اللجوء الي ||| need to resort to ||| PhraseModel_0=0.875061 PhraseModel_1=2.60799 PhraseModel_2=2.23677 ||| 0-0 1-2 2-1 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| النزاعات ||| disputes ||| PhraseModel_0=0.343582 PhraseModel_1=0.661422 PhraseModel_2=0.335344 ||| 0-0
+[X] ||| فض [X,1] ||| settle [1] ||| PhraseModel_0=1.47712 PhraseModel_1=2.36455 PhraseModel_2=1.27563 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| المشاكل ||| problems ||| PhraseModel_0=0.0671881 PhraseModel_1=0.606463 PhraseModel_2=0.06208 ||| 0-0
+[X] ||| و حل [X,1] سلميا ||| and resolve the [1] peacefully ||| PhraseModel_0=0.60206 PhraseModel_1=1.10919 PhraseModel_2=2.15518 ||| 0-0 1-1 3-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| بعيدا عن العنف و ||| away from violence and ||| PhraseModel_0=0.60206 PhraseModel_1=1.89671 PhraseModel_2=1.16859 ||| 0-0 1-0 1-1 2-2 3-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| سباق التسلح ||| arms race ||| PhraseModel_0=0.33146 PhraseModel_1=1.62634 PhraseModel_2=0.914037 ||| 0-1 1-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| و الكيل ب مكيالين ||| and double standards ||| PhraseModel_0=0.176091 PhraseModel_1=4.85807 PhraseModel_2=1.17837 ||| 0-0 1-1 3-2
+[X] ||| [X,1] ضمانا ||| [1] to guarantee ||| PhraseModel_0=1.22617 PhraseModel_1=1.66611 PhraseModel_2=1.72631 ||| 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| لاحقاق الحق ||| to achieve ||| PhraseModel_0=0.60206 PhraseModel_1=6.66257 PhraseModel_2=1.31335 ||| 0-1 1-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| و توفير ||| and provide ||| PhraseModel_0=0.651046 PhraseModel_1=1.05026 PhraseModel_2=0.670739 ||| 0-0 1-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| العداله و ||| justice and ||| PhraseModel_0=0.106053 PhraseModel_1=0.893177 PhraseModel_2=0.239441 ||| 0-0 1-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الحريه ||| freedom ||| PhraseModel_0=0.0740007 PhraseModel_1=0.406813 PhraseModel_2=0.083361 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ل جميع الشعوب ||| for all peoples ||| PhraseModel_0=0.623249 PhraseModel_1=1.80653 PhraseModel_2=1.21292 ||| 0-0 1-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| وكاله انباء الامارات </s> ||| news agency of the united arab emirates . </s> ||| PhraseModel_0=0.753328 PhraseModel_1=1.24143 PhraseModel_2=4.66599 ||| 0-1 1-0 2-4 2-5 2-6 3-8
+[X] ||| ب حسب [X,1] ||| , according to the [1] ||| PhraseModel_0=0.98576 PhraseModel_1=1.75589 PhraseModel_2=2.27787 ||| 0-0 1-1 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| <s> ||| <s> ||| PassThrough=1 ||| 0-0
+[S] ||| [X,1] ||| [1]
+[X] ||| جائزه زايد الدوليه ||| zayed international prize ||| PhraseModel_0=0.30103 PhraseModel_1=0.696449 PhraseModel_2=0.395467 ||| 0-2 1-0 2-1
+[X] ||| جاء تسليم [X,1] ل ||| came the handing over of the [1] for ||| PhraseModel_0=-0 PhraseModel_1=1.35891 PhraseModel_2=4.87542 ||| 0-0 1-2 1-3 3-7
+[X] ||| ندوات و ||| seminars and ||| PhraseModel_0=0.170262 PhraseModel_1=0.794633 PhraseModel_2=0.378029 ||| 0-0 1-1
+[X] ||| [X,1] البيئه ضمن [X,2] ||| [1] the environment within the [2] ||| PhraseModel_0=0.477121 PhraseModel_1=1.17502 PhraseModel_2=1.83892 ||| 1-2 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| مؤتمرات ||| conferences ||| PhraseModel_0=0.231609 PhraseModel_1=0.588819 PhraseModel_2=0.206539 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| تعني ب البيئه ||| concerned with the environment ||| PhraseModel_0=0.30103 PhraseModel_1=3.14552 PhraseModel_2=3.37674 ||| 0-0 1-1 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| دبي ||| dubai ||| PhraseModel_0=0.0555173 PhraseModel_1=0.0362685 PhraseModel_2=0.0363682 ||| 0-0
+[X] ||| تستضيف ها [X,1] بين ||| hosted by [1] between ||| PhraseModel_0=0.544068 PhraseModel_1=1.79295 PhraseModel_2=2.11996 ||| 0-0 1-1 3-3
+[X] ||| الدوره الاستثنائيه ||| session ||| PhraseModel_0=1.79239 PhraseModel_1=5.12575 PhraseModel_2=0.470044 ||| 0-0 1-0
+[X] ||| [X,1] ها [X,2] التاسعه ||| [1] the ninth [2] ||| PhraseModel_0=1.50515 PhraseModel_1=2.04891 PhraseModel_2=1.19259 ||| 3-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الامم المتحده ||| united nations ||| PhraseModel_0=0.30103 PhraseModel_1=0.178353 PhraseModel_2=0.550245 ||| 0-1 1-0
+[X] ||| برنامج [X,1] ل البيئه و ||| [1] environment program and ||| PhraseModel_0=0.778151 PhraseModel_1=2.1568 PhraseModel_2=0.442277 ||| 0-2 3-1 4-3
+[X] ||| ل مجلس اداره [X,1] ||| of the governing council of the [1] ||| PhraseModel_0=1.21085 PhraseModel_1=3.63135 PhraseModel_2=5.86235 ||| 0-0 1-1 1-3 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| المنتدي الوزاري العالمي ل البيئه ||| the global ministerial environment forum ||| PhraseModel_0=0.30103 PhraseModel_1=2.84262 PhraseModel_2=1.79799 ||| 0-0 0-4 1-2 2-1 4-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| </s> ||| </s> ||| PassThrough=1 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| <s> ||| <s> ||| PassThrough=1 ||| 0-0
+[S] ||| [X,1] ||| [1]
+[X] ||| دبي ||| dubai ||| PhraseModel_0=0.0555173 PhraseModel_1=0.0362685 PhraseModel_2=0.0363682 ||| 0-0
+[X] ||| كما استضافت [X,1] ||| [1] also hosted ||| PhraseModel_0=0.60206 PhraseModel_1=1.31454 PhraseModel_2=0.571788 ||| 0-1 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| المؤتمر الدولي حول ||| the international conference on ||| PhraseModel_0=0.428273 PhraseModel_1=2.32803 PhraseModel_2=1.27551 ||| 0-0 0-2 1-1 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| المنتجات الكيميائيه ||| chemical products ||| PhraseModel_0=0.176091 PhraseModel_1=1.15239 PhraseModel_2=0.18304 ||| 0-1 1-0
+[X] ||| التصرف في [X,1] ||| disposal of [1] ||| PhraseModel_0=1.76592 PhraseModel_1=2.97041 PhraseModel_2=3.20593 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الذي اختتم ||| which ended ||| PhraseModel_0=0.875061 PhraseModel_1=1.84709 PhraseModel_2=1.11601 ||| 0-0 1-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الاثنين و بحث ||| monday and discussed ||| PhraseModel_0=-0 PhraseModel_1=1.0181 PhraseModel_2=0.928186 ||| 0-0 1-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| سبل ||| ways ||| PhraseModel_0=0.184865 PhraseModel_1=0.397401 PhraseModel_2=0.173389 ||| 0-0
+[X] ||| المنتجات الكيميائيه ||| chemical products ||| PhraseModel_0=0.176091 PhraseModel_1=1.15239 PhraseModel_2=0.18304 ||| 0-1 1-0
+[X] ||| [X,1] الحد من مخاطر [X,2] ||| [1] to reduce the risk of [2] ||| PhraseModel_0=1.07918 PhraseModel_1=3.22371 PhraseModel_2=4.75857 ||| 1-2 3-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| في العالم </s> ||| in the world . </s> ||| PhraseModel_0=0.321785 PhraseModel_1=0.384139 PhraseModel_2=1.80702 ||| 0-0 1-2 2-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| <s> كان ||| <s> the ||| PhraseModel_0=0.920819 PhraseModel_1=2.582 PhraseModel_2=0.623551 ||| 0-0 1-1
+[S] ||| [X,1] ||| [1]
+[X] ||| يفترض ان يتم في المؤتمر ||| conference is supposed to ||| PhraseModel_0=-0 PhraseModel_1=5.81406 PhraseModel_2=2.20671 ||| 0-1 0-2 0-3 4-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| تبني ||| adopt ||| PhraseModel_0=0.864337 PhraseModel_1=0.618838 PhraseModel_2=0.891993 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| غير ان مسؤولا في ||| however , an official in ||| PhraseModel_0=0.30103 PhraseModel_1=3.87593 PhraseModel_2=3.60227 ||| 0-0 2-2 2-3 3-4
+[X] ||| الخصوص [X,1] الامم المتحده ||| regard , [1] the united nations ||| PhraseModel_0=0.90309 PhraseModel_1=1.50919 PhraseModel_2=2.67277 ||| 0-0 2-5 3-4
+[X] ||| اتفاق ب هذا [X,1] ||| an agreement in this [1] ||| PhraseModel_0=0.441649 PhraseModel_1=1.81811 PhraseModel_2=1.97562 ||| 0-0 0-1 1-2 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| قال ||| said ||| PhraseModel_0=0.221849 PhraseModel_1=0.492977 PhraseModel_2=0.147863 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ل وكاله فرانس برس ان ||| to agence france presse that ||| PhraseModel_0=1.29003 PhraseModel_1=2.80511 PhraseModel_2=3.2963 ||| 0-0 1-1 2-2 2-3 3-3 4-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ذلك لم يتم ||| this did not happen ||| PhraseModel_0=0.778151 PhraseModel_1=2.67645 PhraseModel_2=4.31816 ||| 0-0 1-1 1-2 2-3
+[X] ||| مشاكل ||| problems ||| PhraseModel_0=0.0897314 PhraseModel_1=0.572191 PhraseModel_2=0.0730574 ||| 0-0
+[X] ||| [X,1] ب سبب [X,2] ||| [1] because of the [2] ||| PhraseModel_0=1.04576 PhraseModel_1=1.79686 PhraseModel_2=2.09316 ||| 2-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| تتعلق خاصه ب ||| relating to the ||| PhraseModel_0=0.30103 PhraseModel_1=3.59342 PhraseModel_2=2.71197 ||| 0-0 1-0 2-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| التمويل </s> ||| financing . </s> ||| PhraseModel_0=1.08486 PhraseModel_1=0.79392 PhraseModel_2=1.60287 ||| 0-0 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]

@@ -1,0 +1,20 @@
+[X] ||| <s> عرض ||| <s> the ||| PhraseModel_0=1.63202 PhraseModel_1=3.71608 PhraseModel_2=0.623551 ||| 0-0 1-1
+[S] ||| [X,1] ||| [1]
+[X] ||| القرش ||| sharks ||| PhraseModel_0=1.61979 PhraseModel_1=0.49102 PhraseModel_2=0.551569 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ل المره الاولي ||| for the first time ||| PhraseModel_0=0.115393 PhraseModel_1=2.07639 PhraseModel_2=1.55073 ||| 0-0 1-3 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| 2 ||| 2 ||| PassThrough=1 ||| 0-0
+[X] ||| براغ [X,1] ||| prague [1] ||| PhraseModel_0=0.416423 PhraseModel_1=0.108053 PhraseModel_2=0.0360813 ||| 0-0
+[X] ||| معرض [X,1] الدولي ||| [1] international exhibition ||| PhraseModel_0=1.24126 PhraseModel_1=0.996366 PhraseModel_2=0.622761 ||| 0-2 2-1
+[X] ||| في [X,1] الذي ينظم ||| in [1] which is organized ||| PhraseModel_0=1.0607 PhraseModel_1=2.36542 PhraseModel_2=2.85924 ||| 0-0 2-2 3-3 3-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| كل سنتين و ||| every two years , ||| PhraseModel_0=0.778151 PhraseModel_1=2.78846 PhraseModel_2=2.36396 ||| 0-0 1-1 1-2 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| قد اقيم ||| was held ||| PhraseModel_0=0.960233 PhraseModel_1=3.59747 PhraseModel_2=1.17471 ||| 0-0 1-0 1-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| بين مايو و ||| between may and ||| PhraseModel_0=0.109144 PhraseModel_1=0.982352 PhraseModel_2=0.402939 ||| 0-0 1-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| سبتمبر 2005 </s> ||| september 2005 . </s> ||| PhraseModel_0=0.226396 PhraseModel_1=0.225053 PhraseModel_2=1.05963 ||| 0-0 1-1 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]

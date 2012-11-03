@@ -1,0 +1,64 @@
+$inp.soseos.seg = ~/ferhan/end2end-experiments/ar-en.galep5oct/dev/mt06.ar.soseos.seg
+$inp.soseos = ~/ferhan/end2end-experiments/ar-en.galep5oct/dev/mt06.ar.soseos
+$inp.sgm = /fs/clip-bolt/Zh-En.081611/test/MT08/nw/raw/mt08.raw.nw.sgm
+$cdec = ~/ferhan/cdec-bolt/decoder/cdec
+$inifile1 = cdec.ini
+$inifile2 = cdec.discourse0.ini
+$weights = ~/ferhan/end2end-experiments/ar-en.galep5oct/dev/weights.init
+$inp.docinfo = /fs/clip-qa/ferhan/mt06_dev/mt06_v1-ref.docinfo
+$inp.withdocid = mt06.docperline.withdocid
+
+cat $inp.sgm | SCRIPTSDIR/docinfo.pl > $inp.docinfo
+
+### cdec.ini has 
+### extract_rules=$workdir/rules
+cat $inp.soseos.seg | $cdec -c $inifile1 -w $weights 1> $inp.out 2> $inp.err &
+
+### convert per-sentence grammar files into per-doc grammar files
+mkdir rules_doc
+perl -e '$doccnt=0;$totalcnt=0;while(<>){chomp $_;$str="cat";for($i=0;$i<$_;$i++){$str .= " rules/".($totalcnt+$i);}system "$str > rules_doc/$doccnt\n";$doccnt++;$totalcnt+=$_;}' $inp.docinfo
+
+### create a file, listing paths to per-doc grammar files
+ls rules_doc/* | perl -ne 'if($_ =~ /rules_doc/){s/.+(rules_doc\/\d+).+/$1/g;print;}' > perdoc_nodisc.filelist
+
+### compute rule counts using version C1 of Discourse feature (counting rules)
+mkdir WORKDIR/rules_doc.disc0
+perl -ne 'chomp;@arr=split(/\//,$_);$len=@arr;$docid=$arr[$len-1];system "perl SCRIPTSDIR/rulesfreq_disc0.pl WORKDIR/$_ > WORKDIR/rules_doc.disc0/".$docid;' WORKDIR/perdoc_nodisc.filelist
+
+### compute rule counts using version C2 of Discourse feature (counting rules)
+mkdir WORKDIR/rules_doc.disc1
+perl -ne 'chomp;system "perl SCRIPTSDIR/rulesfreq_disc1.pl WORKDIR/$_ > WORKDIR/rules_doc.disc1/".($.-1)."\n";' WORKDIR/perdoc_nodisc.filelist
+
+### compute rule counts using version C3 of Discourse feature (counting rules)
+mkdir WORKDIR/rules_doc.disc2
+perl -ne 'chomp;system "perl SCRIPTSDIR/rulesfreq_disc2.pl WORKDIR/$_ > WORKDIR/rules_doc.disc2/".($.-1)."\n";' WORKDIR/perdoc_nodisc.filelist
+
+### instead one-sentence-per-line .seg format, convert input into one-doc-per-line format
+cat $inp.soseos | SCRIPTSDIR/conv_cdec_inp.pl $inp.docinfo $inp.grammar/grammar nosuffix | SCRIPTSDIR/add-docid-tag2.pl > $inp.withdocid
+
+### $inifile2 has 
+	### feature_function=Discourse 1 0 0
+	### df=token-df file
+	### df=total no of docs
+	### rules_dir=$workdir/rules_doc.disc
+### $weights.discourse0 has weight for Discourse_0
+cat $inp.withdocid | $cdec -c $inifile2 -w $weights.discourse0 1> $inp.discourse0.out 2> $inp.discourse0.err &
+cat $inp.discourse0.out | perl SCRIPTSDIR/utils/reformat_cdec.perl > $inp.discourse0.out.fixed
+
+### $inifile2 has 
+	### feature_function=Discourse 0 1 0
+	### df=token-df file
+	### df=total no of docs
+	### rules_dir=$workdir/rules_doc.disc
+### $weights.discourse1 has weight for Discourse_1
+cat $inp.withdocid | $cdec -c $inifile2 -w $weights.discourse1 1> $inp.discourse1.out 2> $inp.discourse1.err &
+cat $inp.discourse1.out | perl SCRIPTSDIR/utils/reformat_cdec.perl > $inp.discourse1.out.fixed
+
+### $inifile2 has 
+	### feature_function=Discourse 1 1 1
+	### df=token-df file
+	### df=total no of docs
+	### rules_dir=$workdir/rules_doc.disc
+### $weights.discourse012 has weight for Discourse_0 Discourse_1 Discourse_2
+cat $inp.withdocid | $cdec -c $inifile2 -w $weights.discourse012 1> $inp.discourse012.out 2> $inp.discourse012.err &
+cat $inp.discourse012.out | perl SCRIPTSDIR/utils/reformat_cdec.perl > $inp.discourse012.out.fixed

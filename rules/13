@@ -1,0 +1,35 @@
+[X] ||| <s> تمنح ||| <s> the ||| PhraseModel_0=1.61278 PhraseModel_1=4.86295 PhraseModel_2=0.623551 ||| 0-0 1-1
+[S] ||| [X,1] ||| [1]
+[X] ||| جائزه زايد الدوليه ل البيئه ||| zayed international prize for the environment ||| PhraseModel_0=0.30103 PhraseModel_1=1.48966 PhraseModel_2=1.89923 ||| 0-2 1-0 2-1 3-3 4-5
+[X] ||| [X,1] التي اطلقت ||| [1] , which opened ||| PhraseModel_0=2.17609 PhraseModel_1=1.97784 PhraseModel_2=2.91145 ||| 1-2 2-3
+[X] ||| [X,1] سنه 1998 ||| [1] in 1998 ||| PhraseModel_0=0.720159 PhraseModel_1=2.59963 PhraseModel_2=1.68399 ||| 1-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| مؤسس دوله الامارات العربيه المتحده ||| founder of the united arab emirates ||| PhraseModel_0=-0 PhraseModel_1=1.46375 PhraseModel_2=2.3589 ||| 0-0 1-5 2-5 3-4 4-3
+[X] ||| ب اسم [X,1] ||| in the name of the [1] ||| PhraseModel_0=2 PhraseModel_1=1.39411 PhraseModel_2=3.84416 ||| 0-0 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الشيخ ||| sheikh ||| PhraseModel_0=0.09691 PhraseModel_1=0.050928 PhraseModel_2=0.10001 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| زايد ||| zayed ||| PhraseModel_0=0.0791812 PhraseModel_1=0.00798988 PhraseModel_2=0.0864165 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| بن ||| bin ||| PhraseModel_0=0.111633 PhraseModel_1=0.0187512 PhraseModel_2=0.119921 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| سلطان ال ||| sultan al ||| PhraseModel_0=0.0178747 PhraseModel_1=2.06217 PhraseModel_2=1.02638 ||| 0-0 1-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| مره كل سنتين ||| once every two years ||| PhraseModel_0=0.367977 PhraseModel_1=2.28898 PhraseModel_2=2.37253 ||| 0-0 1-1 2-2 2-3
+[X] ||| نهيان [X,1] ل ||| nahyan , [1] for ||| PhraseModel_0=0.977724 PhraseModel_1=0.753322 PhraseModel_2=1.75842 ||| 0-0 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الاشخاص ||| people ||| PhraseModel_0=0.270295 PhraseModel_1=1.46711 PhraseModel_2=0.276005 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الذين ||| who ||| PhraseModel_0=0.295278 PhraseModel_1=0.688773 PhraseModel_2=0.276262 ||| 0-0
+[X] ||| [X,1] يتميزون ||| [1] are known ||| PhraseModel_0=0.801632 PhraseModel_1=3.73041 PhraseModel_2=1.7282 ||| 1-1 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الدفاع عن البيئه ||| environmental defense ||| PhraseModel_0=0.845098 PhraseModel_1=2.28129 PhraseModel_2=0.926578 ||| 0-1 2-0
+[X] ||| في مجال [X,1] و ||| in the field of [1] and ||| PhraseModel_0=0.728933 PhraseModel_1=0.89987 PhraseModel_2=2.30804 ||| 0-0 1-2 3-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| تبلغ القيمه الاجماليه ||| the total value ||| PhraseModel_0=0.176091 PhraseModel_1=3.97332 PhraseModel_2=0.89534 ||| 0-2 1-0 1-2 2-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| جوائز ||| prizes ||| PhraseModel_0=0.435729 PhraseModel_1=0.289131 PhraseModel_2=0.364716 ||| 0-0
+[X] ||| [X,1] ها مليون دولار ||| $ 1 million [1] ||| PhraseModel_0=1.47712 PhraseModel_1=1.91689 PhraseModel_2=2.6743 ||| 2-0 2-2 3-1
+[X] ||| ل [X,1] </s> ||| to [1] . </s> ||| PhraseModel_0=0.778151 PhraseModel_1=0.759946 PhraseModel_2=1.35385 ||| 0-0 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]

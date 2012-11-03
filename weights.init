@@ -1,0 +1,11 @@
+Glue 0.624721
+LanguageModel 2.67492
+PhraseModel_0 -3.7459081
+PhraseModel_1 -1.63298
+PhraseModel_2 -1.99029
+WordPenalty -8.52125
+Arity_0 0.01
+Arity_1 0.01
+Arity_2 0.01
+SourceWordPenalty 0.01
+LatticeCost 0.492373392675

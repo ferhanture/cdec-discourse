@@ -1,0 +1,13 @@
+[X] ||| <s> ||| <s> ||| PassThrough=1 ||| 0-0
+[S] ||| [X,1] ||| [1]
+[X] ||| ه ||| he ||| PhraseModel_0=0.897338 PhraseModel_1=0.78309 PhraseModel_2=0.984099 ||| 0-0
+[X] ||| كان من المقرر عرض [X,1] ||| [1] was scheduled to be presented ||| PhraseModel_0=-0 PhraseModel_1=3.27244 PhraseModel_2=4.17224 ||| 0-1 2-2 2-3 2-4 3-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| في اطار ||| within the framework ||| PhraseModel_0=0.60206 PhraseModel_1=0.813786 PhraseModel_2=1.64536 ||| 0-0 1-2
+[X] ||| بوفور ||| بوفور ||| PassThrough=1 ||| 0-0
+[X] ||| [X,1] 2006 ||| [1] 2006 ||| PhraseModel_0=0.289601 PhraseModel_1=0.101801 PhraseModel_2=0.0238784 ||| 1-1
+[X] ||| [X,1] مهرجان [X,2] ل الفنون ||| [1] of [2] arts festival ||| PhraseModel_0=0.90309 PhraseModel_1=2.04052 PhraseModel_2=1.15774 ||| 1-4 4-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| </s> ||| </s> ||| PassThrough=1 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]

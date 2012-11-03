@@ -1,0 +1,16 @@
+[X] ||| <s> ||| <s> ||| PassThrough=1 ||| 0-0
+[S] ||| [X,1] ||| [1]
+[X] ||| اضاف اعتقد ||| he added , " i believe ||| PhraseModel_0=0.308454 PhraseModel_1=0.982964 PhraseModel_2=3.7257 ||| 0-0 0-1 0-3 1-4 1-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ان الوضع ||| that the situation ||| PhraseModel_0=0.547702 PhraseModel_1=0.473828 PhraseModel_2=1.11921 ||| 0-0 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| اكثر صعوبه و ||| more difficult and ||| PhraseModel_0=0.230449 PhraseModel_1=1.73127 PhraseModel_2=1.05776 ||| 0-0 1-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| تعقيدا ||| more complicated ||| PhraseModel_0=1.24667 PhraseModel_1=0.853535 PhraseModel_2=1.25688 ||| 0-0 0-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| منذ عقود ||| decades ago ||| PhraseModel_0=1.1549 PhraseModel_1=0.933014 PhraseModel_2=1.25496 ||| 0-1 1-0 1-1
+[X] ||| [X,1] عديده ||| several [1] ||| PhraseModel_0=1.22185 PhraseModel_1=1.37767 PhraseModel_2=0.461839 ||| 1-0
+[X] ||| ما كان علي ه [X,1] ||| it was [1] ||| PhraseModel_0=1 PhraseModel_1=4.80443 PhraseModel_2=1.62173 ||| 0-0 1-1
+[X] ||| و خطوره من [X,1] </s> ||| and dangerous than [1] . </s> ||| PhraseModel_0=-0 PhraseModel_1=1.89525 PhraseModel_2=3.30112 ||| 0-0 1-1 2-2 4-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]

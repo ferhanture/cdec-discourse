@@ -1,0 +1,37 @@
+[X] ||| <s> ||| <s> ||| PassThrough=1 ||| 0-0
+[S] ||| [X,1] ||| [1]
+[X] ||| اضافه الي ||| in addition to ||| PhraseModel_0=0.239075 PhraseModel_1=1.39173 PhraseModel_2=1.2626 ||| 0-0 0-1 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| حصلت ||| got ||| PhraseModel_0=0.761118 PhraseModel_1=0.974945 PhraseModel_2=0.517412 ||| 0-0
+[X] ||| انان [X,1] منظمه ||| annan [1] the ||| PhraseModel_0=1.27875 PhraseModel_1=3.3903 PhraseModel_2=0.775197 ||| 0-0 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ميلينيوم ||| millennium ||| PhraseModel_0=0.210853 PhraseModel_1=1.90309 PhraseModel_2=0.176091 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ايكوس ||| ekeus ||| PhraseModel_0=0.740363 PhraseModel_1=0.893947 PhraseModel_2=0.452298 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| يستم ||| " ||| PhraseModel_0=0.778151 PhraseModel_1=5.90193 PhraseModel_2=0.90309 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| اسيسمنت ||| اسيسمنت ||| PassThrough=1 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ماليزيا مقرا ||| based in malaysia ||| PhraseModel_0=0.30103 PhraseModel_1=1.43494 PhraseModel_2=1.58284 ||| 0-2 1-0 1-1
+[X] ||| التي تتخذ من [X,1] ||| , [1] ||| PhraseModel_0=1.47712 PhraseModel_1=6.77066 PhraseModel_2=0.901938 ||| 0-0
+[X] ||| [X,1] ل ها و ||| [1] , and ||| PhraseModel_0=1.273 PhraseModel_1=3.17106 PhraseModel_2=0.856922 ||| 3-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| تضم ||| includes ||| PhraseModel_0=0.579494 PhraseModel_1=0.660338 PhraseModel_2=0.522756 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| حوالي ||| about ||| PhraseModel_0=0.180456 PhraseModel_1=0.884469 PhraseModel_2=0.216819 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| 1360 ||| 1,360 ||| PhraseModel_0=0.30103 PhraseModel_1=0.477121 PhraseModel_2=0.342423 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| البيئه ||| environment ||| PhraseModel_0=0.128816 PhraseModel_1=0.231978 PhraseModel_2=0.141415 ||| 0-0
+[X] ||| خبيرا في مجال [X,1] علي ||| experts in the field of [1] on ||| PhraseModel_0=-0 PhraseModel_1=2.84282 PhraseModel_2=3.00848 ||| 0-0 1-1 2-3 4-6
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| البحث العلمي التي ||| the scientific research ||| PhraseModel_0=0.477121 PhraseModel_1=3.13204 PhraseModel_2=1.66593 ||| 0-2 1-1 2-0
+[X] ||| جائزه [X,1] ||| [1] prize ||| PhraseModel_0=0.736759 PhraseModel_1=0.266478 PhraseModel_2=0.247308 ||| 0-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| 300 الف ||| 300,000 ||| PhraseModel_0=0.460088 PhraseModel_1=0.834483 PhraseModel_2=1.22407 ||| 0-0 1-0
+[X] ||| تبلغ قيمه ها [X,1] ||| worth [1] ||| PhraseModel_0=0.78533 PhraseModel_1=4.68536 PhraseModel_2=1.23555 ||| 0-0 1-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| دولار </s> ||| dollars . </s> ||| PhraseModel_0=0.49035 PhraseModel_1=0.16724 PhraseModel_2=1.14334 ||| 0-0 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]

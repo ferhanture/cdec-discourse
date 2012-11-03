@@ -1,0 +1,20 @@
+[X] ||| <s> من بين ||| <s> among the ||| PhraseModel_0=0.532639 PhraseModel_1=1.27516 PhraseModel_2=1.62696 ||| 0-0 1-2 2-1
+[S] ||| [X,1] ||| [1]
+[X] ||| القائمه ||| existing ||| PhraseModel_0=0.823909 PhraseModel_1=0.564554 PhraseModel_2=0.840852 ||| 0-0
+[X] ||| الكامنه ||| potential ||| PhraseModel_0=1.35459 PhraseModel_1=2.1005 PhraseModel_2=0.851937 ||| 0-0
+[X] ||| [X,1] او [X,2] ||| [1] or [2] ||| PhraseModel_0=0.387216 PhraseModel_1=0.106228 PhraseModel_2=0.0867714 ||| 1-1
+[X] ||| الازمات [X,1] ||| [1] crises ||| PhraseModel_0=1.24667 PhraseModel_1=0.325981 PhraseModel_2=0.218442 ||| 0-1
+[X] ||| [X,1] في الشرق ||| [1] in the middle ||| PhraseModel_0=0.346787 PhraseModel_1=0.435232 PhraseModel_2=1.10402 ||| 1-1 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ذكر رود لارسن ||| roed - larsen said ||| PhraseModel_0=0.477121 PhraseModel_1=1.55054 PhraseModel_2=2.35008 ||| 0-3 1-0 2-2
+[X] ||| [X,1] النزاع العربي الاسرائيلي و ||| [1] the arab - israeli conflict and ||| PhraseModel_0=0.726999 PhraseModel_1=2.07703 PhraseModel_2=2.38116 ||| 1-1 1-3 1-5 2-2 3-4 4-6
+[X] ||| النووي الايراني ||| iranian nuclear ||| PhraseModel_0=0.146707 PhraseModel_1=0.833422 PhraseModel_2=0.171623 ||| 0-1 1-0
+[X] ||| الاوسط [X,1] الملف [X,2] ||| east , [1] the [2] file ||| PhraseModel_0=0.676694 PhraseModel_1=0.838316 PhraseModel_2=1.93032 ||| 0-0 2-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| و ||| and ||| PhraseModel_0=0.176091 PhraseModel_1=0.295917 PhraseModel_2=0.175508 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الازمه بين لبنان ||| crisis between lebanon ||| PhraseModel_0=-0 PhraseModel_1=0.36817 PhraseModel_2=0.327504 ||| 0-0 1-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| و سوريا </s> ||| and syria . </s> ||| PhraseModel_0=0.178268 PhraseModel_1=0.455906 PhraseModel_2=1.10589 ||| 0-0 1-1 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]

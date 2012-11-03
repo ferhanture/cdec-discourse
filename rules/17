@@ -1,0 +1,40 @@
+[X] ||| <s> ||| <s> ||| PassThrough=1 ||| 0-0
+[S] ||| [X,1] ||| [1]
+[X] ||| الشيخ محمد ||| sheikh mohammad ||| PhraseModel_0=0.401574 PhraseModel_1=0.0690229 PhraseModel_2=0.575267 ||| 0-0 1-1
+[X] ||| اكد [X,1] خلال المقابله ||| [1] confirmed during the meeting ||| PhraseModel_0=0.30103 PhraseModel_1=2.99715 PhraseModel_2=2.10805 ||| 0-1 2-2 3-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| التي تركزت علي ||| that focused on ||| PhraseModel_0=0.477121 PhraseModel_1=2.3456 PhraseModel_2=1.49711 ||| 0-0 1-1 2-2
+[X] ||| العراق ||| iraq ||| PhraseModel_0=0.0238029 PhraseModel_1=0.0482892 PhraseModel_2=0.0284639 ||| 0-0
+[X] ||| [X,1] ملف ي [X,2] و ||| [1] [2] and ||| PhraseModel_0=1.32222 PhraseModel_1=7.29753 PhraseModel_2=0.175508 ||| 4-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| النزاع العربي الاسرائيلي ||| the arab - israeli conflict ||| PhraseModel_0=0.576094 PhraseModel_1=1.78112 PhraseModel_2=2.20565 ||| 0-0 0-2 0-4 1-1 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ضروره اللجوء الي ||| need to resort to ||| PhraseModel_0=0.875061 PhraseModel_1=2.60799 PhraseModel_2=2.23677 ||| 0-0 1-2 2-1 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| النزاعات ||| disputes ||| PhraseModel_0=0.343582 PhraseModel_1=0.661422 PhraseModel_2=0.335344 ||| 0-0
+[X] ||| فض [X,1] ||| settle [1] ||| PhraseModel_0=1.47712 PhraseModel_1=2.36455 PhraseModel_2=1.27563 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| المشاكل ||| problems ||| PhraseModel_0=0.0671881 PhraseModel_1=0.606463 PhraseModel_2=0.06208 ||| 0-0
+[X] ||| و حل [X,1] سلميا ||| and resolve the [1] peacefully ||| PhraseModel_0=0.60206 PhraseModel_1=1.10919 PhraseModel_2=2.15518 ||| 0-0 1-1 3-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| بعيدا عن العنف و ||| away from violence and ||| PhraseModel_0=0.60206 PhraseModel_1=1.89671 PhraseModel_2=1.16859 ||| 0-0 1-0 1-1 2-2 3-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| سباق التسلح ||| arms race ||| PhraseModel_0=0.33146 PhraseModel_1=1.62634 PhraseModel_2=0.914037 ||| 0-1 1-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| و الكيل ب مكيالين ||| and double standards ||| PhraseModel_0=0.176091 PhraseModel_1=4.85807 PhraseModel_2=1.17837 ||| 0-0 1-1 3-2
+[X] ||| [X,1] ضمانا ||| [1] to guarantee ||| PhraseModel_0=1.22617 PhraseModel_1=1.66611 PhraseModel_2=1.72631 ||| 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| لاحقاق الحق ||| to achieve ||| PhraseModel_0=0.60206 PhraseModel_1=6.66257 PhraseModel_2=1.31335 ||| 0-1 1-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| و توفير ||| and provide ||| PhraseModel_0=0.651046 PhraseModel_1=1.05026 PhraseModel_2=0.670739 ||| 0-0 1-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| العداله و ||| justice and ||| PhraseModel_0=0.106053 PhraseModel_1=0.893177 PhraseModel_2=0.239441 ||| 0-0 1-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الحريه ||| freedom ||| PhraseModel_0=0.0740007 PhraseModel_1=0.406813 PhraseModel_2=0.083361 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ل جميع الشعوب ||| for all peoples ||| PhraseModel_0=0.623249 PhraseModel_1=1.80653 PhraseModel_2=1.21292 ||| 0-0 1-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| وكاله انباء الامارات </s> ||| news agency of the united arab emirates . </s> ||| PhraseModel_0=0.753328 PhraseModel_1=1.24143 PhraseModel_2=4.66599 ||| 0-1 1-0 2-4 2-5 2-6 3-8
+[X] ||| ب حسب [X,1] ||| , according to the [1] ||| PhraseModel_0=0.98576 PhraseModel_1=1.75589 PhraseModel_2=2.27787 ||| 0-0 1-1 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]

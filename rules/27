@@ -1,0 +1,20 @@
+[X] ||| قال ميشال ||| michel said ||| PhraseModel_0=0.176091 PhraseModel_1=0.884302 PhraseModel_2=0.404449 ||| 0-1 1-0
+[X] ||| <s> [X,1] ل ان ||| <s> [1] that ||| PhraseModel_0=1.43573 PhraseModel_1=1.5905 PhraseModel_2=0.315129 ||| 0-0 3-2
+[S] ||| [X,1] ||| [1]
+[X] ||| دويت ||| dwight ||| PhraseModel_0=0.30103 PhraseModel_1=1.47712 PhraseModel_2=0.477121 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| اعتبرت ||| considered ||| PhraseModel_0=0.321785 PhraseModel_1=1.02761 PhraseModel_2=0.302419 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| يصدم ||| shocks ||| PhraseModel_0=0.564271 PhraseModel_1=1.14093 PhraseModel_2=0.528274 ||| 0-0
+[X] ||| ان العمل [X,1] ||| that [1] ||| PhraseModel_0=1.63202 PhraseModel_1=3.41612 PhraseModel_2=0.315129 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| المشاعر ||| feelings ||| PhraseModel_0=0.337242 PhraseModel_1=0.749961 PhraseModel_2=0.321775 ||| 0-0
+[X] ||| [X,1] مشددا علي ان صدام ||| [1] , confirming that saddam ||| PhraseModel_0=-0 PhraseModel_1=3.06891 PhraseModel_2=2.35156 ||| 1-2 3-3 4-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| المحاكمه ||| trial ||| PhraseModel_0=0.124939 PhraseModel_1=0.644634 PhraseModel_2=0.104051 ||| 0-0
+[X] ||| يخضع حاليا ل [X,1] ||| is currently under [1] ||| PhraseModel_0=0.90309 PhraseModel_1=3.70399 PhraseModel_2=2.09839 ||| 0-0 0-2 1-1
+[X] ||| الجلسات ||| sessions ||| PhraseModel_0=0.219443 PhraseModel_1=0.83879 PhraseModel_2=0.201179 ||| 0-0
+[X] ||| [X,1] و تعرض [X,2] ||| [1] and [2] ||| PhraseModel_0=1.2943 PhraseModel_1=3.76362 PhraseModel_2=0.175508 ||| 1-1
+[X] ||| حسين [X,1] علي التلفزيون </s> ||| hussein [1] on television . </s> ||| PhraseModel_0=0.30103 PhraseModel_1=0.936704 PhraseModel_2=1.75545 ||| 0-0 2-2 3-3 4-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]

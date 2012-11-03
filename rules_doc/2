@@ -1,0 +1,242 @@
+[X] ||| <s> ||| <s> ||| PassThrough=1 ||| 0-0
+[S] ||| [X,1] ||| [1]
+[X] ||| رئيس بلديه ||| mayor ||| PhraseModel_0=0.259637 PhraseModel_1=1.53337 PhraseModel_2=0.634403 ||| 0-0 1-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| بلجيكي ||| belgian ||| PhraseModel_0=0.15261 PhraseModel_1=1.25489 PhraseModel_2=0.124083 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| يمنع ||| prevents ||| PhraseModel_0=0.657577 PhraseModel_1=0.46337 PhraseModel_2=0.640092 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| عمل فني ||| a work of art ||| PhraseModel_0=0.485554 PhraseModel_1=2.32219 PhraseModel_2=3.49434 ||| 0-1 1-0 1-3
+[X] ||| صدام حسين ||| saddam hussein ||| PhraseModel_0=0.18932 PhraseModel_1=0.0711019 PhraseModel_2=0.177823 ||| 0-0 1-1
+[X] ||| عرض [X,1] يصور [X,2] </s> ||| [1] showing [2] . </s> ||| PhraseModel_0=-0 PhraseModel_1=3.10421 PhraseModel_2=1.80336 ||| 0-1 2-1 4-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| <s> ||| <s> ||| PassThrough=1 ||| 0-0
+[S] ||| [X,1] ||| [1]
+[X] ||| بروكسل ||| brussels ||| PhraseModel_0=0.0102536 PhraseModel_1=0.050307 PhraseModel_2=0.0106775 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| 7 2 اف ب ||| , feb 7 ( afp ) ||| PhraseModel_0=0.414973 PhraseModel_1=4.18287 PhraseModel_2=5.81796 ||| 0-0 0-2 1-1 1-3 2-4 2-5 3-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| اعلن ||| declared ||| PhraseModel_0=0.343582 PhraseModel_1=0.376132 PhraseModel_2=0.286647 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| رئيس بلديه ||| mayor ||| PhraseModel_0=0.259637 PhraseModel_1=1.53337 PhraseModel_2=0.634403 ||| 0-0 1-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ميدل ||| middle ||| PhraseModel_0=0.389166 PhraseModel_1=3.03243 PhraseModel_2=0.255272 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| كيرك ||| kirk ||| PhraseModel_0=0.226784 PhraseModel_1=0.37799 PhraseModel_2=0.148653 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| غرب ||| west ||| PhraseModel_0=0.246672 PhraseModel_1=0.85049 PhraseModel_2=0.247296 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| بلجيكا ||| belgium ||| PhraseModel_0=0.0621479 PhraseModel_1=0.12835 PhraseModel_2=0.0499025 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ميشال ||| michel ||| PhraseModel_0=0.346787 PhraseModel_1=0.391324 PhraseModel_2=0.256586 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| دويت ||| dwight ||| PhraseModel_0=0.30103 PhraseModel_1=1.47712 PhraseModel_2=0.477121 ||| 0-0
+[X] ||| [X,1] ل وكاله فرانس برس ||| [1] told agence france presse ||| PhraseModel_0=1.00333 PhraseModel_1=2.78107 PhraseModel_2=3.92583 ||| 2-2 3-2 3-3 3-4 4-1 4-4
+[X] ||| ل ان [X,1] ان ه ||| to [1] that it ||| PhraseModel_0=2.11727 PhraseModel_1=2.19048 PhraseModel_2=1.934 ||| 0-0 3-2 4-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| عمل ||| work ||| PhraseModel_0=0.579494 PhraseModel_1=0.746568 PhraseModel_2=0.538581 ||| 0-0
+[X] ||| موضع جدل ||| controversial ||| PhraseModel_0=0.732394 PhraseModel_1=4.00183 PhraseModel_2=1.47654 ||| 0-0 1-0
+[X] ||| [X,1] فني [X,2] ||| [2] technical [1] ||| PhraseModel_0=1.77815 PhraseModel_1=1.07681 PhraseModel_2=0.295404 ||| 1-1
+[X] ||| عرض [X,1] يصور ||| [1] showing ||| PhraseModel_0=0.69897 PhraseModel_1=3.10421 PhraseModel_2=0.908576 ||| 0-1 2-1
+[X] ||| قرر منع [X,1] ||| decided to ban the [1] ||| PhraseModel_0=1.23045 PhraseModel_1=1.69878 PhraseModel_2=2.73292 ||| 0-0 0-1 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الرئيس العراقي المخلوع صدام ||| the deposed iraqi president saddam ||| PhraseModel_0=1.09691 PhraseModel_1=0.798276 PhraseModel_2=1.36097 ||| 0-0 0-3 1-2 2-1 3-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| حسين ||| hussein ||| PhraseModel_0=0.0555173 PhraseModel_1=0.035645 PhraseModel_2=0.0559065 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| مكبلا و ||| was chained and ||| PhraseModel_0=0.477121 PhraseModel_1=1.11469 PhraseModel_2=1.77295 ||| 0-0 0-1 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الفنان ||| artist ||| PhraseModel_0=0.180456 PhraseModel_1=0.321563 PhraseModel_2=0.144377 ||| 0-0
+[X] ||| [X,1] التشيكي ||| czech [1] ||| PhraseModel_0=0.542623 PhraseModel_1=0.625275 PhraseModel_2=0.0510722 ||| 1-0
+[X] ||| يحمل توقيع [X,1] ||| signed by [1] ||| PhraseModel_0=0.834633 PhraseModel_1=4.45136 PhraseModel_2=3.01101 ||| 0-0 1-0
+[X] ||| [X,1] الطليعي ||| pioneering [1] ||| PhraseModel_0=1.13033 PhraseModel_1=1.83251 PhraseModel_2=0.875061 ||| 1-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ديفيد ||| david ||| PhraseModel_0=0.0809219 PhraseModel_1=0.29009 PhraseModel_2=0.01498 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| س ||| will ||| PhraseModel_0=0.224268 PhraseModel_1=0.497874 PhraseModel_2=0.23666 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ير ||| see ||| PhraseModel_0=0.628822 PhraseModel_1=2.43401 PhraseModel_2=0.636822 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ني ||| me ||| PhraseModel_0=0.670941 PhraseModel_1=0.743431 PhraseModel_2=0.725568 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| معتبرا ||| considering ||| PhraseModel_0=0.281222 PhraseModel_1=0.530678 PhraseModel_2=0.31664 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| يصدم ||| shocks ||| PhraseModel_0=0.564271 PhraseModel_1=1.14093 PhraseModel_2=0.528274 ||| 0-0
+[X] ||| ان ه [X,1] ||| that [1] ||| PhraseModel_0=0.843653 PhraseModel_1=1.63737 PhraseModel_2=0.315129 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| المشاعر </s> ||| feelings . </s> ||| PhraseModel_0=0.787106 PhraseModel_1=0.749961 PhraseModel_2=1.21656 ||| 0-0 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| <s> ||| <s> ||| PassThrough=1 ||| 0-0
+[S] ||| [X,1] ||| [1]
+[X] ||| لون ||| color ||| PhraseModel_0=0.51808 PhraseModel_1=0.553894 PhraseModel_2=0.485807 ||| 0-0
+[X] ||| [X,1] دويت ||| [1] dwight ||| PhraseModel_0=0.30103 PhraseModel_1=1.47712 PhraseModel_2=0.477121 ||| 1-1
+[X] ||| المنتجع الساحلي ||| seaside resort ||| PhraseModel_0=0.367977 PhraseModel_1=2.26412 PhraseModel_2=1.71357 ||| 0-1 1-0
+[X] ||| قال [X,1] رئيس بلديه [X,2] ||| [2] municipality head [1] said ||| PhraseModel_0=1.34242 PhraseModel_1=1.17161 PhraseModel_2=1.60519 ||| 0-4 2-2 3-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الصغير ||| small ||| PhraseModel_0=0.547702 PhraseModel_1=1.56582 PhraseModel_2=0.525112 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| البلجيكي ||| belgian ||| PhraseModel_0=0.0688813 PhraseModel_1=0.403971 PhraseModel_2=0.0500264 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| مبررا قرار ه ||| justified his decision ||| PhraseModel_0=0.60206 PhraseModel_1=2.07131 PhraseModel_2=1.94368 ||| 0-0 1-2 2-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الاثنين ان هذا ||| monday that the ||| PhraseModel_0=0.477121 PhraseModel_1=2.64668 PhraseModel_2=1.02757 ||| 0-0 1-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| العمل الفني ||| technical work ||| PhraseModel_0=1.10266 PhraseModel_1=1.27242 PhraseModel_2=0.647122 ||| 0-1 1-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| يمكن ||| can ||| PhraseModel_0=0.632023 PhraseModel_1=0.432895 PhraseModel_2=0.51963 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| مشاعر الناس ليس ||| people 's feelings , not ||| PhraseModel_0=-0 PhraseModel_1=2.61616 PhraseModel_2=3.33714 ||| 0-2 1-0 2-4
+[X] ||| ان يصدم [X,1] ||| that shocked the [1] ||| PhraseModel_0=0.30103 PhraseModel_1=2.56376 PhraseModel_2=2.06901 ||| 0-0 1-1
+[X] ||| [X,1] ابناء المنطقه ||| [1] of the sons of the region ||| PhraseModel_0=1.76343 PhraseModel_1=0.718261 PhraseModel_2=3.95582 ||| 1-3 2-2 2-6
+[X] ||| [X,1] فقط بل ||| only [1] ||| PhraseModel_0=1.69897 PhraseModel_1=2.82504 PhraseModel_2=0.163483 ||| 1-0 2-0
+[X] ||| [X,1] ك ذلك ||| [1] as well as ||| PhraseModel_0=0.778151 PhraseModel_1=2.40549 PhraseModel_2=2.35342 ||| 1-1 1-2 1-3 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| السياح ||| tourists ||| PhraseModel_0=0.0879552 PhraseModel_1=0.412619 PhraseModel_2=0.0491073 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| و ربما ||| and perhaps ||| PhraseModel_0=0.619789 PhraseModel_1=0.595139 PhraseModel_2=1.05243 ||| 0-0 1-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| عقيده ||| faith ||| PhraseModel_0=0.971971 PhraseModel_1=1.51885 PhraseModel_2=0.942962 ||| 0-0
+[X] ||| [X,1] اخري ||| other [1] ||| PhraseModel_0=0.933053 PhraseModel_1=0.448125 PhraseModel_2=0.20467 ||| 1-0
+[X] ||| اشخاص من [X,1] ||| people of [1] ||| PhraseModel_0=1.47712 PhraseModel_1=2.01333 PhraseModel_2=0.952215 ||| 0-0 1-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| و علي الاخص ||| , especially ||| PhraseModel_0=0.389971 PhraseModel_1=4.54703 PhraseModel_2=1.0643 ||| 0-0 2-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| المسلمون </s> ||| muslims . </s> ||| PhraseModel_0=0.801632 PhraseModel_1=1.10098 PhraseModel_2=1.20807 ||| 0-0 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| <s> ||| <s> ||| PassThrough=1 ||| 0-0
+[S] ||| [X,1] ||| [1]
+[X] ||| العمل الفني ||| work of art ||| PhraseModel_0=0.46584 PhraseModel_1=1.99084 PhraseModel_2=2.70157 ||| 0-0 1-2
+[X] ||| ان [X,1] انجز ||| that the [1] was ||| PhraseModel_0=1.74819 PhraseModel_1=4.07234 PhraseModel_2=1.83652 ||| 0-0 2-3
+[X] ||| [X,1] قبل نحو سنه ||| [1] about a year ago ||| PhraseModel_0=0.60206 PhraseModel_1=2.55692 PhraseModel_2=3.38828 ||| 1-4 2-1 3-3 3-4
+[X] ||| لكن ه اوضح [X,1] و ||| but he clarified [1] and ||| PhraseModel_0=0.511883 PhraseModel_1=1.77024 PhraseModel_2=1.52087 ||| 0-0 1-1 2-2 4-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| لا علاقه ل ه ب ||| has nothing to do with ||| PhraseModel_0=0.648592 PhraseModel_1=4.75554 PhraseModel_2=5.21128 ||| 0-3 1-0 1-1 2-2 4-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| عن النبي محمد في اوروبا ||| the prophet mohammed in europe ||| PhraseModel_0=-0 PhraseModel_1=2.54211 PhraseModel_2=1.85375 ||| 0-0 1-1 2-2 3-3 4-4
+[X] ||| الرسوم الكاريكاتوريه [X,1] و ||| cartoons of [1] , and ||| PhraseModel_0=1.23045 PhraseModel_1=1.58201 PhraseModel_2=2.04417 ||| 0-0 1-0 3-4
+[X] ||| قضيه نشر [X,1] ||| the publication of [1] ||| PhraseModel_0=1.32222 PhraseModel_1=3.9733 PhraseModel_2=3.10516 ||| 0-0 1-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| التي تسببت خلال ||| which resulted in ||| PhraseModel_0=-0 PhraseModel_1=4.61005 PhraseModel_2=2.72914 ||| 0-0 1-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الايام الماضيه ب ||| the last days of ||| PhraseModel_0=1.20412 PhraseModel_1=2.7466 PhraseModel_2=1.96842 ||| 0-0 0-2 1-1 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| موجه استنكار ||| a wave of condemnation ||| PhraseModel_0=0.632023 PhraseModel_1=1.13973 PhraseModel_2=2.14634 ||| 0-0 0-1 1-3
+[X] ||| [X,1] و عنف ||| violence and [1] ||| PhraseModel_0=1.86923 PhraseModel_1=1.22169 PhraseModel_2=0.268766 ||| 1-1 2-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| في العالم الاسلامي </s> ||| in the islamic world . </s> ||| PhraseModel_0=0.305147 PhraseModel_1=0.846546 PhraseModel_2=1.86008 ||| 0-0 1-1 1-3 2-2 3-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| <s> ||| <s> ||| PassThrough=1 ||| 0-0
+[X] ||| [X,1] العمل الفني ||| [1] the work of art ||| PhraseModel_0=0.880814 PhraseModel_1=1.99084 PhraseModel_2=3.32512 ||| 1-2 2-4
+[X] ||| القرش ||| shark ||| PhraseModel_0=0.866461 PhraseModel_1=0.44835 PhraseModel_2=0.272258 ||| 0-0
+[X] ||| [X,1] الذي يحمل عنوان [X,2] ||| [1] entitled " [2] " ||| PhraseModel_0=1.23045 PhraseModel_1=4.27401 PhraseModel_2=1.8351 ||| 2-1 3-1 3-2 3-4
+[S] ||| [X,1] ||| [1]
+[X] ||| يصور صدام ||| shows saddam ||| PhraseModel_0=0.30103 PhraseModel_1=2.34098 PhraseModel_2=1.4034 ||| 0-0 1-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| حسين ||| hussein ||| PhraseModel_0=0.0555173 PhraseModel_1=0.035645 PhraseModel_2=0.0559065 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| مكبلا ||| chained ||| PhraseModel_0=0.647817 PhraseModel_1=0.818769 PhraseModel_2=0.532979 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| عائما ||| floating ||| PhraseModel_0=0.720159 PhraseModel_1=1.54303 PhraseModel_2=0.41218 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| حوض ||| basin ||| PhraseModel_0=0.21705 PhraseModel_1=0.136176 PhraseModel_2=0.19156 ||| 0-0
+[X] ||| سائل ||| liquid ||| PhraseModel_0=0.453121 PhraseModel_1=0.744393 PhraseModel_2=0.413257 ||| 0-0
+[X] ||| [X,1] ملئ ب [X,2] ||| [1] is full of [2] ||| PhraseModel_0=0.842269 PhraseModel_1=3.05638 PhraseModel_2=2.22765 ||| 1-1 1-2 2-3
+[X] ||| في [X,1] </s> ||| in the [1] . </s> ||| PhraseModel_0=1.22185 PhraseModel_1=0.152329 PhraseModel_2=1.70275 ||| 0-0 2-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| <s> ||| <s> ||| PassThrough=1 ||| 0-0
+[S] ||| [X,1] ||| [1]
+[X] ||| ه ||| he ||| PhraseModel_0=0.897338 PhraseModel_1=0.78309 PhraseModel_2=0.984099 ||| 0-0
+[X] ||| كان من المقرر عرض [X,1] ||| [1] was scheduled to be presented ||| PhraseModel_0=-0 PhraseModel_1=3.27244 PhraseModel_2=4.17224 ||| 0-1 2-2 2-3 2-4 3-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| في اطار ||| within the framework ||| PhraseModel_0=0.60206 PhraseModel_1=0.813786 PhraseModel_2=1.64536 ||| 0-0 1-2
+[X] ||| بوفور ||| بوفور ||| PassThrough=1 ||| 0-0
+[X] ||| [X,1] 2006 ||| [1] 2006 ||| PhraseModel_0=0.289601 PhraseModel_1=0.101801 PhraseModel_2=0.0238784 ||| 1-1
+[X] ||| [X,1] مهرجان [X,2] ل الفنون ||| [1] of [2] arts festival ||| PhraseModel_0=0.90309 PhraseModel_1=2.04052 PhraseModel_2=1.15774 ||| 1-4 4-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| </s> ||| </s> ||| PassThrough=1 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| قال ميشال ||| michel said ||| PhraseModel_0=0.176091 PhraseModel_1=0.884302 PhraseModel_2=0.404449 ||| 0-1 1-0
+[X] ||| <s> [X,1] ل ان ||| <s> [1] that ||| PhraseModel_0=1.43573 PhraseModel_1=1.5905 PhraseModel_2=0.315129 ||| 0-0 3-2
+[S] ||| [X,1] ||| [1]
+[X] ||| دويت ||| dwight ||| PhraseModel_0=0.30103 PhraseModel_1=1.47712 PhraseModel_2=0.477121 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| اعتبرت ||| considered ||| PhraseModel_0=0.321785 PhraseModel_1=1.02761 PhraseModel_2=0.302419 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| يصدم ||| shocks ||| PhraseModel_0=0.564271 PhraseModel_1=1.14093 PhraseModel_2=0.528274 ||| 0-0
+[X] ||| ان العمل [X,1] ||| that [1] ||| PhraseModel_0=1.63202 PhraseModel_1=3.41612 PhraseModel_2=0.315129 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| المشاعر ||| feelings ||| PhraseModel_0=0.337242 PhraseModel_1=0.749961 PhraseModel_2=0.321775 ||| 0-0
+[X] ||| [X,1] مشددا علي ان صدام ||| [1] , confirming that saddam ||| PhraseModel_0=-0 PhraseModel_1=3.06891 PhraseModel_2=2.35156 ||| 1-2 3-3 4-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| المحاكمه ||| trial ||| PhraseModel_0=0.124939 PhraseModel_1=0.644634 PhraseModel_2=0.104051 ||| 0-0
+[X] ||| يخضع حاليا ل [X,1] ||| is currently under [1] ||| PhraseModel_0=0.90309 PhraseModel_1=3.70399 PhraseModel_2=2.09839 ||| 0-0 0-2 1-1
+[X] ||| الجلسات ||| sessions ||| PhraseModel_0=0.219443 PhraseModel_1=0.83879 PhraseModel_2=0.201179 ||| 0-0
+[X] ||| [X,1] و تعرض [X,2] ||| [1] and [2] ||| PhraseModel_0=1.2943 PhraseModel_1=3.76362 PhraseModel_2=0.175508 ||| 1-1
+[X] ||| حسين [X,1] علي التلفزيون </s> ||| hussein [1] on television . </s> ||| PhraseModel_0=0.30103 PhraseModel_1=0.936704 PhraseModel_2=1.75545 ||| 0-0 2-2 3-3 4-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| <s> عرض ||| <s> the ||| PhraseModel_0=1.63202 PhraseModel_1=3.71608 PhraseModel_2=0.623551 ||| 0-0 1-1
+[S] ||| [X,1] ||| [1]
+[X] ||| القرش ||| sharks ||| PhraseModel_0=1.61979 PhraseModel_1=0.49102 PhraseModel_2=0.551569 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ل المره الاولي ||| for the first time ||| PhraseModel_0=0.115393 PhraseModel_1=2.07639 PhraseModel_2=1.55073 ||| 0-0 1-3 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| 2 ||| 2 ||| PassThrough=1 ||| 0-0
+[X] ||| براغ [X,1] ||| prague [1] ||| PhraseModel_0=0.416423 PhraseModel_1=0.108053 PhraseModel_2=0.0360813 ||| 0-0
+[X] ||| معرض [X,1] الدولي ||| [1] international exhibition ||| PhraseModel_0=1.24126 PhraseModel_1=0.996366 PhraseModel_2=0.622761 ||| 0-2 2-1
+[X] ||| في [X,1] الذي ينظم ||| in [1] which is organized ||| PhraseModel_0=1.0607 PhraseModel_1=2.36542 PhraseModel_2=2.85924 ||| 0-0 2-2 3-3 3-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| كل سنتين و ||| every two years , ||| PhraseModel_0=0.778151 PhraseModel_1=2.78846 PhraseModel_2=2.36396 ||| 0-0 1-1 1-2 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| قد اقيم ||| was held ||| PhraseModel_0=0.960233 PhraseModel_1=3.59747 PhraseModel_2=1.17471 ||| 0-0 1-0 1-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| بين مايو و ||| between may and ||| PhraseModel_0=0.109144 PhraseModel_1=0.982352 PhraseModel_2=0.402939 ||| 0-0 1-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| سبتمبر 2005 </s> ||| september 2005 . </s> ||| PhraseModel_0=0.226396 PhraseModel_1=0.225053 PhraseModel_2=1.05963 ||| 0-0 1-1 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| ديفيد ||| david ||| PhraseModel_0=0.0809219 PhraseModel_1=0.29009 PhraseModel_2=0.01498 ||| 0-0
+[X] ||| ير ||| see ||| PhraseModel_0=0.628822 PhraseModel_1=2.43401 PhraseModel_2=0.636822 ||| 0-0
+[X] ||| [X,1] س [X,2] ||| [1] will [2] ||| PhraseModel_0=0.49035 PhraseModel_1=0.497874 PhraseModel_2=0.23666 ||| 1-1
+[X] ||| [X,1] ني ||| [1] me ||| PhraseModel_0=0.853872 PhraseModel_1=0.743431 PhraseModel_2=0.725568 ||| 1-1
+[X] ||| [X,1] 38 عاما ||| [1] ( 38 years ) ||| PhraseModel_0=1.43573 PhraseModel_1=0.681477 PhraseModel_2=2.58037 ||| 1-2 2-1 2-3 2-4
+[X] ||| اعمال ه الاستفزازيه ||| its provocative acts ||| PhraseModel_0=-0 PhraseModel_1=1.95413 PhraseModel_2=2.1453 ||| 0-2 1-0 2-1
+[X] ||| <s> اشتهر [X,1] ب [X,2] ||| <s> [1] was famous for [2] ||| PhraseModel_0=1.17609 PhraseModel_1=2.68076 PhraseModel_2=2.0957 ||| 0-0 1-2
+[S] ||| [X,1] ||| [1]
+[X] ||| قوائم ||| lists ||| PhraseModel_0=0.21705 PhraseModel_1=0.571608 PhraseModel_2=0.164274 ||| 0-0
+[X] ||| رايه علي [X,1] ||| his opinion on the [1] ||| PhraseModel_0=0.60206 PhraseModel_1=2.16463 PhraseModel_2=2.53218 ||| 0-0 0-1 1-2
+[X] ||| و من ها [X,1] ||| and [1] ||| PhraseModel_0=1.69897 PhraseModel_1=2.86885 PhraseModel_2=0.175508 ||| 0-0
+[X] ||| الالمان الشرقيين ||| east germans ||| PhraseModel_0=0.176091 PhraseModel_1=2.80815 PhraseModel_2=1.43779 ||| 0-1 1-0 1-1
+[X] ||| هجره [X,1] ||| emigration of [1] ||| PhraseModel_0=1.47712 PhraseModel_1=1.07201 PhraseModel_2=1.94485 ||| 0-0
+[X] ||| [X,1] التي ترمز الي [X,2] ||| [1] , which refers to the [2] ||| PhraseModel_0=0.812913 PhraseModel_1=4.00143 PhraseModel_2=4.45621 ||| 1-2 2-3 3-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الي الغرب ||| to the west ||| PhraseModel_0=0.416423 PhraseModel_1=1.88648 PhraseModel_2=0.983173 ||| 0-0 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| عام 1989 </s> ||| in 1989 . </s> ||| PhraseModel_0=0.522879 PhraseModel_1=0.743233 PhraseModel_2=1.5251 ||| 0-0 1-1 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
+[X] ||| في اكتوبر 2004 ||| in october 2004 ||| PhraseModel_0=0.0595857 PhraseModel_1=0.538667 PhraseModel_2=0.380973 ||| 0-0 1-1 2-2
+[X] ||| بلديه براغ ||| prague municipality ||| PhraseModel_0=-0 PhraseModel_1=0.473439 PhraseModel_2=0.460523 ||| 0-1 1-0
+[X] ||| <s> [X,1] تخلت [X,2] عن ||| <s> [1] , [2] gave up ||| PhraseModel_0=0.920819 PhraseModel_1=3.24673 PhraseModel_2=2.49237 ||| 0-0 2-4 2-5 4-5
+[S] ||| [X,1] ||| [1]
+[X] ||| حركه المقاومه ||| resistance movement ||| PhraseModel_0=0.568636 PhraseModel_1=0.379506 PhraseModel_2=0.266313 ||| 0-1 1-0
+[X] ||| نصب تذكاري ل [X,1] ||| a memorial for the [1] ||| PhraseModel_0=0.812913 PhraseModel_1=2.60287 PhraseModel_2=2.1991 ||| 0-1 1-0 1-1 2-2
+[X] ||| تنفيذ [X,1] ||| implementation of [1] ||| PhraseModel_0=1 PhraseModel_1=0.242396 PhraseModel_2=1.66137 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ضد ||| against ||| PhraseModel_0=0.0571655 PhraseModel_1=0.322088 PhraseModel_2=0.0588681 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| النازيه ||| nazi ||| PhraseModel_0=0.146707 PhraseModel_1=0.402686 PhraseModel_2=0.145616 ||| 0-0
+[X] ||| [X,1] من تصميم ||| [1] design ||| PhraseModel_0=1.03141 PhraseModel_1=1.47662 PhraseModel_2=0.659461 ||| 2-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| قدامي ||| veterans ||| PhraseModel_0=1.1651 PhraseModel_1=0.897677 PhraseModel_2=0.357798 ||| 0-0
+[X] ||| [X,1] الحرب العالميه الثانيه ||| [1] of the second world war ||| PhraseModel_0=1.36318 PhraseModel_1=1.66654 PhraseModel_2=2.08311 ||| 1-5 2-4 3-3
+[X] ||| مهينا ل [X,1] ||| insulting to the [1] ||| PhraseModel_0=0.477121 PhraseModel_1=2.69276 PhraseModel_2=1.86076 ||| 0-0 1-1
+[X] ||| ه اعتبر [X,1] </s> ||| he considered [1] . </s> ||| PhraseModel_0=0.954243 PhraseModel_1=1.45486 PhraseModel_2=2.23195 ||| 0-0 1-1 3-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]

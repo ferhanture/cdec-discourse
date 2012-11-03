@@ -1,0 +1,25 @@
+[X] ||| مجلس الامن الدولي ||| security council ||| PhraseModel_0=0.69897 PhraseModel_1=2.13153 PhraseModel_2=0.32137 ||| 0-1 1-0 2-0
+[X] ||| مراقبه تطبيق قرار [X,1] ||| monitoring the implementation of [1] resolution ||| PhraseModel_0=0.477121 PhraseModel_1=1.86793 PhraseModel_2=3.7203 ||| 0-0 1-2 2-5
+[X] ||| مكلف حاليا [X,1] ||| currently in charge of [1] ||| PhraseModel_0=-0 PhraseModel_1=2.84587 PhraseModel_2=4.63466 ||| 0-2 1-0
+[X] ||| <s> رود لارسن [X,1] ||| <s> roed - larsen is [1] ||| PhraseModel_0=1.04139 PhraseModel_1=0.0676181 PhraseModel_2=4.06992 ||| 0-0 1-1 2-3
+[S] ||| [X,1] ||| [1]
+[X] ||| 1559 ||| 1559 ||| PassThrough=1 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الذي ينص ||| which stipulates ||| PhraseModel_0=1.1549 PhraseModel_1=1.35235 PhraseModel_2=2.01364 ||| 0-0 1-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| علي ||| on ||| PhraseModel_0=0.485895 PhraseModel_1=0.418707 PhraseModel_2=0.544799 ||| 0-0
+[X] ||| [X,1] نزع سلاح الميليشيات و ||| [1] the disarmament of the militias and ||| PhraseModel_0=0.69897 PhraseModel_1=2.27228 PhraseModel_2=2.98347 ||| 1-2 2-2 3-5 4-6
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| المجموعات المسلحه في ||| armed groups in ||| PhraseModel_0=0.111492 PhraseModel_1=1.52668 PhraseModel_2=0.426475 ||| 0-1 1-0 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| لبنان ||| lebanon ||| PhraseModel_0=0.0425524 PhraseModel_1=0.052095 PhraseModel_2=0.0260783 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| المنظمه الدوليه ||| international organization ||| PhraseModel_0=0.18932 PhraseModel_1=1.05521 PhraseModel_2=0.235811 ||| 0-1 1-0
+[X] ||| ب نظر [X,1] ||| in the eyes of the [1] ||| PhraseModel_0=1.6721 PhraseModel_1=2.54462 PhraseModel_2=4.77921 ||| 0-0 1-2
+[X] ||| و من بين ها [X,1] ||| , including [1] ||| PhraseModel_0=0.435729 PhraseModel_1=4.20683 PhraseModel_2=1.98421 ||| 0-0 2-1
+[X] ||| [X,1] حزب الله الشيعي اللبناني ||| [1] of the lebanese shiite hezbollah ||| PhraseModel_0=1.24304 PhraseModel_1=1.52208 PhraseModel_2=2.44435 ||| 1-5 2-5 3-4 4-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| مجموعات فلسطينيه ||| palestinian groups ||| PhraseModel_0=0.122717 PhraseModel_1=1.98181 PhraseModel_2=0.110581 ||| 0-1 1-0
+[X] ||| و [X,1] </s> ||| and [1] . </s> ||| PhraseModel_0=0.532639 PhraseModel_1=0.295917 PhraseModel_2=1.07029 ||| 0-0 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]

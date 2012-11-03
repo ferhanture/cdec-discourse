@@ -8,8 +8,24 @@
 #include <boost/program_options/variables_map.hpp>
 #include <ff.h>
 
+#include "weights.h"  // weight_t
+
+#undef CP_TIME
+//#define CP_TIME
+#ifdef CP_TIME
+#include <time.h>
+struct CpTime{
+public:
+	static void Add(clock_t x);
+	static void Sub(clock_t x);
+	static double Get();
+private:
+    static clock_t time_;
+};
+#endif
+
 class SentenceMetadata;
-struct Hypergraph;
+class Hypergraph;
 struct DecoderImpl;
 
 struct DecoderObserver {
@@ -22,27 +38,35 @@ struct DecoderObserver {
   virtual void NotifyDecodingComplete(const SentenceMetadata& smeta);
 };
 
+struct Grammar;  // TODO once the decoder interface is cleaned up,
+                 // this should be somewhere else
 struct Decoder {
   Decoder(int argc, char** argv);
   Decoder(std::istream* config_file);
   bool Decode(const std::string& input, DecoderObserver* observer = NULL);
 
-  //@author FERHANTURE
-  std::vector<boost::shared_ptr<FeatureFunction> > GetFFs();
-  std::string GetTrans(int s);
-  void NewDocument();
-  void SetRuleFile(std::string f);
+  // access this to either *read* or *write* to the decoder's last
+  // weight vector (i.e., the weights of the finest past)
+  std::vector<weight_t>& CurrentWeightVector();
+  const std::vector<weight_t>& CurrentWeightVector() const;
 
+    //@author ferhanture
+    int GetDiscourseId();
+    std::vector<boost::shared_ptr<FeatureFunction> > GetFFs();
+    std::string GetTrans(int s);
+    void NewDocument();
+    void SetRuleFile(std::string f);
+    //END @author ferhanture
+    
   void SetId(int id);
   ~Decoder();
   const boost::program_options::variables_map& GetConf() const { return conf; }
 
-  void SetWeights(const std::vector<double>& weights);
-    
   // add grammar rules (currently only supported by SCFG decoders)
   // that will be used on subsequent calls to Decode. rules should be in standard
   // text format. This function does NOT read from a file.
-  void SetSupplementalGrammar(const std::string& grammar);
+  void AddSupplementalGrammar(boost::shared_ptr<Grammar> gp);
+  void AddSupplementalGrammarFromString(const std::string& grammar_string);
  private:
   boost::program_options::variables_map conf;
   boost::shared_ptr<DecoderImpl> pimpl_;

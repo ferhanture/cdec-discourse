@@ -1,0 +1,19 @@
+[X] ||| <s> اكد انان ||| <s> annan confirmed ||| PhraseModel_0=0.292597 PhraseModel_1=0.38113 PhraseModel_2=0.49932 ||| 0-0 1-2 2-1
+[S] ||| [X,1] ||| [1]
+[X] ||| في كلمه اثناء ||| in a speech during ||| PhraseModel_0=0.367977 PhraseModel_1=1.30906 PhraseModel_2=1.34592 ||| 0-0 1-1 1-2 2-3
+[X] ||| تسلم الجائزه ||| receive the prize ||| PhraseModel_0=0.477121 PhraseModel_1=2.14165 PhraseModel_2=2.14688 ||| 0-0 1-2
+[X] ||| [X,1] حفل [X,2] ||| [1] a ceremony to [2] ||| PhraseModel_0=2.47712 PhraseModel_1=0.606282 PhraseModel_2=2.55497 ||| 1-1 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| قرر استخدام ||| decided to use ||| PhraseModel_0=0.39794 PhraseModel_1=0.992597 PhraseModel_2=1.05787 ||| 0-0 0-1 1-2
+[X] ||| [X,1] قيمه الجائزه ||| [1] the prize ||| PhraseModel_0=1.53148 PhraseModel_1=3.98246 PhraseModel_2=0.848876 ||| 2-2
+[X] ||| ان ه [X,1] ل اطلاق ||| that he [1] - ||| PhraseModel_0=1.11948 PhraseModel_1=4.45196 PhraseModel_2=2.09657 ||| 0-0 1-1 4-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| بعث ||| sent ||| PhraseModel_0=0.224268 PhraseModel_1=1.07915 PhraseModel_2=0.19939 ||| 0-0
+[X] ||| [X,1] ها ل تعمل ||| [1] to work ||| PhraseModel_0=0.477121 PhraseModel_1=3.65176 PhraseModel_2=1.22579 ||| 2-1 3-2
+[X] ||| ساتولي [X,1] ||| will assume [1] ||| PhraseModel_0=-0 PhraseModel_1=3.17187 PhraseModel_2=0.60206 ||| 0-0 0-1
+[X] ||| مؤسسه [X,1] في افريقيا ||| institution [1] in africa ||| PhraseModel_0=-0 PhraseModel_1=0.65854 PhraseModel_2=1.11487 ||| 0-0 2-2 3-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| و تعليم البنات ||| and education of girls ||| PhraseModel_0=-0 PhraseModel_1=2.38883 PhraseModel_2=1.62656 ||| 0-0 1-1 2-3
+[X] ||| في مجالي الزراعه [X,1] </s> ||| in the fields of agriculture [1] . </s> ||| PhraseModel_0=0.414973 PhraseModel_1=1.78385 PhraseModel_2=3.07924 ||| 0-0 1-2 2-4 4-7
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]

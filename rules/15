@@ -1,0 +1,32 @@
+[X] ||| وزير البيئه الاندونيسي ||| indonesian environment minister ||| PhraseModel_0=0.146128 PhraseModel_1=1.1404 PhraseModel_2=0.34717 ||| 0-2 1-1 2-0
+[X] ||| [X,1] السابق ||| former [1] ||| PhraseModel_0=0.431798 PhraseModel_1=0.208801 PhraseModel_2=0.147348 ||| 1-0
+[X] ||| <s> تقاسم [X,1] ||| <s> [1] ||| PhraseModel_0=1.34242 PhraseModel_1=5.37226 PhraseModel_2=-0 ||| 0-0
+[S] ||| [X,1] ||| [1]
+[X] ||| اميل ||| emil ||| PhraseModel_0=1.09691 PhraseModel_1=0.102563 PhraseModel_2=1.01929 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| سليم ||| salim ||| PhraseModel_0=0.28679 PhraseModel_1=0.10194 PhraseModel_2=0.294116 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| السناتور ||| senator ||| PhraseModel_0=0.102373 PhraseModel_1=0.856615 PhraseModel_2=0.078464 ||| 0-0
+[X] ||| و [X,1] انجيلا ||| and [1] angela ||| PhraseModel_0=0.182931 PhraseModel_1=0.36862 PhraseModel_2=0.19296 ||| 0-0 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| المسؤوله عن ||| responsible for ||| PhraseModel_0=0.542623 PhraseModel_1=2.10782 PhraseModel_2=1.42518 ||| 0-0 1-1
+[X] ||| كروبر [X,1] ||| cropper , [1] ||| PhraseModel_0=1.15635 PhraseModel_1=0.139662 PhraseModel_2=1.17193 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| مؤسسه ||| institution ||| PhraseModel_0=0.823909 PhraseModel_1=0.430464 PhraseModel_2=0.805421 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ل الدفاع عن ||| to defend the ||| PhraseModel_0=1.09691 PhraseModel_1=1.71138 PhraseModel_2=2.40307 ||| 0-0 1-1 2-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| البيئه ||| environment ||| PhraseModel_0=0.128816 PhraseModel_1=0.231978 PhraseModel_2=0.141415 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| في ترينيداد و ||| in trinidad and ||| PhraseModel_0=0.0579919 PhraseModel_1=0.57429 PhraseModel_2=0.402122 ||| 0-0 1-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| توباغو ||| tobago ||| PhraseModel_0=0.0469966 PhraseModel_1=0.430125 PhraseModel_2=0.0321847 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الجائزه المخصصه ل ||| award allocated for ||| PhraseModel_0=0.30103 PhraseModel_1=2.22677 PhraseModel_2=2.13079 ||| 0-0 1-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| المنظمات غير الحكوميه ||| non - governmental organizations ||| PhraseModel_0=0.221849 PhraseModel_1=1.12061 PhraseModel_2=3.16967 ||| 0-3 1-0 2-2
+[X] ||| [X,1] التي تبلغ قيمه ها ||| [1] , which is estimated by ||| PhraseModel_0=1.77085 PhraseModel_1=4.74355 PhraseModel_2=6.01201 ||| 1-2 2-3 3-4 4-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| مئتي الف دولار </s> ||| two hundred thousand dollars . </s> ||| PhraseModel_0=0.176091 PhraseModel_1=2.21688 PhraseModel_2=2.64165 ||| 0-0 0-1 1-2 2-3 3-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]

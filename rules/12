@@ -1,0 +1,18 @@
+[X] ||| <s> اوضح ان ||| <s> he clarified that ||| PhraseModel_0=0.424043 PhraseModel_1=0.556061 PhraseModel_2=1.54129 ||| 0-0 1-1 1-2 2-3
+[S] ||| [X,1] ||| [1]
+[X] ||| الزراعه ل ||| agriculture to ||| PhraseModel_0=0.954243 PhraseModel_1=0.882323 PhraseModel_2=0.528602 ||| 0-0 1-1
+[X] ||| الشعوب ||| nations ||| PhraseModel_0=0.485895 PhraseModel_1=1.71939 PhraseModel_2=0.533703 ||| 0-0
+[X] ||| [X,1] الافريقيه في ||| african [1] in ||| PhraseModel_0=0.843653 PhraseModel_1=0.715051 PhraseModel_2=0.228176 ||| 1-0 2-2
+[X] ||| ه اختار [X,1] ان [X,2] ||| he chose the [1] [2] ||| PhraseModel_0=0.778151 PhraseModel_1=2.45782 PhraseModel_2=1.99829 ||| 0-0 1-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ثوره خضراء ||| green revolution ||| PhraseModel_0=0.359022 PhraseModel_1=2.13264 PhraseModel_2=0.362551 ||| 0-1 1-0
+[X] ||| الي [X,1] و تعليم ||| to [1] and teach ||| PhraseModel_0=0.477121 PhraseModel_1=1.95493 PhraseModel_2=1.53141 ||| 0-0 2-2 3-3
+[X] ||| حاجه [X,1] البنات ||| need [1] girls ||| PhraseModel_0=-0 PhraseModel_1=1.39092 PhraseModel_2=0.340954 ||| 0-0 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ل ان ه لا توجد ||| because there is no ||| PhraseModel_0=0.801632 PhraseModel_1=5.73572 PhraseModel_2=4.1685 ||| 0-0 3-3 4-1 4-2 4-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| وسائل اخري ||| other means ||| PhraseModel_0=0.201202 PhraseModel_1=1.47856 PhraseModel_2=0.98465 ||| 0-1 1-0
+[X] ||| التنميه </s> ||| development . </s> ||| PhraseModel_0=0.35985 PhraseModel_1=0.500852 PhraseModel_2=0.924088 ||| 0-0 1-2
+[X] ||| [X,1] اكثر فعاليه ل [X,2] ||| [1] for more effective [2] ||| PhraseModel_0=1.32222 PhraseModel_1=2.1741 PhraseModel_2=1.60838 ||| 1-2 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]

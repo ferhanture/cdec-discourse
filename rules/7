@@ -1,0 +1,45 @@
+[X] ||| متظاهرون ||| demonstrators ||| PhraseModel_0=0.0638215 PhraseModel_1=1.17088 PhraseModel_2=0.0485179 ||| 0-0
+[X] ||| <s> قام [X,1] ب احراق ||| <s> [1] burned ||| PhraseModel_0=0.30103 PhraseModel_1=4.60325 PhraseModel_2=0.73398 ||| 0-0 4-2
+[S] ||| [X,1] ||| [1]
+[X] ||| النروجيه ||| norwegian ||| PhraseModel_0=0.20926 PhraseModel_1=1.85733 PhraseModel_2=0.159701 ||| 0-0
+[X] ||| و [X,1] ||| and [1] ||| PhraseModel_0=0.321785 PhraseModel_1=0.295917 PhraseModel_2=0.175508 ||| 0-0
+[X] ||| السفارتين الدنماركيه [X,1] ||| danish [1] embassies ||| PhraseModel_0=-0 PhraseModel_1=1.72675 PhraseModel_2=0.246172 ||| 0-2 1-0
+[X] ||| [X,1] في دمشق السبت ||| [1] in damascus saturday ||| PhraseModel_0=0.243038 PhraseModel_1=0.310359 PhraseModel_2=0.282281 ||| 1-1 2-2 3-3
+[X] ||| مبني ||| building ||| PhraseModel_0=0.273001 PhraseModel_1=0.573262 PhraseModel_2=0.196671 ||| 0-0
+[X] ||| [X,1] فيما احرق [X,2] ||| [1] , while [2] burned ||| PhraseModel_0=0.124939 PhraseModel_1=1.79701 PhraseModel_2=1.80296 ||| 1-2 2-4
+[X] ||| مبنيي [X,1] ||| [1] buildings ||| PhraseModel_0=0.632023 PhraseModel_1=2.47052 PhraseModel_2=0.30103 ||| 0-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| يضم مكتبا ل ||| that includes the office of ||| PhraseModel_0=0.477121 PhraseModel_1=4.04408 PhraseModel_2=3.52325 ||| 0-0 0-1 1-3 2-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| السفاره الدنماركيه ||| the danish embassy ||| PhraseModel_0=0.544068 PhraseModel_1=0.93589 PhraseModel_2=0.733081 ||| 0-0 0-2 1-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| نشر الرسوم ||| publication of the cartoons ||| PhraseModel_0=1.22724 PhraseModel_1=0.809016 PhraseModel_2=3.78773 ||| 0-0 1-3
+[X] ||| في بيروت ردا علي [X,1] ||| in beirut in response to the [1] ||| PhraseModel_0=0.477121 PhraseModel_1=1.89012 PhraseModel_2=2.33342 ||| 0-0 0-2 1-1 2-3 3-4 3-5
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| في ||| in ||| PhraseModel_0=0.173925 PhraseModel_1=0.152329 PhraseModel_2=0.184416 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| سبتمبر ||| september ||| PhraseModel_0=0.18932 PhraseModel_1=0.0952045 PhraseModel_2=0.151131 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| في ||| in ||| PhraseModel_0=0.173925 PhraseModel_1=0.152329 PhraseModel_2=0.184416 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| صحيفه يلاندس بوستن ||| yalandis boston newspaper ||| PhraseModel_0=1.11394 PhraseModel_1=0.917195 PhraseModel_2=2.20875 ||| 0-2 1-0 1-1 2-0
+[X] ||| [X,1] الدنماركيه ||| danish [1] ||| PhraseModel_0=0.823909 PhraseModel_1=0.816349 PhraseModel_2=0.058632 ||| 1-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| و اعاده نشر ها ||| and redeploy them ||| PhraseModel_0=0.60206 PhraseModel_1=2.50837 PhraseModel_2=4.10556 ||| 0-0 1-1 2-1 3-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| فيما بعد في عدد من ||| later in a number of ||| PhraseModel_0=-0 PhraseModel_1=3.32081 PhraseModel_2=3.40498 ||| 0-0 1-0 2-1 3-2 3-3 3-4 4-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| وسائل الاعلام الاوروبيه و ||| european mass media , ||| PhraseModel_0=-0 PhraseModel_1=2.68443 PhraseModel_2=1.8728 ||| 0-2 1-1 2-0 3-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| مجله ||| magazine ||| PhraseModel_0=0.254405 PhraseModel_1=0.266536 PhraseModel_2=0.162774 ||| 0-0
+[X] ||| في طليعه ها [X,1] ||| in the forefront of the [1] ||| PhraseModel_0=0.954243 PhraseModel_1=2.84003 PhraseModel_2=3.22047 ||| 0-0 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ماغازين ||| ماغازين ||| PassThrough=1 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| يت ||| accuse ||| PhraseModel_0=0.619789 PhraseModel_1=1.77085 PhraseModel_2=0.653212 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| النروجيه ||| norwegian ||| PhraseModel_0=0.20926 PhraseModel_1=1.85733 PhraseModel_2=0.159701 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| </s> ||| </s> ||| PassThrough=1 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]

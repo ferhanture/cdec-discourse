@@ -3,7 +3,8 @@
 #include <tr1/unordered_map>
 #include <boost/program_options.hpp>
 #include <boost/program_options/variables_map.hpp>
-#include <boost/unordered_map.hpp>
+#include <boost/make_shared.hpp>
+#include <boost/scoped_ptr.hpp>
 
 #include "program_options.h"
 #include "stringlib.h"
@@ -24,10 +25,12 @@
 #include "hg.h"
 #include "sentence_metadata.h"
 #include "hg_intersect.h"
+#include "hg_union.h"
 
 #include "oracle_bleu.h"
 #include "apply_models.h"
 #include "ff.h"
+#include "ffset.h"
 #include "ff_factory.h"
 #include "viterbi.h"
 #include "kbest.h"
@@ -37,6 +40,7 @@
 #include "sampler.h"
 
 #include "forest_writer.h" // TODO this section should probably be handled by an Observer
+#include "incremental.h"
 #include "hg_io.h"
 #include "aligner.h"
 
@@ -47,11 +51,17 @@
 #include "cfg_options.h"
 #endif
 
+#ifdef CP_TIME
+    clock_t CpTime::time_;
+	void CpTime::Add(clock_t x){time_+=x;}
+	void CpTime::Sub(clock_t x){time_-=x;}
+	double CpTime::Get(){return (double)(time_)/CLOCKS_PER_SEC;}
+#endif
+
 static const double kMINUS_EPSILON = -1e-6;  // don't be too strict
 
 using namespace std;
 using namespace std::tr1;
-using boost::shared_ptr;
 namespace po = boost::program_options;
 
 static bool verbose_feature_functions=true;
@@ -83,11 +93,6 @@ inline void ShowBanner() {
   cerr << "cdec v1.0 (c) 2009-2011 by Chris Dyer\n";
 }
 
-inline void show_models(po::variables_map const& conf,ModelSet &ms,char const* header) {
-  cerr<<header<<": ";
-  ms.show_features(cerr,cerr,conf.count("warn_0_weight"));
-}
-
 inline string str(char const* name,po::variables_map const& conf) {
   return conf[name].as<string>();
 }
@@ -95,7 +100,7 @@ inline string str(char const* name,po::variables_map const& conf) {
 
 // print just the --long_opt names suitable for bash compgen
 inline void print_options(std::ostream &out,po::options_description const& opts) {
-  typedef std::vector< shared_ptr<po::option_description> > Ds;
+  typedef std::vector< boost::shared_ptr<po::option_description> > Ds;
   Ds const& ds=opts.options();
   out << '"';
   for (unsigned i=0;i<ds.size();++i) {
@@ -114,30 +119,33 @@ inline bool store_conf(po::variables_map const& conf,std::string const& name,V *
   return false;
 }
 
-inline shared_ptr<FeatureFunction> make_ff(string const& ffp,bool verbose_feature_functions,char const* pre="") {
+inline boost::shared_ptr<FeatureFunction> make_ff(string const& ffp,bool verbose_feature_functions,char const* pre="") {
   string ff, param;
   SplitCommandAndParam(ffp, &ff, &param);
-  cerr << pre << "feature: " << ff;
-  if (param.size() > 0) cerr << " (with config parameters '" << param << "')\n";
-  else cerr << " (no config parameters)\n";
-  shared_ptr<FeatureFunction> pf = ff_registry.Create(ff, param);
+  if (verbose_feature_functions && !SILENT)
+    cerr << pre << "feature: " << ff;
+  if (!SILENT) {
+    if (param.size() > 0) cerr << " (with config parameters '" << param << "')\n";
+    else cerr << " (no config parameters)\n";
+  }
+  boost::shared_ptr<FeatureFunction> pf = ff_registry.Create(ff, param);
   if (!pf) exit(1);
-  int nbyte=pf->NumBytesContext();
-  if (verbose_feature_functions)
+  int nbyte=pf->StateSize();
+  if (verbose_feature_functions && !SILENT)
     cerr<<"State is "<<nbyte<<" bytes for "<<pre<<"feature "<<ffp<<endl;
   return pf;
 }
 
 #ifdef FSA_RESCORING
-inline shared_ptr<FsaFeatureFunction> make_fsa_ff(string const& ffp,bool verbose_feature_functions,char const* pre="") {
+inline boost::shared_ptr<FsaFeatureFunction> make_fsa_ff(string const& ffp,bool verbose_feature_functions,char const* pre="") {
   string ff, param;
   SplitCommandAndParam(ffp, &ff, &param);
   cerr << "FSA Feature: " << ff;
   if (param.size() > 0) cerr << " (with config parameters '" << param << "')\n";
   else cerr << " (no config parameters)\n";
-  shared_ptr<FsaFeatureFunction> pf = fsa_ff_registry.Create(ff, param);
+  boost::shared_ptr<FsaFeatureFunction> pf = fsa_ff_registry.Create(ff, param);
   if (!pf) exit(1);
-  if (verbose_feature_functions)
+  if (verbose_feature_functions && !SILENT)
     cerr<<"State is "<<pf->state_bytes()<<" bytes for "<<pre<<"feature "<<ffp<<endl;
   return pf;
 }
@@ -150,11 +158,10 @@ inline shared_ptr<FsaFeatureFunction> make_fsa_ff(string const& ffp,bool verbose
 // passes are carried over into subsequent passes (where they may have different weights).
 struct RescoringPass {
   RescoringPass() : fid_summary(), density_prune(), beam_prune() {}
-  shared_ptr<ModelSet> models;
-  shared_ptr<IntersectionConfiguration> inter_conf;
+  boost::shared_ptr<ModelSet> models;
+  boost::shared_ptr<IntersectionConfiguration> inter_conf;
   vector<const FeatureFunction*> ffs;
-  shared_ptr<Weights> w;      // null == use previous weights
-  vector<double> weight_vector;
+  boost::shared_ptr<vector<weight_t> > weight_vector;
   int fid_summary;            // 0 == no summary feature
   double density_prune;       // 0 == don't density prune
   double beam_prune;          // 0 == don't beam prune
@@ -163,7 +170,7 @@ struct RescoringPass {
 ostream& operator<<(ostream& os, const RescoringPass& rp) {
   os << "[num_fn=" << rp.ffs.size();
   if (rp.inter_conf) { os << " int_alg=" << *rp.inter_conf; }
-  if (rp.w) os << " new_weights";
+  //if (rp.weight_vector.size() > 0) os << " new_weights";
   if (rp.fid_summary) os << " summary_feature=" << FD::Convert(rp.fid_summary);
   if (rp.density_prune) os << " density_prune=" << rp.density_prune;
   if (rp.beam_prune) os << " beam_prune=" << rp.beam_prune;
@@ -175,29 +182,23 @@ struct DecoderImpl {
   DecoderImpl(po::variables_map& conf, int argc, char** argv, istream* cfg);
   ~DecoderImpl();
   bool Decode(const string& input, DecoderObserver*);
-  void SetWeights(const vector<double>& weights) {
-    init_weights = weights;
-    for (int i = 0; i < rescoring_passes.size(); ++i) {
-      if (rescoring_passes[i].models)
-        rescoring_passes[i].models->SetWeights(weights);
-      rescoring_passes[i].weight_vector = weights;
-    }
+  vector<weight_t>& CurrentWeightVector() {
+    return (rescoring_passes.empty() ? *init_weights : *rescoring_passes.back().weight_vector);
   }
   void SetId(int next_sent_id) { sent_id = next_sent_id - 1; }
 
     //@author ferhanture	
-	std::string GetTrans(int seg_id){ 
-		Int2StrMap::iterator iterator = translations.find(seg_id);
-		if(iterator != translations.end()){
-			return iterator->second;
-		}else {
-			return "NUL";
-		}
-	}
+    std::string GetTrans(int seg_id){ 
+        Int2StrMap::iterator iterator = translations.find(seg_id);
+        if(iterator != translations.end()){
+            return iterator->second;
+        }else {
+            return "NUL";
+        }
+    }
 
-    
-  void forest_stats(Hypergraph &forest,string name,bool show_tree,bool show_deriv=false, bool show_ruleset=false) {
-    cerr << viterbi_stats(forest,name,true,show_tree,show_deriv,show_ruleset,rules_file);
+  void forest_stats(Hypergraph &forest,string name,bool show_tree,bool show_deriv=false, bool extract_rules=false, boost::shared_ptr<WriteFile> extract_file = boost::make_shared<WriteFile>()) {
+    cerr << viterbi_stats(forest,name,true,show_tree,show_deriv,extract_rules, extract_file);
     cerr << endl;
   }
 
@@ -223,8 +224,10 @@ struct DecoderImpl {
       }
       forest.PruneInsideOutside(beam_prune,density_prune,pm,false,1);
       if (!forestname.empty()) forestname=" "+forestname;
-      forest_stats(forest,"  Pruned "+forestname+" forest",false,false);
-      cerr << "  Pruned "<<forestname<<" forest portion of edges kept: "<<forest.edges_.size()/presize<<endl;
+      if (!SILENT) { 
+        forest_stats(forest,"  Pruned "+forestname+" forest",false,false);
+        cerr << "  Pruned "<<forestname<<" forest portion of edges kept: "<<forest.edges_.size()/presize<<endl;
+      }
     }
   }
 
@@ -304,16 +307,15 @@ struct DecoderImpl {
   po::variables_map& conf;
   OracleBleu oracle;
   string formalism;
-  shared_ptr<Translator> translator;
-  Weights w_init_weights;      // used with initial parse
-  vector<double> init_weights; // weights used with initial parse
-  vector<shared_ptr<FeatureFunction> > pffs;
+  boost::shared_ptr<Translator> translator;
+  boost::shared_ptr<vector<weight_t> > init_weights; // weights used with initial parse
+  vector<boost::shared_ptr<FeatureFunction> > pffs;
 #ifdef FSA_RESCORING
   CFGOptions cfg_options;
-  vector<shared_ptr<FsaFeatureFunction> > fsa_ffs;
+  vector<boost::shared_ptr<FsaFeatureFunction> > fsa_ffs;
   vector<string> fsa_names;
 #endif
-  shared_ptr<RandomNumberGenerator<boost::mt19937> > rng;
+  boost::shared_ptr<RandomNumberGenerator<boost::mt19937> > rng;
   int sample_max_trans;
   bool aligner_mode;
   bool graphviz; 
@@ -322,7 +324,7 @@ struct DecoderImpl {
   bool kbest;
   bool unique_kbest;
   bool get_oracle_forest;
-  shared_ptr<WriteFile> extract_file;
+  boost::shared_ptr<WriteFile> extract_file;
   int combine_size;
   int sent_id;
   SparseVector<prob_t> acc_vec;  // accumulate gradient
@@ -333,15 +335,18 @@ struct DecoderImpl {
   bool write_gradient; // TODO Observer
   bool feature_expectations; // TODO Observer
   bool output_training_vector; // TODO Observer
+  bool remove_intersected_rule_annotations;
+  boost::scoped_ptr<IncrementalBase> incremental;
 
-    //@author FERHANTURE
-    typedef boost::unordered_map<int, string> Int2StrMap;
-	Int2StrMap translations;		// when randomizing a doc translation: keep track of latest translations of segments.
-	string rules_file;
+  //@author ferhanture
+  typedef unordered_map<int, string> Int2StrMap;
+  Int2StrMap translations;		// when randomizing a doc translation: keep track of latest translations of segments.
+  string rules_file;
+  int discourse_id;
 
   static void ConvertSV(const SparseVector<prob_t>& src, SparseVector<double>* trg) {
     for (SparseVector<prob_t>::const_iterator it = src.begin(); it != src.end(); ++it)
-      trg->set_value(it->first, it->second);
+      trg->set_value(it->first, it->second.as_float());
   }
 };
 
@@ -371,10 +376,13 @@ DecoderImpl::DecoderImpl(po::variables_map& conf, int argc, char** argv, istream
         ("grammar,g",po::value<vector<string> >()->composing(),"Either SCFG grammar file(s) or phrase tables file(s)")
         ("per_sentence_grammar_file", po::value<string>(), "Optional (and possibly not implemented) per sentence grammar file enables all per sentence grammars to be stored in a single large file and accessed by offset")
         ("list_feature_functions,L","List available feature functions")
+#ifdef HAVE_CMPH
+        ("cmph_perfect_feature_hash,h", po::value<string>(), "Load perfect hash function for features")
+#endif
 
         ("weights,w",po::value<string>(),"Feature weights file (initial forest / pass 1)")
         ("feature_function,F",po::value<vector<string> >()->composing(), "Pass 1 additional feature function(s) (-L for list)")
-        ("intersection_strategy,I",po::value<string>()->default_value("cube_pruning"), "Pass 1 intersection strategy for incorporating finite-state features; values include Cube_pruning, Full")
+        ("intersection_strategy,I",po::value<string>()->default_value("cube_pruning"), "Pass 1 intersection strategy for incorporating finite-state features; values include Cube_pruning, Full, Fast_cube_pruning, Fast_cube_pruning_2")
         ("summary_feature", po::value<string>(), "Compute a 'summary feature' at the end of the pass (before any pruning) with name=arg and value=inside-outside/Z")
         ("summary_feature_type", po::value<string>()->default_value("node_risk"), "Summary feature types: node_risk, edge_risk, edge_prob")
         ("density_prune", po::value<double>(), "Pass 1 pruning: keep no more than this many times the number of edges used in the best derivation tree (>=1.0)")
@@ -421,6 +429,8 @@ DecoderImpl::DecoderImpl(po::variables_map& conf, int argc, char** argv, istream
         ("show_partition,z", "Compute and show the partition (inside score)")
         ("show_conditional_prob", "Output the conditional log prob to STDOUT instead of a translation")
         ("show_cfg_search_space", "Show the search space as a CFG")
+        ("show_target_graph", po::value<string>(), "Directory to write the target hypergraphs to")
+        ("incremental_search", po::value<string>(), "Run lazy search with this language model file")
         ("coarse_to_fine_beam_prune", po::value<double>(), "Prune paths from coarse parse forest before fine parse, keeping paths within exp(alpha>=0)")
         ("ctf_beam_widen", po::value<double>()->default_value(2.0), "Expand coarse pass beam by this factor if no fine parse is found")
         ("ctf_num_widenings", po::value<int>()->default_value(2), "Widen coarse beam this many times before backing off to full parse")
@@ -432,7 +442,8 @@ DecoderImpl::DecoderImpl(po::variables_map& conf, int argc, char** argv, istream
         ("tagger_tagset,t", po::value<string>(), "(Tagger) file containing tag set")
         ("csplit_output_plf", "(Compound splitter) Output lattice in PLF format")
         ("csplit_preserve_full_word", "(Compound splitter) Always include the unsegmented form in the output lattice")
-        ("extract_rules", po::value<string>(), "Extract the rules used in translation (de-duped) to this file")
+        ("extract_rules", po::value<string>(), "Extract the rules used in translation (not de-duped!) to a file in this directory")
+        ("show_derivations", po::value<string>(), "Directory to print the derivation structures to")
         ("graphviz","Show (constrained) translation forest in GraphViz format")
         ("max_translation_beam,x", po::value<int>(), "Beam approximation to get max translation from the chart")
         ("max_translation_sample,X", po::value<int>(), "Sample the max translation from the chart")
@@ -442,18 +453,13 @@ DecoderImpl::DecoderImpl(po::variables_map& conf, int argc, char** argv, istream
         ("feature_expectations","Write feature expectations for all features in chart (**OBJ** will be the partition)")
         ("vector_format",po::value<string>()->default_value("b64"), "Sparse vector serialization format for feature expectations or gradients, includes (text or b64)")
         ("combine_size,C",po::value<int>()->default_value(1), "When option -G is used, process this many sentence pairs before writing the gradient (1=emit after every sentence pair)")
-    
-    //@author ferhanture
-
-    ("show_rules", po::value<string>(), "Show the rules used in Viterbi translation or k best derivations, depending on option k_best_rules")
+        ("forest_output,O",po::value<string>(),"Directory to write forests to")
+    ("remove_intersected_rule_annotations", "After forced decoding is completed, remove nonterminal annotations (i.e., the source side spans)")
+	//@author ferhanture
     ("rules_dir",po::value<string>(),"DISCOURSE FEATURE: Directory to read rule frequency of each document from")
     ("rules_file",po::value<string>(),"DISCOURSE FEATURE: File to read rule frequency of entire collection from")
-    ("discourse_0",po::value<string>(),"DISCOURSE FEATURE: enable variation 0")
-    ("discourse_1",po::value<string>(),"DISCOURSE FEATURE: enable variation 1")
-    ("discourse_2",po::value<string>(),"DISCOURSE FEATURE: enable variation 2")
-    ("df",po::value<vector<string> >()->composing(),"DISCOURSE FEATURE: File to read document frequency (df) values, followed by total number of documents")
+    ("df",po::value<vector<string> >()->composing(),"DISCOURSE FEATURE: File to read document frequency (df) values, followed by total number of documents");
     
-        ("forest_output,O",po::value<string>(),"Directory to write forests to");
   // ob.AddOptions(&opts);
 #ifdef FSA_RESCORING
   po::options_description cfgo(cfg_options.description());
@@ -462,7 +468,7 @@ DecoderImpl::DecoderImpl(po::variables_map& conf, int argc, char** argv, istream
   po::options_description clo("Command line options");
   clo.add_options()
     ("config,c", po::value<vector<string> >(&cfg_files), "Configuration file(s) - latest has priority")
-        ("help,h", "Print this help message and exit")
+        ("help,?", "Print this help message and exit")
     ("usage,u", po::value<string>(), "Describe a feature function type")
     ("compgen", "Print just option names suitable for bash command line completion builtin 'compgen'")
     ;
@@ -542,8 +548,8 @@ DecoderImpl::DecoderImpl(po::variables_map& conf, int argc, char** argv, istream
   }
 
   formalism = LowercaseString(str("formalism",conf));
-  if (formalism != "scfg" && formalism != "fst" && formalism != "lextrans" && formalism != "pb" && formalism != "csplit" && formalism != "tagger" && formalism != "lexalign") {
-    cerr << "Error: --formalism takes only 'scfg', 'fst', 'pb', 'csplit', 'lextrans', 'lexalign', or 'tagger'\n";
+  if (formalism != "scfg" && formalism != "fst" && formalism != "lextrans" && formalism != "pb" && formalism != "csplit" && formalism != "tagger" && formalism != "lexalign" && formalism != "rescore") {
+    cerr << "Error: --formalism takes only 'scfg', 'fst', 'pb', 'csplit', 'lextrans', 'lexalign', 'rescore', or 'tagger'\n";
     cerr << dcmdline_options << endl;
     exit(1);
   }
@@ -571,15 +577,28 @@ DecoderImpl::DecoderImpl(po::variables_map& conf, int argc, char** argv, istream
     exit(1);
   }
 
-  // load initial feature weights (and possibly freeze feature set)
-  if (conf.count("weights")) {
-    w_init_weights.InitFromFile(str("weights",conf));
-    w_init_weights.InitVector(&init_weights);
-    init_weights.resize(FD::NumFeats());
+  // load perfect hash function for features
+  if (conf.count("cmph_perfect_feature_hash")) {
+    cerr << "Loading perfect hash function from " << conf["cmph_perfect_feature_hash"].as<string>() << " ...\n";
+    FD::EnableHash(conf["cmph_perfect_feature_hash"].as<string>());
+    cerr << "  " << FD::NumFeats() << " features in map\n";
   }
+
+  // load initial feature weights (and possibly freeze feature set)
+  init_weights.reset(new vector<weight_t>);
+  if (conf.count("weights"))
+    Weights::InitFromFile(str("weights",conf), init_weights.get());
 
   // cube pruning pop-limit: we may want to configure this on a per-pass basis
   pop_limit = conf["cubepruning_pop_limit"].as<int>();
+
+  if (conf.count("extract_rules")) {
+    if (!DirectoryExists(conf["extract_rules"].as<string>()))
+      MkDirP(conf["extract_rules"].as<string>());
+  }
+
+  // initialize
+  discourse_id = -1;
 
   // determine the number of rescoring/pruning/weighting passes configured
   const int MAX_PASSES = 3;
@@ -596,16 +615,20 @@ DecoderImpl::DecoderImpl(po::variables_map& conf, int argc, char** argv, istream
       RescoringPass& rp = rescoring_passes.back();
       // only configure new weights if pass > 0, otherwise we reuse the initial chart weights
       if (nth_pass_condition && conf.count(ws)) {
-        rp.w.reset(new Weights);
-        rp.w->InitFromFile(str(ws.c_str(), conf));
-        rp.w->InitVector(&rp.weight_vector);
+        rp.weight_vector.reset(new vector<weight_t>());
+        Weights::InitFromFile(str(ws.c_str(), conf), rp.weight_vector.get());
       }
       bool has_stateful = false;
       if (conf.count(ff)) {
         vector<string> add_ffs;
         store_conf(conf,ff,&add_ffs);
         for (int i = 0; i < add_ffs.size(); ++i) {
-          pffs.push_back(make_ff(add_ffs[i],verbose_feature_functions));
+          size_t found = add_ffs[i].find("Discourse");
+	  if (found != string::npos){ 
+	    discourse_id = i;
+	    cerr << "Discourse id is " << i << endl;
+	  }
+	  pffs.push_back(make_ff(add_ffs[i],verbose_feature_functions));
           FeatureFunction const* p=pffs.back().get();
           rp.ffs.push_back(p);
           if (p->IsStateful()) { has_stateful = true; }
@@ -623,6 +646,14 @@ DecoderImpl::DecoderImpl(po::variables_map& conf, int argc, char** argv, istream
       if (LowercaseString(str(isn.c_str(),conf)) == "full") {
         palg = 0;
       }
+      if (LowercaseString(conf["intersection_strategy"].as<string>()) == "fast_cube_pruning") {
+        palg = 2;
+        cerr << "Using Fast Cube Pruning intersection (see Algorithm 2 described in: Gesmundo A., Henderson J,. Faster Cube Pruning, IWSLT 2010).\n";
+      }
+      if (LowercaseString(conf["intersection_strategy"].as<string>()) == "fast_cube_pruning_2") {
+        palg = 3;
+        cerr << "Using Fast Cube Pruning 2 intersection (see Algorithm 3 described in: Gesmundo A., Henderson J,. Faster Cube Pruning, IWSLT 2010).\n";
+      }
       rp.inter_conf.reset(new IntersectionConfiguration(palg, pop_limit));
     } else {
       break;  // TODO alert user if there are any future configurations
@@ -630,13 +661,15 @@ DecoderImpl::DecoderImpl(po::variables_map& conf, int argc, char** argv, istream
   }
 
   // set up weight vectors since later phases may reuse weights from earlier phases
-  const vector<double>* prev = &init_weights;
+  boost::shared_ptr<vector<weight_t> > prev_weights = init_weights;
   for (int pass = 0; pass < rescoring_passes.size(); ++pass) {
     RescoringPass& rp = rescoring_passes[pass];
-    if (!rp.w) { rp.weight_vector = *prev; } else { prev = &rp.weight_vector; }
-    rp.models.reset(new ModelSet(rp.weight_vector, rp.ffs));
-    string ps = "Pass1 "; ps[4] += pass;
-    if (!SILENT) show_models(conf,*rp.models,ps.c_str());
+    if (!rp.weight_vector) {
+      rp.weight_vector = prev_weights;
+    } else {
+      prev_weights = rp.weight_vector;
+    }
+    rp.models.reset(new ModelSet(*rp.weight_vector, rp.ffs));
   }
 
   // show configuration of rescoring passes
@@ -669,6 +702,8 @@ DecoderImpl::DecoderImpl(po::variables_map& conf, int argc, char** argv, istream
     translator.reset(new LexicalTrans(conf));
   else if (formalism == "lexalign")
     translator.reset(new LexicalAlign(conf));
+  else if (formalism == "rescore")
+    translator.reset(new RescoreTranslator(conf));
   else if (formalism == "tagger")
     translator.reset(new Tagger(conf));
   else
@@ -685,7 +720,7 @@ DecoderImpl::DecoderImpl(po::variables_map& conf, int argc, char** argv, istream
   }
   if (!fsa_ffs.empty()) {
     cerr<<"FSA: ";
-    show_all_features(fsa_ffs,init_weights,cerr,cerr,true,true);
+    show_all_features(fsa_ffs,*init_weights,cerr,cerr,true,true);
   }
 #endif
 
@@ -705,19 +740,22 @@ DecoderImpl::DecoderImpl(po::variables_map& conf, int argc, char** argv, istream
   kbest = conf.count("k_best");
   unique_kbest = conf.count("unique_k_best");
   get_oracle_forest = conf.count("get_oracle_forest");
+  oracle.show_derivation=conf.count("show_derivations");
+  remove_intersected_rule_annotations = conf.count("remove_intersected_rule_annotations");
 
 #ifdef FSA_RESCORING
   cfg_options.Validate();
 #endif
-
-  if (conf.count("extract_rules"))
-    extract_file.reset(new WriteFile(str("extract_rules",conf)));
 
   combine_size = conf["combine_size"].as<int>();
   if (combine_size < 1) combine_size = 1;
   sent_id = -1;
   acc_obj = 0; // accumulate objective
   g_count = 0;    // number of gradient pieces computed
+
+  if (conf.count("incremental_search")) {
+    incremental.reset(IncrementalBase::Load(conf["incremental_search"].as<string>().c_str(), CurrentWeightVector()));
+  }
 }
 
 Decoder::Decoder(istream* cfg) { pimpl_.reset(new DecoderImpl(conf,0,0,cfg)); }
@@ -731,13 +769,18 @@ bool Decoder::Decode(const string& input, DecoderObserver* o) {
   if (del) delete o;
   return res;
 }
-void Decoder::SetWeights(const vector<double>& weights) { pimpl_->SetWeights(weights); }
-void Decoder::SetSupplementalGrammar(const std::string& grammar_string) {
+vector<weight_t>& Decoder::CurrentWeightVector() { return pimpl_->CurrentWeightVector(); }
+const vector<weight_t>& Decoder::CurrentWeightVector() const { return pimpl_->CurrentWeightVector(); }
+void Decoder::AddSupplementalGrammar(GrammarPtr gp) {
+  static_cast<SCFGTranslator&>(*pimpl_->translator).AddSupplementalGrammar(gp);
+}
+void Decoder::AddSupplementalGrammarFromString(const std::string& grammar_string) {
   assert(pimpl_->translator->GetDecoderType() == "SCFG");
-  static_cast<SCFGTranslator&>(*pimpl_->translator).SetSupplementalGrammar(grammar_string);
+  static_cast<SCFGTranslator&>(*pimpl_->translator).AddSupplementalGrammarFromString(grammar_string);
 }
 
 //@author ferhanture
+int Decoder::GetDiscourseId(){ return pimpl_->discourse_id; }
 vector<boost::shared_ptr<FeatureFunction> > Decoder::GetFFs(){ return pimpl_->pffs; }
 
 void Decoder::SetRuleFile(string file) { pimpl_->rules_file = file; }
@@ -761,6 +804,12 @@ bool DecoderImpl::Decode(const string& input, DecoderObserver* o) {
   if (sgml.find("id") != sgml.end())
     sent_id = atoi(sgml["id"].c_str());
 
+  if (conf.count("extract_rules")) {
+    stringstream ss;
+    ss << sent_id;
+    extract_file.reset(new WriteFile(str("extract_rules",conf)+"/"+ss.str()));
+  }
+  
   if (!SILENT) {
     cerr << "\nINPUT: ";
     if (buf.size() < 100)
@@ -785,7 +834,7 @@ bool DecoderImpl::Decode(const string& input, DecoderObserver* o) {
   translator->ProcessMarkupHints(smeta.sgml_);
   Timer t("Translation");
   const bool translation_successful =
-    translator->Translate(to_translate, &smeta, init_weights, &forest);
+    translator->Translate(to_translate, &smeta, *init_weights, &forest);
   translator->SentenceComplete();
 
   if (!translation_successful) {
@@ -803,15 +852,22 @@ bool DecoderImpl::Decode(const string& input, DecoderObserver* o) {
   const bool show_tree_structure=conf.count("show_tree_structure");
   if (!SILENT) forest_stats(forest,"  Init. forest",show_tree_structure,oracle.show_derivation);
   if (conf.count("show_expected_length")) {
-    const PRPair<double, double> res =
-      Inside<PRPair<double, double>,
-             PRWeightFunction<double, EdgeProb, double, ELengthWeightFunction> >(forest);
-    cerr << "  Expected length  (words): " << res.r / res.p << "\t" << res << endl;
+    const PRPair<prob_t, prob_t> res =
+      Inside<PRPair<prob_t, prob_t>,
+             PRWeightFunction<prob_t, EdgeProb, prob_t, ELengthWeightFunction> >(forest);
+    cerr << "  Expected length  (words): " << (res.r / res.p).as_float() << "\t" << res << endl;
+  }
+
+  if (conf.count("show_partition")) {
+    const prob_t z = Inside<prob_t, EdgeProb>(forest);
+    cerr << "  Partition         log(Z): " << log(z) << endl;
   }
 
     //@author ferhanture
-    const bool show_rules=conf.count("show_rules");
-
+    bool is_discourse = false;
+    if(conf.count("rules_file") || conf.count("rules_dir")){
+        is_discourse=true;
+    }
 
   SummaryFeature summary_feature_type = kNODE_RISK;
   if (conf["summary_feature_type"].as<string>() == "edge_risk")
@@ -825,9 +881,18 @@ bool DecoderImpl::Decode(const string& input, DecoderObserver* o) {
     abort();
   }
 
+  if (conf.count("show_target_graph"))
+    HypergraphIO::WriteTarget(conf["show_target_graph"].as<string>(), sent_id, forest);
+
+  if (conf.count("incremental_search")) {
+    incremental->Search(pop_limit, forest);
+    o->NotifyDecodingComplete(smeta);
+    return true;
+  }
+
   for (int pass = 0; pass < rescoring_passes.size(); ++pass) {
     const RescoringPass& rp = rescoring_passes[pass];
-    const vector<double>& cur_weights = rp.weight_vector;
+    const vector<weight_t>& cur_weights = *rp.weight_vector;
     if (!SILENT) cerr << endl << "  RESCORING PASS #" << (pass+1) << " " << rp << endl;
 #ifdef FSA_RESCORING
     cfg_options.maybe_output_source(forest);
@@ -840,14 +905,20 @@ bool DecoderImpl::Decode(const string& input, DecoderObserver* o) {
       Timer t("Forest rescoring:");
       rp.models->PrepareForInput(smeta);
       Hypergraph rescored_forest;
+#ifdef CP_TIME
+      CpTime::Sub(clock());
+#endif
       ApplyModelSet(forest,
                   smeta,
                   *rp.models,
                   *rp.inter_conf,
                   &rescored_forest);
+#ifdef CP_TIME
+      CpTime::Add(clock());
+#endif
       forest.swap(rescored_forest);
       forest.Reweight(cur_weights);
-      if (!SILENT) forest_stats(forest,"  " + passtr +" forest",show_tree_structure,oracle.show_derivation, show_rules);
+      if (!SILENT) forest_stats(forest,"  " + passtr +" forest",show_tree_structure,oracle.show_derivation, conf.count("extract_rules"), extract_file);
     }
 
     if (conf.count("show_partition")) {
@@ -858,13 +929,13 @@ bool DecoderImpl::Decode(const string& input, DecoderObserver* o) {
     if (rp.fid_summary) {
       if (summary_feature_type == kEDGE_PROB) {
         const prob_t z = forest.PushWeightsToGoal(1.0);
-        if (!isfinite(log(z)) || isnan(log(z))) {
+        if (!std::isfinite(log(z)) || std::isnan(log(z))) {
           cerr << "  " << passtr << " !!! Invalid partition detected, abandoning.\n";
         } else {
           for (int i = 0; i < forest.edges_.size(); ++i) {
             const double log_prob_transition = log(forest.edges_[i].edge_prob_); // locally normalized by the edge
                                                                               // head node by forest.PushWeightsToGoal
-            if (!isfinite(log_prob_transition) || isnan(log_prob_transition)) {
+            if (!std::isfinite(log_prob_transition) || std::isnan(log_prob_transition)) {
               cerr << "Edge: i=" << i << " got bad inside prob: " << *forest.edges_[i].rule_ << endl;
               abort();
             }
@@ -876,7 +947,7 @@ bool DecoderImpl::Decode(const string& input, DecoderObserver* o) {
       } else if (summary_feature_type == kNODE_RISK) {
         Hypergraph::EdgeProbs posts;
         const prob_t z = forest.ComputeEdgePosteriors(1.0, &posts);
-        if (!isfinite(log(z)) || isnan(log(z))) {
+        if (!std::isfinite(log(z)) || std::isnan(log(z))) {
           cerr << "  " << passtr << " !!! Invalid partition detected, abandoning.\n";
         } else {
           for (int i = 0; i < forest.nodes_.size(); ++i) {
@@ -885,7 +956,7 @@ bool DecoderImpl::Decode(const string& input, DecoderObserver* o) {
             for (int j = 0; j < in_edges.size(); ++j)
               node_post += (posts[in_edges[j]] / z);
             const double log_np = log(node_post);
-            if (!isfinite(log_np) || isnan(log_np)) {
+            if (!std::isfinite(log_np) || std::isnan(log_np)) {
               cerr << "got bad posterior prob for node " << i << endl;
               abort();
             }
@@ -900,13 +971,13 @@ bool DecoderImpl::Decode(const string& input, DecoderObserver* o) {
       } else if (summary_feature_type == kEDGE_RISK) {
         Hypergraph::EdgeProbs posts;
         const prob_t z = forest.ComputeEdgePosteriors(1.0, &posts);
-        if (!isfinite(log(z)) || isnan(log(z))) {
+        if (!std::isfinite(log(z)) || std::isnan(log(z))) {
           cerr << "  " << passtr << " !!! Invalid partition detected, abandoning.\n";
         } else {
           assert(posts.size() == forest.edges_.size());
           for (int i = 0; i < posts.size(); ++i) {
             const double log_np = log(posts[i] / z);
-            if (!isfinite(log_np) || isnan(log_np)) {
+            if (!std::isfinite(log_np) || std::isnan(log_np)) {
               cerr << "got bad posterior prob for node " << i << endl;
               abort();
             }
@@ -942,11 +1013,11 @@ bool DecoderImpl::Decode(const string& input, DecoderObserver* o) {
 #endif
   }
 
-  const vector<double>& last_weights = (rescoring_passes.empty() ? init_weights : rescoring_passes.back().weight_vector);
+  const vector<double>& last_weights = (rescoring_passes.empty() ? *init_weights : *rescoring_passes.back().weight_vector);
 
   // Oracle Rescoring
   if(get_oracle_forest) {
-    assert(!"this is broken"); FeatureVector dummy; // = last_weights
+    assert(!"this is broken"); SparseVector<double> dummy; // = last_weights
     Oracle oc=oracle.ComputeOracle(smeta,&forest,dummy,10,conf["forest_output"].as<std::string>());
     if (!SILENT) cerr << "  +Oracle BLEU forest (nodes/edges): " << forest.nodes_.size() << '/' << forest.edges_.size() << endl;
     if (!SILENT) cerr << "  +Oracle BLEU (paths): " << forest.NumberOfPaths() << endl;
@@ -966,14 +1037,14 @@ bool DecoderImpl::Decode(const string& input, DecoderObserver* o) {
       {
         ReadFile rf(writer.fname_);
         bool succeeded = HypergraphIO::ReadFromJSON(rf.stream(), &new_hg);
-        assert(succeeded);
+        if (!succeeded) abort();
       }
-      new_hg.Union(forest);
+      HG::Union(forest, &new_hg);
       bool succeeded = writer.Write(new_hg, false);
-      assert(succeeded);
+      if (!succeeded) abort();
     } else {
       bool succeeded = writer.Write(forest, false);
-      assert(succeeded);
+      if (!succeeded) abort();
     }
   }
 
@@ -983,19 +1054,21 @@ bool DecoderImpl::Decode(const string& input, DecoderObserver* o) {
   } else {
     if (kbest && !has_ref) {
       //TODO: does this work properly?
-      oracle.DumpKBest(sent_id, forest, conf["k_best"].as<int>(), unique_kbest,"-");
-
+      const string deriv_fname = conf.count("show_derivations") ? str("show_derivations",conf) : "-";
+      oracle.DumpKBest(sent_id, forest, conf["k_best"].as<int>(), unique_kbest,"-", deriv_fname);
     } else if (csplit_output_plf) {
       cout << HypergraphIO::AsPLF(forest, false) << endl;
     } else {
-      if (!graphviz && !has_ref && !joshua_viz) {
+      if (!graphviz && !has_ref && !joshua_viz && !SILENT) {
         vector<WordID> trans;
         ViterbiESentence(forest, &trans);
-
-          //@author FERHANTURE 
-          translations[sent_id] = TD::GetString(trans); 
-          cerr << "saved" << sent_id << "=" << translations[sent_id] << endl;
-      
+          //@author ferhanture
+          if (is_discourse){
+              translations[sent_id] = TD::GetString(trans); 
+              cerr << "saved" << sent_id << "=" << translations[sent_id] << endl;
+          }else {
+              cout << TD::GetString(trans) << endl << flush;
+          }
       }
       if (joshua_viz) {
         cout << sent_id << " ||| " << JoshuaVisualizationString(forest) << " ||| 1.0 ||| " << -1.0 << endl << flush;
@@ -1035,6 +1108,12 @@ bool DecoderImpl::Decode(const string& input, DecoderObserver* o) {
 //        if (!SILENT) cerr << "  USING UNIFORM WEIGHTS\n";
 //        for (int i = 0; i < forest.edges_.size(); ++i)
 //          forest.edges_[i].edge_prob_=prob_t::One(); }
+      if (remove_intersected_rule_annotations) {
+        for (unsigned i = 0; i < forest.edges_.size(); ++i)
+          if (forest.edges_[i].rule_ &&
+              forest.edges_[i].rule_->parent_rule_)
+            forest.edges_[i].rule_ = forest.edges_[i].rule_->parent_rule_;
+      }
       forest.Reweight(last_weights);
       if (!SILENT) forest_stats(forest,"  Constr. forest",show_tree_structure,oracle.show_derivation);
       if (!SILENT) cerr << "  Constr. VitTree: " << ViterbiFTree(forest) << endl;
@@ -1051,14 +1130,14 @@ bool DecoderImpl::Decode(const string& input, DecoderObserver* o) {
           {
             ReadFile rf(writer.fname_);
             bool succeeded = HypergraphIO::ReadFromJSON(rf.stream(), &new_hg);
-            assert(succeeded);
+            if (!succeeded) abort();
           }
-          new_hg.Union(forest);
+          HG::Union(forest, &new_hg);
           bool succeeded = writer.Write(new_hg, false);
-          assert(succeeded);
+          if (!succeeded) abort();
         } else {
           bool succeeded = writer.Write(forest, false);
-          assert(succeeded);
+          if (!succeeded) abort();
         }
       }
       if (aligner_mode && !output_training_vector)
@@ -1075,7 +1154,7 @@ bool DecoderImpl::Decode(const string& input, DecoderObserver* o) {
           cerr << "DIFF. ERR! log_z < log_ref_z: " << log_z << " " << log_ref_z << endl;
           exit(1);
         }
-        assert(!isnan(log_ref_z));
+        assert(!std::isnan(log_ref_z));
         ref_exp -= full_exp;
         acc_vec += ref_exp;
         acc_obj += (log_z - log_ref_z);
@@ -1105,8 +1184,10 @@ bool DecoderImpl::Decode(const string& input, DecoderObserver* o) {
         }
       }
       if (conf.count("graphviz")) forest.PrintGraphviz();
-      if (kbest)
-        oracle.DumpKBest(sent_id, forest, conf["k_best"].as<int>(), unique_kbest,"-");
+      if (kbest) {
+        const string deriv_fname = conf.count("show_derivations") ? str("show_derivations",conf) : "-";
+        oracle.DumpKBest(sent_id, forest, conf["k_best"].as<int>(), unique_kbest,"-", deriv_fname);
+      }
       if (conf.count("show_conditional_prob")) {
         const prob_t ref_z = Inside<prob_t, EdgeProb>(forest);
         cout << (log(ref_z) - log(first_z)) << endl << flush;

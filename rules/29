@@ -1,0 +1,20 @@
+[X] ||| ديفيد ||| david ||| PhraseModel_0=0.0809219 PhraseModel_1=0.29009 PhraseModel_2=0.01498 ||| 0-0
+[X] ||| ير ||| see ||| PhraseModel_0=0.628822 PhraseModel_1=2.43401 PhraseModel_2=0.636822 ||| 0-0
+[X] ||| [X,1] س [X,2] ||| [1] will [2] ||| PhraseModel_0=0.49035 PhraseModel_1=0.497874 PhraseModel_2=0.23666 ||| 1-1
+[X] ||| [X,1] ني ||| [1] me ||| PhraseModel_0=0.853872 PhraseModel_1=0.743431 PhraseModel_2=0.725568 ||| 1-1
+[X] ||| [X,1] 38 عاما ||| [1] ( 38 years ) ||| PhraseModel_0=1.43573 PhraseModel_1=0.681477 PhraseModel_2=2.58037 ||| 1-2 2-1 2-3 2-4
+[X] ||| اعمال ه الاستفزازيه ||| its provocative acts ||| PhraseModel_0=-0 PhraseModel_1=1.95413 PhraseModel_2=2.1453 ||| 0-2 1-0 2-1
+[X] ||| <s> اشتهر [X,1] ب [X,2] ||| <s> [1] was famous for [2] ||| PhraseModel_0=1.17609 PhraseModel_1=2.68076 PhraseModel_2=2.0957 ||| 0-0 1-2
+[S] ||| [X,1] ||| [1]
+[X] ||| قوائم ||| lists ||| PhraseModel_0=0.21705 PhraseModel_1=0.571608 PhraseModel_2=0.164274 ||| 0-0
+[X] ||| رايه علي [X,1] ||| his opinion on the [1] ||| PhraseModel_0=0.60206 PhraseModel_1=2.16463 PhraseModel_2=2.53218 ||| 0-0 0-1 1-2
+[X] ||| و من ها [X,1] ||| and [1] ||| PhraseModel_0=1.69897 PhraseModel_1=2.86885 PhraseModel_2=0.175508 ||| 0-0
+[X] ||| الالمان الشرقيين ||| east germans ||| PhraseModel_0=0.176091 PhraseModel_1=2.80815 PhraseModel_2=1.43779 ||| 0-1 1-0 1-1
+[X] ||| هجره [X,1] ||| emigration of [1] ||| PhraseModel_0=1.47712 PhraseModel_1=1.07201 PhraseModel_2=1.94485 ||| 0-0
+[X] ||| [X,1] التي ترمز الي [X,2] ||| [1] , which refers to the [2] ||| PhraseModel_0=0.812913 PhraseModel_1=4.00143 PhraseModel_2=4.45621 ||| 1-2 2-3 3-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الي الغرب ||| to the west ||| PhraseModel_0=0.416423 PhraseModel_1=1.88648 PhraseModel_2=0.983173 ||| 0-0 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| عام 1989 </s> ||| in 1989 . </s> ||| PhraseModel_0=0.522879 PhraseModel_1=0.743233 PhraseModel_2=1.5251 ||| 0-0 1-1 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]

@@ -1,0 +1,21 @@
+[X] ||| <s> ||| <s> ||| PassThrough=1 ||| 0-0
+[S] ||| [X,1] ||| [1]
+[X] ||| دبي ||| dubai ||| PhraseModel_0=0.0555173 PhraseModel_1=0.0362685 PhraseModel_2=0.0363682 ||| 0-0
+[X] ||| كما استضافت [X,1] ||| [1] also hosted ||| PhraseModel_0=0.60206 PhraseModel_1=1.31454 PhraseModel_2=0.571788 ||| 0-1 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| المؤتمر الدولي حول ||| the international conference on ||| PhraseModel_0=0.428273 PhraseModel_1=2.32803 PhraseModel_2=1.27551 ||| 0-0 0-2 1-1 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| المنتجات الكيميائيه ||| chemical products ||| PhraseModel_0=0.176091 PhraseModel_1=1.15239 PhraseModel_2=0.18304 ||| 0-1 1-0
+[X] ||| التصرف في [X,1] ||| disposal of [1] ||| PhraseModel_0=1.76592 PhraseModel_1=2.97041 PhraseModel_2=3.20593 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الذي اختتم ||| which ended ||| PhraseModel_0=0.875061 PhraseModel_1=1.84709 PhraseModel_2=1.11601 ||| 0-0 1-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الاثنين و بحث ||| monday and discussed ||| PhraseModel_0=-0 PhraseModel_1=1.0181 PhraseModel_2=0.928186 ||| 0-0 1-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| سبل ||| ways ||| PhraseModel_0=0.184865 PhraseModel_1=0.397401 PhraseModel_2=0.173389 ||| 0-0
+[X] ||| المنتجات الكيميائيه ||| chemical products ||| PhraseModel_0=0.176091 PhraseModel_1=1.15239 PhraseModel_2=0.18304 ||| 0-1 1-0
+[X] ||| [X,1] الحد من مخاطر [X,2] ||| [1] to reduce the risk of [2] ||| PhraseModel_0=1.07918 PhraseModel_1=3.22371 PhraseModel_2=4.75857 ||| 1-2 3-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| في العالم </s> ||| in the world . </s> ||| PhraseModel_0=0.321785 PhraseModel_1=0.384139 PhraseModel_2=1.80702 ||| 0-0 1-2 2-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]

@@ -1,0 +1,19 @@
+[X] ||| في اكتوبر 2004 ||| in october 2004 ||| PhraseModel_0=0.0595857 PhraseModel_1=0.538667 PhraseModel_2=0.380973 ||| 0-0 1-1 2-2
+[X] ||| بلديه براغ ||| prague municipality ||| PhraseModel_0=-0 PhraseModel_1=0.473439 PhraseModel_2=0.460523 ||| 0-1 1-0
+[X] ||| <s> [X,1] تخلت [X,2] عن ||| <s> [1] , [2] gave up ||| PhraseModel_0=0.920819 PhraseModel_1=3.24673 PhraseModel_2=2.49237 ||| 0-0 2-4 2-5 4-5
+[S] ||| [X,1] ||| [1]
+[X] ||| حركه المقاومه ||| resistance movement ||| PhraseModel_0=0.568636 PhraseModel_1=0.379506 PhraseModel_2=0.266313 ||| 0-1 1-0
+[X] ||| نصب تذكاري ل [X,1] ||| a memorial for the [1] ||| PhraseModel_0=0.812913 PhraseModel_1=2.60287 PhraseModel_2=2.1991 ||| 0-1 1-0 1-1 2-2
+[X] ||| تنفيذ [X,1] ||| implementation of [1] ||| PhraseModel_0=1 PhraseModel_1=0.242396 PhraseModel_2=1.66137 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ضد ||| against ||| PhraseModel_0=0.0571655 PhraseModel_1=0.322088 PhraseModel_2=0.0588681 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| النازيه ||| nazi ||| PhraseModel_0=0.146707 PhraseModel_1=0.402686 PhraseModel_2=0.145616 ||| 0-0
+[X] ||| [X,1] من تصميم ||| [1] design ||| PhraseModel_0=1.03141 PhraseModel_1=1.47662 PhraseModel_2=0.659461 ||| 2-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| قدامي ||| veterans ||| PhraseModel_0=1.1651 PhraseModel_1=0.897677 PhraseModel_2=0.357798 ||| 0-0
+[X] ||| [X,1] الحرب العالميه الثانيه ||| [1] of the second world war ||| PhraseModel_0=1.36318 PhraseModel_1=1.66654 PhraseModel_2=2.08311 ||| 1-5 2-4 3-3
+[X] ||| مهينا ل [X,1] ||| insulting to the [1] ||| PhraseModel_0=0.477121 PhraseModel_1=2.69276 PhraseModel_2=1.86076 ||| 0-0 1-1
+[X] ||| ه اعتبر [X,1] </s> ||| he considered [1] . </s> ||| PhraseModel_0=0.954243 PhraseModel_1=1.45486 PhraseModel_2=2.23195 ||| 0-0 1-1 3-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]

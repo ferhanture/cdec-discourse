@@ -1,15 +1,18 @@
-#include <iostream>
+ #include <iostream>
 
 #include "filelib.h"
 #include "decoder.h"
+#include "ff_basic.h"
 #include "ff_register.h"
 #include "verbose.h"
-#include <iostream>
+#include "timing_stats.h"
 #include <cstring>
 #include "stringlib.h"
+#include "util/usage.hh"
 #include <sstream>
 #include <boost/algorithm/string/predicate.hpp>
 #include <boost/algorithm/string.hpp>
+#include <typeinfo>
 
 using namespace std;
 
@@ -31,26 +34,23 @@ int main(int argc, char** argv) {
     //@author ferhanture: get a handle to the Discourse ff object
 	vector<boost::shared_ptr<FeatureFunction> > ffs = decoder.GetFFs();
 	boost::shared_ptr<Discourse> ff_discourse;
-	int discourse_cnt = 0;
-	
-	for(int i=0; i<ffs.size(); i++){
-		cerr << i << endl;
-		if(ffs[i]->name_ == "Discourse"){
-			ff_discourse = boost::dynamic_pointer_cast<Discourse, FeatureFunction>(ffs[i]);
-			discourse_cnt=1;
-		}  
+	int discourse_id = decoder.GetDiscourseId();
+	if(discourse_id >= 0){
+		ff_discourse = boost::dynamic_pointer_cast<Discourse, FeatureFunction>(ffs[discourse_id]);
+   		cerr << "discourse id=" << discourse_id << endl;
 	}
-    
+ 
     //@author ferhanture: run cdec w/ discourse feature
     bool rulefreq_percollection, rulefreq_perdoc;
     string rulefreq_dir, rulefreq_file;
-    if(discourse_cnt>0){
+    if(discourse_id >= 0){
         
         //read num of docs
         vector<string> df_options = decoder.GetConf()["df"].as<vector<string> >();	
-		string df_file = df_options[0];
-		int num_docs = atoi(df_options[1].c_str());
+	string df_file = df_options[0];
+	int num_docs = atoi(df_options[1].c_str());
         ff_discourse->set_df_numdocs(num_docs); 
+        //        ff_discourse->set_isdisc(decoder.GetConf().count("discourse_0"),decoder.GetConf().count("discourse_1"),decoder.GetConf().count("discourse_2")); 
         
         //read df values
         ReadFile in_read2(df_file);
@@ -60,8 +60,8 @@ int main(int argc, char** argv) {
 		while(*in2){
 			getline(*in2,line);
 			if (line.empty()) continue;
-            vector<string> term_df;
-            boost::split(term_df, line, boost::is_any_of(" "));
+ 		        vector<string> term_df;
+            		boost::split(term_df, line, boost::is_any_of(" "));
 			string term = term_df[0];
 			int df = atoi(term_df[1].c_str());
 			dfs[term]=df;
@@ -69,78 +69,77 @@ int main(int argc, char** argv) {
         ff_discourse->set_dfs(dfs); 
         
         //rule freq folder
-
+        
         rulefreq_perdoc = decoder.GetConf().count("rules_dir");
         rulefreq_percollection = decoder.GetConf().count("rules_file");
-
+        
         if(rulefreq_perdoc){
             rulefreq_dir = decoder.GetConf()["rules_dir"].as<string>();
         }else if(rulefreq_percollection){
             rulefreq_file = decoder.GetConf()["rules_file"].as<string>();
             ff_discourse->load_freqs(rulefreq_file);
         }
-	
+        
     }
     
     //show rules
     string show_rules_dir;
     if(decoder.GetConf().count("show_rules")){
     	show_rules_dir = decoder.GetConf()["show_rules"].as<string>();
-    }    
-    string buf;
-    while(*in) {
-        getline(*in, buf);
-        if (buf.empty()) continue;
-        
-        if(discourse_cnt>0){
-            vector<string> segments_in_doc = split(buf, "<NEXTSEG>", false);
-           
-            if(rulefreq_perdoc){ 
-            	int doc_id = get_doc_id(segments_in_doc[0]);
-            	ff_discourse->load_freqs(doc_id, rulefreq_dir);
-            }
-            
-            stringstream outstrm;
-            for(int i=0;i<segments_in_doc.size();i++){
-                int sent_id = get_sent_id(segments_in_doc[i]);
-                stringstream show_rules_strm; 
-		if(decoder.GetConf().count("show_rules")){
-			show_rules_strm << show_rules_dir << "/rules." << sent_id;
-                	decoder.SetRuleFile(show_rules_strm.str());                
-                }
-		decoder.Decode(segments_in_doc[i]);  
-            }
-            
-            for(int i=0;i<segments_in_doc.size();i++){
-                int sent_id = get_sent_id(segments_in_doc[i]);
-                if(i==segments_in_doc.size()-1){
-                    outstrm << decoder.GetTrans(sent_id);                    
-                }else{
-                    outstrm << decoder.GetTrans(sent_id) << "<NEXTSEG>";
-                }
-            }
-            
-            cout << outstrm.str() << endl;
-        }else{
-            decoder.Decode(buf);
-        }
-        decoder.NewDocument();
-    }
-    
-    
-    
-    
-    
+    } 
+
+  string buf;
+#ifdef CP_TIME
+    clock_t time_cp(0);//, end_cp;
+#endif
+  while(*in) {
+    getline(*in, buf);
+    if (buf.empty()) continue;
+      if(discourse_id >= 0){
+    	  cerr << "reading doc-per-line input..." << endl;
+	  vector<string> segments_in_doc = split(buf, "<NEXTSEG>", false);
+          
+          if(rulefreq_perdoc){ 
+              int doc_id = get_doc_id(segments_in_doc[0]);
+              ff_discourse->load_freqs(doc_id, rulefreq_dir);
+          }
+          
+          stringstream outstrm;
+          for(int i=0;i<segments_in_doc.size();i++){
+              decoder.Decode(segments_in_doc[i]);  
+          }
+          
+          for(int i=0;i<segments_in_doc.size();i++){
+              int sent_id = get_sent_id(segments_in_doc[i]);
+              if(i==segments_in_doc.size()-1){
+                  outstrm << decoder.GetTrans(sent_id);                    
+              }else{
+                  outstrm << decoder.GetTrans(sent_id) << "<NEXTSEG>";
+              }
+          }
+          
+          cout << outstrm.str() << endl;
+      }else{
+          // default: no discourse feature
+          decoder.Decode(buf);
+      }
+      decoder.NewDocument();
+  }
+  Timer::Summarize();
+#ifdef CP_TIME
+    cerr << "Time required for Cube Pruning execution: "
+    << CpTime::Get()
+    << " seconds." << "\n\n";
+#endif
   if (show_feature_dictionary) {
     int num = FD::NumFeats();
     for (int i = 1; i < num; ++i) {
       cout << FD::Convert(i) << endl;
     }
   }
+  util::PrintUsage(std::cerr);
   return 0;
 }
-
-
 
 int get_doc_id(string s){  
 	// get segment id from tag
@@ -194,5 +193,3 @@ vector<string> split(const string& s, const string& delim, const bool keep_empty
 	}
 	return result;
 }
-
-

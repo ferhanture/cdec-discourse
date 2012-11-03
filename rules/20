@@ -1,0 +1,23 @@
+[X] ||| <s> كان ||| <s> the ||| PhraseModel_0=0.920819 PhraseModel_1=2.582 PhraseModel_2=0.623551 ||| 0-0 1-1
+[S] ||| [X,1] ||| [1]
+[X] ||| يفترض ان يتم في المؤتمر ||| conference is supposed to ||| PhraseModel_0=-0 PhraseModel_1=5.81406 PhraseModel_2=2.20671 ||| 0-1 0-2 0-3 4-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| تبني ||| adopt ||| PhraseModel_0=0.864337 PhraseModel_1=0.618838 PhraseModel_2=0.891993 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| غير ان مسؤولا في ||| however , an official in ||| PhraseModel_0=0.30103 PhraseModel_1=3.87593 PhraseModel_2=3.60227 ||| 0-0 2-2 2-3 3-4
+[X] ||| الخصوص [X,1] الامم المتحده ||| regard , [1] the united nations ||| PhraseModel_0=0.90309 PhraseModel_1=1.50919 PhraseModel_2=2.67277 ||| 0-0 2-5 3-4
+[X] ||| اتفاق ب هذا [X,1] ||| an agreement in this [1] ||| PhraseModel_0=0.441649 PhraseModel_1=1.81811 PhraseModel_2=1.97562 ||| 0-0 0-1 1-2 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| قال ||| said ||| PhraseModel_0=0.221849 PhraseModel_1=0.492977 PhraseModel_2=0.147863 ||| 0-0
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ل وكاله فرانس برس ان ||| to agence france presse that ||| PhraseModel_0=1.29003 PhraseModel_1=2.80511 PhraseModel_2=3.2963 ||| 0-0 1-1 2-2 2-3 3-3 4-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| ذلك لم يتم ||| this did not happen ||| PhraseModel_0=0.778151 PhraseModel_1=2.67645 PhraseModel_2=4.31816 ||| 0-0 1-1 1-2 2-3
+[X] ||| مشاكل ||| problems ||| PhraseModel_0=0.0897314 PhraseModel_1=0.572191 PhraseModel_2=0.0730574 ||| 0-0
+[X] ||| [X,1] ب سبب [X,2] ||| [1] because of the [2] ||| PhraseModel_0=1.04576 PhraseModel_1=1.79686 PhraseModel_2=2.09316 ||| 2-1
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| تتعلق خاصه ب ||| relating to the ||| PhraseModel_0=0.30103 PhraseModel_1=3.59342 PhraseModel_2=2.71197 ||| 0-0 1-0 2-1 2-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| التمويل </s> ||| financing . </s> ||| PhraseModel_0=1.08486 PhraseModel_1=0.79392 PhraseModel_2=1.60287 ||| 0-0 1-2
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]

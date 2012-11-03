@@ -1,0 +1,16 @@
+[X] ||| <s> ||| <s> ||| PassThrough=1 ||| 0-0
+[S] ||| [X,1] ||| [1]
+[X] ||| كوفي انان ||| secretary - general kofi annan ||| PhraseModel_0=1 PhraseModel_1=0.380943 PhraseModel_2=2.32498 ||| 0-0 0-2 0-3 1-1 1-4
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| زايد ||| zayed ||| PhraseModel_0=0.0791812 PhraseModel_1=0.00798988 PhraseModel_2=0.0864165 ||| 0-0
+[X] ||| جائزه [X,1] ||| [1] prize ||| PhraseModel_0=0.736759 PhraseModel_1=0.266478 PhraseModel_2=0.247308 ||| 0-1
+[X] ||| قيمه [X,1] ||| [1] value ||| PhraseModel_0=1.43573 PhraseModel_1=0.294032 PhraseModel_2=0.374402 ||| 0-1
+[X] ||| س يخصص [X,1] ||| the [1] will be allocated ||| PhraseModel_0=1.52288 PhraseModel_1=1.89803 PhraseModel_2=2.2143 ||| 0-2 1-0 1-3 1-4
+[X] ||| [X,1] ل انشاء مؤسسه ||| [1] for the establishment of the institution ||| PhraseModel_0=0.69897 PhraseModel_1=1.70768 PhraseModel_2=4.42037 ||| 1-1 2-3 3-6
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| الزراعه و ||| agriculture and ||| PhraseModel_0=0.346787 PhraseModel_1=0.418294 PhraseModel_2=0.245051 ||| 0-0 1-1
+[X] ||| ل [X,1] تعليم البنات ||| for [1] girls ' education ||| PhraseModel_0=-0 PhraseModel_1=2.65414 PhraseModel_2=2.07289 ||| 0-0 2-4 3-2 3-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[X] ||| في افريقيا </s> ||| in africa . </s> ||| PhraseModel_0=0.281222 PhraseModel_1=0.228076 PhraseModel_2=1.20423 ||| 0-0 1-1 2-3
+[S] ||| [S,1] [X,2] ||| [1] [2] ||| Glue=1
+[Goal] ||| [S,1] ||| [1]
