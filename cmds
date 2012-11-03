@@ -1,12 +1,4 @@
-$inp.soseos.seg = ~/ferhan/end2end-experiments/ar-en.galep5oct/dev/mt06.ar.soseos.seg
-$inp.soseos = ~/ferhan/end2end-experiments/ar-en.galep5oct/dev/mt06.ar.soseos
-$inp.sgm = /fs/clip-bolt/Zh-En.081611/test/MT08/nw/raw/mt08.raw.nw.sgm
-$cdec = ~/ferhan/cdec-bolt/decoder/cdec
-$inifile1 = cdec.ini
-$inifile2 = cdec.discourse0.ini
-$weights = ~/ferhan/end2end-experiments/ar-en.galep5oct/dev/weights.init
-$inp.docinfo = /fs/clip-qa/ferhan/mt06_dev/mt06_v1-ref.docinfo
-$inp.withdocid = mt06.docperline.withdocid
+### example .sgm formatted file = mt08.raw.nw.sgm
 
 cat $inp.sgm | SCRIPTSDIR/docinfo.pl > $inp.docinfo
 
