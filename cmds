@@ -19,11 +19,11 @@ perl -ne 'chomp;@arr=split(/\//,$_);$len=@arr;$docid=$arr[$len-1];system "perl S
 
 ### compute rule counts using version C2 of Discourse feature (counting rules)
 mkdir WORKDIR/rules_doc.disc1
-perl -ne 'chomp;system "perl SCRIPTSDIR/rulesfreq_disc1.pl WORKDIR/$_ > WORKDIR/rules_doc.disc1/".($.-1)."\n";' WORKDIR/perdoc_nodisc.filelist
+perl -ne 'chomp;@arr=split(/\//,$_);$len=@arr;$docid=$arr[$len-1];system "perl SCRIPTSDIR/rulesfreq_disc1.pl WORKDIR/$_ > WORKDIR/rules_doc.disc1/".($.-1)."\n";' WORKDIR/perdoc_nodisc.filelist
 
 ### compute rule counts using version C3 of Discourse feature (counting rules)
 mkdir WORKDIR/rules_doc.disc2
-perl -ne 'chomp;system "perl SCRIPTSDIR/rulesfreq_disc2.pl WORKDIR/$_ > WORKDIR/rules_doc.disc2/".($.-1)."\n";' WORKDIR/perdoc_nodisc.filelist
+perl -ne 'chomp;@arr=split(/\//,$_);$len=@arr;$docid=$arr[$len-1];system "perl SCRIPTSDIR/rulesfreq_disc2.pl WORKDIR/$_ > WORKDIR/rules_doc.disc2/".($.-1)."\n";' WORKDIR/perdoc_nodisc.filelist
 
 ### instead one-sentence-per-line .seg format, convert input into one-doc-per-line format
 cat $inp.soseos | SCRIPTSDIR/conv_cdec_inp.pl $inp.docinfo $inp.grammar/grammar nosuffix | SCRIPTSDIR/add-docid-tag2.pl > $inp.withdocid
